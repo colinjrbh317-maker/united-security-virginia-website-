@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import Breadcrumb from '../components/Breadcrumb';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { Shield, Camera, Lock, Users, Factory, CheckCircle, Phone, MapPin, Star, Clock, Award, Building } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Security Services Martinsville Henry County Virginia",
+  name: "Professional Security Services Martinsville and Henry County - Bassett, Collinsville",
+  description: "Comprehensive security services for Martinsville and Henry County businesses and residents. Serving Martinsville, Bassett, Collinsville with professional security systems, manufacturing security, and commercial solutions since 1988.",
+  url: "https://unitedsecurityva.com/martinsville-henry-county-security",
+  areaServed: [
+    "Martinsville", "Henry County", "Bassett", "Collinsville", "Ridgeway", "Fieldale", "Stanleytown", "Axton"
+  ],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Martinsville Security Systems",
+        "description": "Complete security system installation and monitoring for Martinsville area businesses and homes"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Manufacturing Security Solutions",
+        "description": "Industrial security systems for manufacturing and production facilities"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Henry County Commercial Security",
+        "description": "Commercial security and access control for Henry County businesses"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Martinsville Henry County Security | Manufacturing & Commercial Security | United Security" 
+  description="Professional security services for Martinsville and Henry County - manufacturing, commercial, residential. Bassett, Collinsville coverage. Licensed & local since 1988."
+  type="website"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Locations", href: "/locations" },
+		{ label: "Martinsville Henry County" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Commercial Security Solutions Martinsville Henry County VA
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional Business Security Services in Martinsville and Henry County VA
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Problem Statement -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Commercial Security Solutions in Martinsville and Henry County, VA</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your Martinsville or Henry County business needs security services, you need specialists who understand the unique challenges of our manufacturing heritage and industrial environment. United Security provides on-site solutions throughout Martinsville, Bassett, Collinsville, and surrounding Henry County communities with expertise in both traditional commercial security and specialized manufacturing facility protection.
+					</p>
+				</div>
+
+				<!-- Services -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Services We Provide in Martinsville and Henry County</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Emergency Security Response</strong> – Break-ins, alarm activations, urgent on-site support</li>
+						<li><strong>Access Control Solutions</strong> – Keycard systems, biometric entry, door hardware upgrades</li>
+						<li><strong>Security Camera Installation & Repair</strong> – IP cameras, CCTV, system troubleshooting</li>
+						<li><strong>Commercial Locksmith Services</strong> – Lock changes, master key systems, rekeying</li>
+						<li><strong>Intrusion Detection Systems</strong> – Alarm systems, motion sensors, perimeter security</li>
+						<li><strong>Manufacturing Security Solutions</strong> – Industrial facility protection, production line monitoring</li>
+						<li><strong>Business Security Consulting</strong> – Site assessments, risk analysis, tailored security plans</li>
+						<li><strong>Preventive Security Maintenance</strong> – Equipment checks, firmware updates, system inspections</li>
+					</ul>
+				</div>
+
+				<!-- Why Choose Us -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Why Choose United Security in Martinsville and Henry County?</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Manufacturing Expertise</strong> – Specialized experience with industrial facilities and production environments</li>
+						<li><strong>Local Knowledge</strong> – Deep understanding of Martinsville's business community and industrial heritage</li>
+						<li><strong>Prompt Response</strong> – Strategically positioned teams ensure fast arrival for urgent service needs</li>
+						<li><strong>Fair Pricing</strong> – Transparent quotes with no hidden fees</li>
+						<li><strong>Industrial-Grade Equipment</strong> – Commercial security systems designed for demanding environments</li>
+						<li><strong>Trusted by Local Businesses</strong> – Proven track record serving manufacturers and commercial properties</li>
+					</ul>
+				</div>
+
+				<!-- Business Types -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Common Businesses We Service</h3>
+					<ul class="space-y-3 text-lg text-header">
+						<li>• Manufacturing plants and production facilities</li>
+						<li>• Industrial warehouses and distribution centers</li>
+						<li>• Retail stores and shopping centers</li>
+						<li>• Office buildings and corporate facilities</li>
+						<li>• Healthcare clinics and medical offices</li>
+						<li>• Entertainment venues and racing facilities</li>
+					</ul>
+				</div>
+
+				<!-- Service Area -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Serving the Martinsville and Henry County Area</h3>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						We cover all of Martinsville and Henry County and beyond:
+					</p>
+					
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Martinsville City:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Downtown Martinsville business district and Broad Street</li>
+							<li>• Memorial Boulevard and Commonwealth Boulevard corridors</li>
+							<li>• City government complex and municipal facilities</li>
+							<li>• Martinsville Speedway and surrounding entertainment venues</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Henry County Industrial Areas:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Bassett furniture manufacturing district and industrial parks</li>
+							<li>• Collinsville textile and manufacturing facilities</li>
+							<li>• Ridgeway industrial corridor and business parks</li>
+							<li>• Commonwealth Crossing Business Centre</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Rural Communities:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Fieldale mill village and surrounding businesses</li>
+							<li>• Stanleytown rural commercial and agricultural areas</li>
+							<li>• Axton farming and rural business operations</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Surrounding Areas:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Spencer and Patrick County border businesses</li>
+							<li>• US-58 and US-220 corridor commercial properties</li>
+							<li>• Smith River access and recreational facilities</li>
+							<li>• Fairy Stone State Park area tourism businesses</li>
+						</ul>
+					</div>
+
+					<div class="text-center">
+						<Button variant="cta-prominent" size="2xl" asChild>
+							<a href="tel:540-989-9393" class="flex items-center">
+								<Phone class="w-6 h-6 mr-3" />
+								Call 540-989-9393 for Immediate Service
+							</a>
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

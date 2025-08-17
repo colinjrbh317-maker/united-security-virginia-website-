@@ -1,0 +1,160 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+  type?: 'website' | 'article' | 'service';
+}
+
+const { 
+  title, 
+  description = "United Security & Control Systems - Professional security solutions for Southwest Virginia businesses. Access control, security cameras, and locksmith services since 1988.",
+  image = "/lovable-uploads/f279366a-7136-4229-b19a-ad0fee523641.png",
+  noindex = false,
+  canonical,
+  type = 'website'
+} = Astro.props;
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:site_name" content="United Security & Control Systems" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+    
+    <!-- Business Info -->
+    <meta name="author" content="United Security & Control Systems" />
+    <meta name="geo.region" content="US-VA" />
+    <meta name="geo.placename" content="Southwest Virginia" />
+    <meta name="geo.position" content="37.2431;-79.9414" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+    
+    <!-- Fonts - Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- DNS Prefetch and Resource Hints for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preload" href={image} as="image" />
+    <link rel="prefetch" href="/contact" />
+    <link rel="prefetch" href="/services" />
+    
+    <!-- Schema.org placeholder -->
+    <slot name="schema" />
+  </head>
+  <body>
+    <slot />
+    
+    <!-- Schema.org LocalBusiness (Global) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "United Security & Control Systems",
+      "description": "Professional security solutions for Southwest Virginia businesses - access control, security cameras, and locksmith services since 1988.",
+      "url": "https://unitedsecurityva.com",
+      "telephone": "540-989-9393",
+      "email": "info@unitedsecurityva.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6405 Merriman Rd # 204",
+        "addressLocality": "Roanoke",
+        "addressRegion": "VA",
+        "postalCode": "24018",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "37.2431",
+        "longitude": "-79.9414"
+      },
+      "areaServed": [
+        "Southwest Virginia", "Roanoke Valley", "New River Valley",
+        "Lynchburg", "Blacksburg", "Christiansburg", "Martinsville"
+      ],
+      "foundingDate": "1988",
+      "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Check", "Credit Card"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Security Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Access Control Systems",
+              "description": "Commercial access control installation and maintenance"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Security Camera Installation",
+              "description": "Professional surveillance camera systems and monitoring"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Locksmith Services",
+              "description": "Professional locksmith services for businesses and institutions"
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.facebook.com/unitedsecurityva",
+        "https://www.linkedin.com/company/united-security-control-systems"
+      ]
+    }
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  /* Font loading optimization */
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+  }
+</style>

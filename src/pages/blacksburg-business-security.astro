@@ -1,0 +1,385 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { GraduationCap, Building2, Cpu, Rocket, CheckCircle, Phone, Star, MapPin } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Blacksburg Business Security",
+  name: "Professional Business Security Blacksburg Virginia",
+  description: "Expert security solutions for Blacksburg businesses and Virginia Tech area. Access control, security cameras, locksmith services for technology companies and startups.",
+  url: "https://unitedsecurityva.com/blacksburg-business-security",
+  areaServed: ["Blacksburg", "Virginia Tech", "Christiansburg", "Montgomery County"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Blacksburg Access Control Systems",
+        "description": "Professional access control for Virginia Tech area businesses"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Blacksburg Security Camera Installation",
+        "description": "Commercial surveillance systems for Blacksburg business district"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Virginia Tech Area Locksmith",
+        "description": "Commercial locksmith services for Blacksburg and Virginia Tech area"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Blacksburg Business Security | Virginia Tech Area Security Systems | United Security" 
+  description="Professional business security for Blacksburg & Virginia Tech area. Access control, security cameras, locksmith services for tech companies & startups. Licensed since 1988."
+  type="service"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-hero-bg to-primary-light overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					<span class="text-primary">Blacksburg Business Security</span><br>
+					Virginia Tech Area Experts
+				</h1>
+				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Advanced security solutions for Blacksburg's innovation economy. Protecting tech companies, startups, and Virginia Tech area businesses with cutting-edge security systems.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+						document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+					}}>
+						Get Free Blacksburg Security Quote
+					</Button>
+					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-5 h-5 mr-2" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Indicators -->
+	<section class="py-12 bg-white border-b border-gray-100">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap justify-center items-center gap-8 text-body">
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Licensed DCJS# 11-3283</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Virginia Tech Area Specialists</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Tech Company Experience</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>New River Valley Local</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Blacksburg Market Overview -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-header mb-6">
+						Security for Blacksburg's Innovation Economy
+					</h2>
+					<p class="text-xl text-body max-w-3xl mx-auto leading-relaxed">
+						From Virginia Tech research facilities to emerging technology companies, we provide sophisticated security solutions for Blacksburg's dynamic business environment.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Cpu class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Technology Companies</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Specialized security solutions for Blacksburg's growing tech sector, from startups to established software and engineering companies.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Software development companies</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Engineering firms</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Research & development</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<GraduationCap class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Virginia Tech Area</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Security services for businesses serving the Virginia Tech community, including student housing, research facilities, and campus-adjacent businesses.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Campus-adjacent businesses</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Student housing facilities</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Research partnerships</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Rocket class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Startup Ecosystem</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Flexible security solutions for Blacksburg's emerging startups and innovation centers, with scalable systems that grow with your business.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Startup incubators</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Co-working spaces</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Innovation centers</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					New River Valley Service Areas
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Blacksburg</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Virginia Tech</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Christiansburg</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Montgomery County</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Technology-Focused Security Solutions -->
+	<section class="py-20 bg-muted/30">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Advanced Security for Technology Businesses
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<InternalLinkCard
+						title="Biometric Access Control"
+						description="High-security biometric systems perfect for protecting intellectual property and sensitive research data."
+						href="/access-control-systems-virginia"
+						badge="Tech Favorite"
+						client:load
+					/>
+					<InternalLinkCard
+						title="AI Security Cameras"
+						description="Intelligent surveillance with analytics and AI detection, ideal for modern technology workplaces."
+						href="/security-cameras-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Smartphone Security Control"
+						description="Mobile-first security management systems that integrate with modern business workflows."
+						href="/business-security-systems-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Multi-Location Access Control"
+						description="Centralized access management for growing companies with multiple Blacksburg area locations."
+						href="/multi-location-access-control"
+						client:load
+					/>
+					<InternalLinkCard
+						title="No-Contract Security Systems"
+						description="Flexible security solutions without long-term commitments, perfect for dynamic startup environments."
+						href="/no-contract-security-systems"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Commercial Locksmith Services"
+						description="Professional locksmith services for high-security lock systems and master key design."
+						href="/commercial-locksmith-virginia"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Industry-Specific Solutions -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Specialized Security for Key Industries
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<InternalLinkCard
+						title="Research Facility Security"
+						description="Specialized security for R&D facilities, labs, and intellectual property protection."
+						href="/research-facility-security"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Software Company Security"
+						description="Security solutions designed for software development companies and tech startups."
+						href="/software-company-security"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Student Housing Security"
+						description="Comprehensive security systems for student housing and residential facilities."
+						href="/student-housing-security"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Co-working Space Security"
+						description="Flexible access control and security for shared workspaces and innovation centers."
+						href="/coworking-space-security"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Local Testimonials -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-12">
+					Trusted by Blacksburg Technology Companies
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-white rounded-lg p-8 shadow-md">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"Perfect security solution for our software development company. The biometric access control integrates seamlessly with our tech-forward culture. United Security understands the Blacksburg business environment."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Blacksburg Tech Company CEO
+						</div>
+					</div>
+					<div class="bg-white rounded-lg p-8 shadow-md">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"As a growing startup, we needed flexible security that could scale with us. The no-contract option and smartphone control were exactly what we needed. Great local support too."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Virginia Tech Area Startup Founder
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose for Blacksburg -->
+	<section class="py-20 bg-primary-light">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Why Blacksburg Businesses Choose United Security
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Technology Understanding</h3>
+						<p class="text-body">We understand the unique security needs of technology companies, startups, and research facilities in the Virginia Tech area.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Scalable Solutions</h3>
+						<p class="text-body">Security systems that grow with your business, from startup to established company, with flexible contract options.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">New River Valley Local</h3>
+						<p class="text-body">Based in Southwest Virginia with deep understanding of the Blacksburg business community and rapid local response.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Cutting-Edge Technology</h3>
+						<p class="text-body">Advanced security technology including AI cameras, biometric access, and smartphone integration that matches your tech environment.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

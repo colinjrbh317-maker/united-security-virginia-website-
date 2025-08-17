@@ -1,0 +1,423 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { GraduationCap, Shield, Users, BookOpen, CheckCircle, Phone, Star, MapPin, Camera, Lock } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "School Security Systems Virginia",
+  name: "Professional School Security Systems Southwest Virginia",
+  description: "Expert security solutions for Virginia schools and educational facilities. Access control, lockdown systems, visitor management, security cameras designed for K-12 and higher education.",
+  url: "https://unitedsecurityva.com/school-security-systems-virginia",
+  areaServed: ["Southwest Virginia", "Roanoke Valley", "New River Valley", "Lynchburg", "Martinsville", "Franklin County"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "K-12 School Security Systems",
+        "description": "Comprehensive security solutions for elementary, middle, and high schools throughout Southwest Virginia"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "College Campus Security",
+        "description": "Advanced security systems for Virginia colleges and universities including Virginia Tech area institutions"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "School Lockdown Systems",
+        "description": "Emergency lockdown security systems with instant building-wide activation for Virginia schools"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="School Security Systems Virginia | Educational Facility Security Southwest VA | United Security" 
+  description="Professional security systems for Virginia schools & educational facilities. K-12 lockdown systems, college campus security, visitor management. Protecting students since 1988."
+  type="service"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-hero-bg to-primary-light overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					<span class="text-primary">School Security Systems</span><br>
+					Protecting Virginia's Educational Communities
+				</h1>
+				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Comprehensive security solutions for Virginia schools and educational facilities. From K-12 lockdown systems to college campus security, protecting students, staff, and educational environments.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+						document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+					}}>
+						Get Free School Security Consultation
+					</Button>
+					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-5 h-5 mr-2" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Indicators -->
+	<section class="py-12 bg-white border-b border-gray-100">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap justify-center items-center gap-8 text-body">
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Licensed DCJS# 11-3283</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Educational Security Specialists</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>K-12 & Higher Education</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Virginia Education Experience</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Educational Security Overview -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-header mb-6">
+						Comprehensive School Security Solutions
+					</h2>
+					<p class="text-xl text-body max-w-3xl mx-auto leading-relaxed">
+						From elementary schools to college campuses, we provide security systems designed specifically for educational environments, balancing safety with accessibility.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<GraduationCap class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">K-12 School Security</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Specialized security systems for elementary, middle, and high schools with age-appropriate solutions that maintain a welcoming learning environment.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Visitor management systems</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Emergency lockdown capability</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Playground monitoring</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<BookOpen class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">College Campus Security</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Advanced security solutions for Virginia colleges and universities, including dormitories, academic buildings, and campus-wide emergency systems.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Dormitory access control</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Academic building security</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Campus-wide integration</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Shield class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Emergency Response Systems</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Rapid emergency response capabilities with instant lockdown systems, emergency communication, and coordination with local law enforcement.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">One-touch lockdown</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Emergency communication</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Law enforcement coordination</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Virginia Educational Security Service Areas
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Roanoke City Schools</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Virginia Tech Area</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Lynchburg Schools</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Montgomery County Schools</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Franklin County Schools</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Henry County Schools</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Educational Security Solutions -->
+	<section class="py-20 bg-muted/30">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Specialized Educational Security Systems
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<InternalLinkCard
+						title="Visitor Management Systems"
+						description="Advanced visitor check-in systems with ID verification, background checks, and temporary badge printing for school security."
+						href="/visitor-management-systems"
+						badge="Essential"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Emergency Lockdown Systems"
+						description="One-touch building-wide lockdown capability with automated door locking and emergency communication systems."
+						href="/emergency-lockdown-systems"
+						client:load
+					/>
+					<InternalLinkCard
+						title="School Access Control"
+						description="Advanced access control systems with time-based permissions, staff management, and student safety features."
+						href="/access-control-systems-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Campus Security Cameras"
+						description="Comprehensive surveillance systems for hallways, common areas, entrances, and outdoor spaces with privacy protection."
+						href="/security-cameras-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Intercom & Communication"
+						description="School-wide communication systems with emergency broadcasting and two-way communication capabilities."
+						href="/school-intercom-systems"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Perimeter Security"
+						description="Fencing, gate controls, and perimeter monitoring systems to secure school grounds and control campus access."
+						href="/perimeter-security-systems"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Safety & Learning Balance -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Balancing Security with Learning Environment
+				</h2>
+				<p class="text-xl text-body mb-12 leading-relaxed">
+					Our educational security solutions are designed to provide maximum protection while maintaining the open, welcoming atmosphere essential for effective learning and education.
+				</p>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4 flex items-center">
+							<Lock class="w-6 h-6 text-primary mr-3" />
+							Security First
+						</h3>
+						<p class="text-body mb-4">
+							Comprehensive protection against threats with rapid emergency response, controlled access, and complete situational awareness while maintaining educational priorities.
+						</p>
+					</div>
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4 flex items-center">
+							<Users class="w-6 h-6 text-primary mr-3" />
+							Learning Environment
+						</h3>
+						<p class="text-body mb-4">
+							Security systems designed to be invisible during normal operation, maintaining the open, collaborative atmosphere necessary for effective education and student development.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Technology Features -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Advanced Educational Security Technology
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Camera class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">AI-Powered Cameras</h3>
+						<p class="text-sm text-body">Intelligent surveillance with behavior detection and automated threat recognition.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Lock class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Smart Access Control</h3>
+						<p class="text-sm text-body">Biometric and card-based systems with time restrictions and visitor management.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Shield class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Emergency Integration</h3>
+						<p class="text-sm text-body">Seamless integration with fire alarms, PA systems, and law enforcement protocols.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Users class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Mobile Management</h3>
+						<p class="text-sm text-body">Smartphone and tablet control for administrators with real-time alerts and monitoring.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Educational Testimonials -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-12">
+					Trusted by Virginia Educational Institutions
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-gray-50 rounded-lg p-8">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"United Security installed a comprehensive security system for our K-12 school. The visitor management and emergency lockdown features give us confidence in our students' safety while maintaining our welcoming school environment."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Virginia Elementary School Principal
+						</div>
+					</div>
+					<div class="bg-gray-50 rounded-lg p-8">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"Professional installation and excellent training for our staff. The access control system works perfectly for our college dormitories and academic buildings. Students and faculty feel secure on campus."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Virginia College Campus Security Director
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Educational Security -->
+	<section class="py-20 bg-primary-light">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Why Choose United Security for Educational Facilities?
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Educational Expertise</h3>
+						<p class="text-body">Specialized experience with K-12 schools, colleges, and universities throughout Virginia with understanding of educational environment needs.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Safety-First Design</h3>
+						<p class="text-body">Security systems designed specifically for educational settings, balancing comprehensive protection with open learning environments.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Emergency Response Ready</h3>
+						<p class="text-body">Advanced emergency systems with rapid lockdown capabilities and seamless law enforcement coordination for maximum student safety.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Virginia Licensed & Experienced</h3>
+						<p class="text-body">Fully licensed (DCJS# 11-3283) Virginia security contractor with 35+ years protecting educational institutions across Southwest Virginia.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

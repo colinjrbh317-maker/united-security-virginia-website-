@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import Breadcrumb from '../components/Breadcrumb';
+import { Button } from '../components/ui/button';
+import { Phone } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Commercial Security Solutions Bedford County Virginia",
+  name: "Professional Business Security Services Bedford County VA",
+  description: "Commercial security solutions in Bedford County, VA. Professional business security services including access control, security cameras, and commercial locksmith services.",
+  url: "https://unitedsecurityva.com/bedford-county-security",
+  areaServed: [
+    "Bedford County", "Bedford", "Forest", "Moneta", "Big Island", "Thaxton", "Goodview"
+  ]
+};
+---
+
+<Layout 
+  title="Commercial Security Solutions Bedford County VA | United Security" 
+  description="Professional business security services in Bedford County VA. Commercial security solutions for Bedford, Forest, Moneta. Call 540-989-9393."
+  type="website"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Locations", href: "/locations" },
+		{ label: "Bedford County" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Commercial Security Solutions Bedford County VA
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional Business Security Services in Bedford County VA
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Problem Statement -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Commercial Security Solutions in Bedford County, VA</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your Bedford County business or lake property needs security services, you need specialists who understand the unique challenges of our diverse region spanning from Peaks of Otter to Smith Mountain Lake. United Security provides on-site solutions throughout Bedford, Forest, Moneta, and surrounding Bedford County communities with expertise in both traditional commercial security and specialized lakefront property protection.
+					</p>
+				</div>
+
+				<!-- Services -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Services We Provide in Bedford County</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Emergency Security Response</strong> – Break-ins, alarm activations, urgent on-site support</li>
+						<li><strong>Access Control Solutions</strong> – Keycard systems, biometric entry, door hardware upgrades</li>
+						<li><strong>Security Camera Installation & Repair</strong> – IP cameras, CCTV, system troubleshooting</li>
+						<li><strong>Commercial Locksmith Services</strong> – Lock changes, master key systems, rekeying</li>
+						<li><strong>Intrusion Detection Systems</strong> – Alarm systems, motion sensors, perimeter security</li>
+						<li><strong>Lakefront Property Security</strong> – Seasonal monitoring, dock protection, remote access</li>
+						<li><strong>Business Security Consulting</strong> – Site assessments, risk analysis, tailored security plans</li>
+						<li><strong>Preventive Security Maintenance</strong> – Equipment checks, firmware updates, system inspections</li>
+					</ul>
+				</div>
+
+				<!-- Why Choose Us -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Why Choose United Security in Bedford County?</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Lake Property Expertise</strong> – Specialized experience with Smith Mountain Lake seasonal and vacation properties</li>
+						<li><strong>Rural-Urban Knowledge</strong> – Understanding of both Bedford city businesses and county rural properties</li>
+						<li><strong>Prompt Response</strong> – Strategically positioned teams ensure fast arrival for urgent service needs</li>
+						<li><strong>Fair Pricing</strong> – Transparent quotes with no hidden fees</li>
+						<li><strong>Comprehensive Capabilities</strong> – From downtown businesses to remote mountain properties</li>
+						<li><strong>Trusted by Local Businesses</strong> – Proven track record serving diverse Bedford County communities</li>
+					</ul>
+				</div>
+
+				<!-- Business Types -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Common Businesses We Service</h3>
+					<ul class="space-y-3 text-lg text-header">
+						<li>• Retail stores and shopping centers</li>
+						<li>• Lakefront resorts and vacation rental properties</li>
+						<li>• Government buildings and municipal services</li>
+						<li>• Healthcare facilities and medical centers</li>
+						<li>• Manufacturing and distribution facilities</li>
+						<li>• Restaurants and hospitality venues</li>
+					</ul>
+				</div>
+
+				<!-- Service Area -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Serving the Bedford County Area</h3>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						We cover all of Bedford County and beyond:
+					</p>
+					
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Bedford City Area:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Downtown Bedford business district and Main Street</li>
+							<li>• Bedford Area Welcome Center and D-Day Memorial</li>
+							<li>• Industrial parks and manufacturing facilities</li>
+							<li>• Peaks of Otter Lodge and tourism corridor</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Forest:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Forest shopping centers and commercial strips</li>
+							<li>• Timberlake Road business corridor</li>
+							<li>• Residential neighborhoods and community centers</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Smith Mountain Lake Area:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Moneta lakefront businesses and marinas</li>
+							<li>• Vacation rental properties and resort facilities</li>
+							<li>• Seasonal businesses and recreational venues</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Surrounding Areas:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Big Island rural businesses and agricultural facilities</li>
+							<li>• Thaxton and US-460 corridor commercial properties</li>
+							<li>• Goodview residential and small business areas</li>
+							<li>• Blue Ridge Parkway access points and overlooks</li>
+						</ul>
+					</div>
+
+					<div class="text-center">
+						<Button variant="cta-prominent" size="2xl" asChild>
+							<a href="tel:540-989-9393" class="flex items-center">
+								<Phone class="w-6 h-6 mr-3" />
+								Call 540-989-9393 for Immediate Service
+							</a>
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

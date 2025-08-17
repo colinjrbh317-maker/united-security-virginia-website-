@@ -1,0 +1,383 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import { Button } from '../components/ui/button';
+import { Phone, ChevronDown } from 'lucide-react';
+import '../styles/global.css';
+
+const faqSchema = {
+  questions: [
+    {
+      "@type": "Question",
+      "name": "How long has United Security been in business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "United Security Virginia has been serving Southwest Virginia since 1988 - over 35 years of professional security services. We are a family-owned and operated company with deep roots in the local community."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed and insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we are fully licensed by the Virginia Department of Criminal Justice Services (DCJS# 11-3283), bonded, and insured. We maintain all required licenses and certifications for security services in Virginia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you require long-term monitoring contracts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, we offer flexible monitoring options without requiring long-term contracts. You own your security system outright and can choose month-to-month monitoring or self-monitoring options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there monthly fees for camera systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, our camera systems have no monthly fees. You own your system outright with local recording and remote viewing capabilities. Optional cloud storage and professional monitoring are available if desired."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide free estimates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide free consultations and estimates for all security services. We'll assess your needs, recommend solutions, and provide detailed pricing with no obligation."
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Frequently Asked Questions | United Security Virginia" 
+  description="Get answers to common questions about security systems, installation, monitoring, and services in Southwest Virginia. Expert security solutions since 1988."
+  type="website"
+>
+	<SchemaMarkup type="FAQPage" data={faqSchema} client:load />
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6">
+					Frequently Asked Questions
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed">
+					Common questions about security systems and services in Southwest Virginia
+				</p>
+				<div class="flex justify-center">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				
+				<!-- General Questions -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-8">General Questions</h2>
+					
+					<div class="space-y-6">
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								How long has United Security been in business?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								United Security Virginia has been serving Southwest Virginia since 1988 - over 35 years of professional security services. We are a family-owned and operated company with deep roots in the local community.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Are you licensed and insured?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, we are fully licensed by the Virginia Department of Criminal Justice Services (DCJS# 11-3283), bonded, and insured. We maintain all required licenses and certifications for security services in Virginia.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								What areas do you serve?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								We serve all of Southwest Virginia including Roanoke Valley, New River Valley, Lynchburg area, Martinsville, Franklin County, Botetourt County, Bedford County, Allegheny County, Rockbridge County, and Giles County.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Do you offer emergency services?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, we provide 24/7 emergency response for security system repairs, lockouts, and urgent security needs. Emergency service fees may apply for after-hours calls.
+							</div>
+						</details>
+					</div>
+				</div>
+
+				<!-- Security Systems -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-8">Security Systems</h2>
+					
+					<div class="space-y-6">
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Do you require long-term monitoring contracts?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								No, we offer flexible monitoring options without requiring long-term contracts. You own your security system outright and can choose month-to-month monitoring or self-monitoring options.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								What types of security systems do you install?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								We install wireless and hardwired security systems including intrusion detection, motion sensors, door/window contacts, glass break detectors, control panels, and smartphone integration. All systems are commercial-grade for reliability.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Can I control my security system remotely?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, our modern security systems include smartphone app control allowing you to arm/disarm your system, receive real-time notifications, and monitor system status from anywhere.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								How long does installation take?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Most security system installations are completed in one day. Complex systems or large facilities may require multiple days. We provide an estimated timeline during your consultation.
+							</div>
+						</details>
+					</div>
+				</div>
+
+				<!-- Access Control -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-8">Access Control Systems</h2>
+					
+					<div class="space-y-6">
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								What types of access control do you install?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								We install keycard readers, keypads, biometric scanners (fingerprint/facial recognition), and proximity card systems. All systems include access management software for user permissions and scheduling.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Can I manage employee access myself?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, our access control systems include user-friendly management software. You can add/remove users, set access schedules, generate reports, and manage permissions without needing our assistance.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								What happens if an employee leaves?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								You can instantly remove their access through the management software without changing locks or collecting keys. This provides immediate security and eliminates the cost of rekeying locks.
+							</div>
+						</details>
+					</div>
+				</div>
+
+				<!-- Security Cameras -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-8">Security Cameras</h2>
+					
+					<div class="space-y-6">
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Are there monthly fees for camera systems?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								No, our camera systems have no monthly fees. You own your system outright with local recording and remote viewing capabilities. Optional cloud storage and professional monitoring are available if desired.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Can I view cameras on my phone?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, our IP camera systems include mobile apps allowing you to view live video, review recordings, and receive motion alerts on your smartphone or computer from anywhere.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								How long do cameras record?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Recording duration depends on the storage capacity we install and your recording settings. Typical systems provide 30-90 days of storage. We design systems based on your specific needs and budget.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Do cameras work in the dark?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, our cameras include night vision capabilities with infrared technology providing clear recordings in complete darkness. We also offer cameras with color night vision for enhanced detail.
+							</div>
+						</details>
+					</div>
+				</div>
+
+				<!-- Commercial Locksmith -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-8">Locksmith Services</h2>
+					
+					<div class="space-y-6">
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Do you provide 24/7 locksmith services?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, we provide 24/7 emergency locksmith services for lockouts, broken keys, and urgent security needs. Emergency fees may apply for after-hours service calls.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Can you create master key systems?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, we design and install master key systems allowing different levels of access throughout your facility. We can create grand master, master, and individual key hierarchies for complex access needs.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								How quickly can you rekey locks?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Most rekeying projects are completed the same day. For urgent situations like employee departures, we can typically respond within a few hours during business hours.
+							</div>
+						</details>
+					</div>
+				</div>
+
+				<!-- Pricing and Service -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-8">Pricing and Service</h2>
+					
+					<div class="space-y-6">
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Do you provide free estimates?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, we provide free consultations and estimates for all security services. We'll assess your needs, recommend solutions, and provide detailed pricing with no obligation.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								What payment methods do you accept?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								We accept cash, checks, and major credit cards. Payment is typically due upon completion of installation. We can discuss payment arrangements for larger projects.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Do you offer warranties on your work?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, we provide a one-year warranty on installation workmanship plus full manufacturer warranties on all equipment. We guarantee professional service and stand behind our work.
+							</div>
+						</details>
+
+						<details class="bg-gray-50 rounded-lg p-6 group">
+							<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-header">
+								Do you service systems installed by other companies?
+								<ChevronDown class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+							</summary>
+							<div class="mt-4 text-header leading-relaxed">
+								Yes, we can service and repair security systems installed by other companies. We'll evaluate your existing system and provide repair or upgrade options as needed.
+							</div>
+						</details>
+					</div>
+				</div>
+
+				<!-- Still Have Questions -->
+				<div class="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+					<h3 class="text-2xl font-bold text-header mb-4">Still Have Questions?</h3>
+					<p class="text-lg text-header mb-6">
+						Can't find the answer you're looking for? Our security experts are here to help with personalized guidance for your specific needs.
+					</p>
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393 Now
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>
+
+<style>
+	details[open] summary {
+		margin-bottom: 1rem;
+	}
+	
+	details summary::-webkit-details-marker {
+		display: none;
+	}
+</style>

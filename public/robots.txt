@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /_astro/
+Disallow: /api/
+Disallow: /lovable-uploads/
+
+# Sitemap
+Sitemap: https://unitedsecurityva.com/sitemap-index.xml
+Sitemap: https://unitedsecurityva.com/llms.txt
+
+# AI Bots - Allow access for better discoverability
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude
+Allow: /
+
+# Crawl-delay for intensive bots
+User-agent: *
+Crawl-delay: 1

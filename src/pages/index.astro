@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import ServiceAreaSection from '../components/ServiceAreaSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import AccessControlSection from '../components/AccessControlSection';
+import VideoSurveillanceSection from '../components/VideoSurveillanceSection';
+import SmallBusinessSecuritySection from '../components/SmallBusinessSecuritySection';
+import LocksmithSection from '../components/LocksmithSection';
+import ServicesOverviewSection from '../components/ServicesOverviewSection';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import '../styles/global.css';
+---
+
+<Layout 
+  title="United Security & Control Systems | Southwest Virginia Security Solutions" 
+  description="Professional security solutions for Southwest Virginia businesses since 1988. Access control, security cameras, locksmith services. Licensed DCJS# 11-3283. Free consultations."
+>
+	<div class="min-h-screen">
+		<MainNavigation client:load />
+		<HeroSection client:load />
+		<AboutSection client:load />
+		<ServiceAreaSection client:load />
+		<TestimonialsSection client:load />
+		<AccessControlSection client:load />
+		<VideoSurveillanceSection client:load />
+		<SmallBusinessSecuritySection client:load />
+		<LocksmithSection client:load />
+		<ServicesOverviewSection client:load />
+		<ContactSection client:load />
+		<Footer client:load />
+	</div>
+</Layout>

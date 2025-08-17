@@ -1,0 +1,423 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { Heart, Shield, Users, FileText, CheckCircle, Phone, Star, MapPin, Lock, Camera, UserCheck } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Healthcare Security Virginia",
+  name: "Professional Healthcare Security Systems Southwest Virginia",
+  description: "Expert security solutions for Virginia healthcare facilities. HIPAA-compliant hospital security, medical office protection, patient privacy systems for Southwest Virginia medical facilities.",
+  url: "https://unitedsecurityva.com/healthcare-security-virginia",
+  areaServed: ["Southwest Virginia", "Roanoke Valley", "Lynchburg", "New River Valley", "Martinsville", "Franklin County"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Hospital Security Systems",
+        "description": "Comprehensive security solutions for Virginia hospitals with HIPAA compliance and patient safety focus"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Medical Office Security",
+        "description": "Professional security systems for medical offices, clinics, and outpatient facilities throughout Virginia"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "HIPAA Compliance Security",
+        "description": "HIPAA-compliant security systems protecting patient records and privacy in Virginia healthcare facilities"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Healthcare Security Virginia | Hospital Security Systems Southwest VA | United Security" 
+  description="Professional healthcare security for Virginia medical facilities. HIPAA-compliant hospital security, medical office protection, patient privacy systems. Licensed since 1988."
+  type="service"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-hero-bg to-primary-light overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					<span class="text-primary">Healthcare Security Virginia</span><br>
+					HIPAA-Compliant Medical Facility Protection
+				</h1>
+				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Specialized security solutions for Virginia healthcare facilities. Hospital security, medical office protection, and HIPAA-compliant systems protecting patients, staff, and sensitive medical information.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+						document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+					}}>
+						Get Free Healthcare Security Consultation
+					</Button>
+					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-5 h-5 mr-2" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Indicators -->
+	<section class="py-12 bg-white border-b border-gray-100">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap justify-center items-center gap-8 text-body">
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Licensed DCJS# 11-3283</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>HIPAA Compliance Experts</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Healthcare Security Specialists</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Patient Privacy Focus</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Healthcare Security Overview -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-header mb-6">
+						Comprehensive Healthcare Security Solutions
+					</h2>
+					<p class="text-xl text-body max-w-3xl mx-auto leading-relaxed">
+						From hospitals to medical offices, we provide security systems designed specifically for healthcare environments, ensuring patient safety, staff protection, and HIPAA compliance.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Heart class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Hospital Security Systems</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Comprehensive security solutions for Virginia hospitals with patient safety, emergency department protection, and secure access to sensitive areas.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Emergency department security</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Patient room monitoring</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Pharmacy & supply protection</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Users class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Medical Office Security</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Professional security systems for medical offices, clinics, and outpatient facilities with patient privacy protection and staff safety focus.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Reception area security</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Private consultation rooms</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Records storage protection</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<FileText class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">HIPAA Compliance Security</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Specialized security systems designed to meet HIPAA requirements, protecting patient information and ensuring regulatory compliance for Virginia healthcare providers.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Patient record protection</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Access audit trails</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Privacy compliance</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Virginia Healthcare Security Service Areas
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Roanoke Valley Hospitals</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Lynchburg Medical</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">New River Valley Clinics</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Martinsville Healthcare</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Franklin County Medical</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Southwest Virginia</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Healthcare Security Solutions -->
+	<section class="py-20 bg-muted/30">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Specialized Healthcare Security Systems
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<InternalLinkCard
+						title="Hospital Access Control"
+						description="Advanced access control systems for hospitals with role-based permissions, emergency override, and patient area protection."
+						href="/access-control-systems-virginia"
+						badge="HIPAA"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Medical Surveillance"
+						description="Privacy-compliant security cameras for healthcare facilities with patient protection and staff safety monitoring."
+						href="/security-cameras-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Emergency Department Security"
+						description="Specialized security solutions for hospital emergency departments with rapid response and de-escalation capabilities."
+						href="/emergency-department-security"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Pharmacy Security"
+						description="High-security protection for hospital pharmacies and controlled substance storage with regulatory compliance."
+						href="/pharmacy-security-systems"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Patient Privacy Systems"
+						description="HIPAA-compliant security systems protecting patient information and ensuring medical record confidentiality."
+						href="/patient-privacy-security"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Medical Office Protection"
+						description="Comprehensive security for medical offices, clinics, and outpatient facilities with patient safety focus."
+						href="/medical-office-security"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- HIPAA Compliance -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					HIPAA Compliance & Patient Privacy
+				</h2>
+				<p class="text-xl text-body mb-12 leading-relaxed">
+					Our healthcare security systems are designed with HIPAA compliance at their core, ensuring patient privacy protection while maintaining essential security capabilities for Virginia medical facilities.
+				</p>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4 flex items-center">
+							<FileText class="w-6 h-6 text-primary mr-3" />
+							Privacy Protection
+						</h3>
+						<p class="text-body mb-4">
+							Advanced access controls and audit trails ensure only authorized personnel can access patient areas and medical records, with complete documentation for compliance audits.
+						</p>
+					</div>
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4 flex items-center">
+							<Shield class="w-6 h-6 text-primary mr-3" />
+							Security Integration
+						</h3>
+						<p class="text-body mb-4">
+							Seamless integration with hospital information systems and electronic health records while maintaining strict security protocols and patient confidentiality requirements.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Healthcare Technology Features -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Advanced Healthcare Security Technology
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<div class="bg-white rounded-lg p-6 text-center">
+						<UserCheck class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Role-Based Access</h3>
+						<p class="text-sm text-body">Customized access permissions based on job roles, patient care needs, and HIPAA requirements.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Camera class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Privacy-Compliant Cameras</h3>
+						<p class="text-sm text-body">Surveillance systems with privacy masking and HIPAA-compliant recording capabilities.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Lock class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Emergency Override</h3>
+						<p class="text-sm text-body">Instant access override capabilities for medical emergencies and patient care situations.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<FileText class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Audit Trail Logging</h3>
+						<p class="text-sm text-body">Comprehensive access logging and reporting for HIPAA compliance and security audits.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Healthcare Testimonials -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-12">
+					Trusted by Virginia Healthcare Providers
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-gray-50 rounded-lg p-8">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"United Security installed a comprehensive security system for our hospital that perfectly balances patient privacy with staff safety. The HIPAA compliance features and emergency department security exceeded our expectations."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Virginia Hospital Security Director
+						</div>
+					</div>
+					<div class="bg-gray-50 rounded-lg p-8">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"Professional installation with complete understanding of healthcare requirements. The access control system protects our patient records while allowing seamless workflow for our medical staff. Excellent ongoing support."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Virginia Medical Office Administrator
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Healthcare Security -->
+	<section class="py-20 bg-primary-light">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Why Choose United Security for Healthcare Facilities?
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Healthcare Expertise</h3>
+						<p class="text-body">Specialized experience with hospitals, medical offices, and healthcare facilities throughout Virginia with deep understanding of medical environment needs.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">HIPAA Compliance Focus</h3>
+						<p class="text-body">Complete understanding of HIPAA requirements with security systems designed to protect patient privacy while ensuring regulatory compliance.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Patient Safety Priority</h3>
+						<p class="text-body">Security solutions that prioritize patient safety and comfort while protecting staff and maintaining secure healthcare environments.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Virginia Licensed Medical Contractor</h3>
+						<p class="text-body">Fully licensed (DCJS# 11-3283) Virginia security contractor with 35+ years serving healthcare providers across Southwest Virginia.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

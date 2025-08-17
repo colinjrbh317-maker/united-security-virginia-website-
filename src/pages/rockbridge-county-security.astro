@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import Breadcrumb from '../components/Breadcrumb';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import { Button } from '../components/ui/button';
+import { Phone } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Commercial Security Solutions Rockbridge County Virginia",
+  name: "Professional Business Security Services Rockbridge County VA",
+  description: "Commercial security solutions in Rockbridge County, VA. Professional business security services including access control, security cameras, and commercial locksmith services.",
+  url: "https://unitedsecurityva.com/rockbridge-county-security",
+  areaServed: [
+    "Rockbridge County", "Lexington", "Buena Vista", "Natural Bridge", "Glasgow", "Goshen", "Fairfield"
+  ]
+};
+---
+
+<Layout 
+  title="Commercial Security Solutions Rockbridge County VA | United Security" 
+  description="Professional business security services in Rockbridge County VA. Commercial security solutions for Lexington, Buena Vista. Call 540-989-9393."
+  type="website"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Locations", href: "/locations" },
+		{ label: "Rockbridge County" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Commercial Security Solutions Rockbridge County VA
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional Business Security Services in Rockbridge County VA
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Problem Statement -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Commercial Security Solutions in Rockbridge County, VA</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your Rockbridge County business or educational facility needs security services, you need specialists who understand the unique challenges of our historic region and diverse communities. United Security provides on-site solutions throughout Lexington, Buena Vista, Natural Bridge, and surrounding Rockbridge County areas with expertise in both traditional commercial security and specialized educational institution protection.
+					</p>
+				</div>
+
+				<!-- Services -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Services We Provide in Rockbridge County</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Emergency Security Response</strong> – Break-ins, alarm activations, urgent on-site support</li>
+						<li><strong>Access Control Solutions</strong> – Keycard systems, biometric entry, door hardware upgrades</li>
+						<li><strong>Security Camera Installation & Repair</strong> – IP cameras, CCTV, system troubleshooting</li>
+						<li><strong>Commercial Locksmith Services</strong> – Lock changes, master key systems, rekeying</li>
+						<li><strong>Intrusion Detection Systems</strong> – Alarm systems, motion sensors, perimeter security</li>
+						<li><strong>Educational Facility Security</strong> – Campus protection, dormitory access control</li>
+						<li><strong>Tourism & Hospitality Security</strong> – Hotel, restaurant, and attraction protection</li>
+						<li><strong>Business Security Consulting</strong> – Site assessments, risk analysis, tailored security plans</li>
+						<li><strong>Preventive Security Maintenance</strong> – Equipment checks, firmware updates, system inspections</li>
+					</ul>
+				</div>
+
+				<!-- Why Choose Us -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Why Choose United Security in Rockbridge County?</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Educational Institution Expertise</strong> – Specialized experience with college campuses and school security</li>
+						<li><strong>Historic District Knowledge</strong> – Understanding of preservation requirements and building constraints</li>
+						<li><strong>Tourism Industry Experience</strong> – Security solutions for hospitality and attraction venues</li>
+						<li><strong>Prompt Response</strong> – Strategically positioned teams ensure fast arrival for urgent service needs</li>
+						<li><strong>Fair Pricing</strong> – Transparent quotes with no hidden fees</li>
+						<li><strong>Trusted by Local Institutions</strong> – Proven track record serving educational and commercial clients</li>
+					</ul>
+				</div>
+
+				<!-- Business Types -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Common Businesses We Service</h3>
+					<ul class="space-y-3 text-lg text-header">
+						<li>• Universities and educational institutions</li>
+						<li>• Hotels and hospitality venues</li>
+						<li>• Tourist attractions and entertainment facilities</li>
+						<li>• Government buildings and historic sites</li>
+						<li>• Retail stores and commercial properties</li>
+						<li>• Manufacturing and light industrial facilities</li>
+					</ul>
+				</div>
+
+				<!-- Service Area -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Serving the Rockbridge County Area</h3>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						We cover all of Rockbridge County and beyond:
+					</p>
+					
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Lexington Area:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Washington and Lee University campus and facilities</li>
+							<li>• Virginia Military Institute grounds and buildings</li>
+							<li>• Historic downtown district and Main Street businesses</li>
+							<li>• Stonewall Jackson Memorial Cemetery area</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Buena Vista:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Downtown business district and municipal buildings</li>
+							<li>• Industrial areas and manufacturing facilities</li>
+							<li>• Maury River corridor and recreational areas</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Surrounding Areas:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Natural Bridge and tourism corridor businesses</li>
+							<li>• Glasgow rural commercial and agricultural areas</li>
+							<li>• Goshen mountain communities and seasonal properties</li>
+							<li>• Fairfield and Blue Ridge Parkway access points</li>
+						</ul>
+					</div>
+
+					<div class="text-center">
+						<Button variant="cta-prominent" size="2xl" asChild>
+							<a href="tel:540-989-9393" class="flex items-center">
+								<Phone class="w-6 h-6 mr-3" />
+								Call 540-989-9393 for Immediate Service
+							</a>
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

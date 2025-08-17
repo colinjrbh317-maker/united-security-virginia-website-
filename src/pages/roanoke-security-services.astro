@@ -1,0 +1,356 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { MapPin, Building, Shield, Users, CheckCircle, Phone, Star } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Roanoke Security Services",
+  name: "Professional Security Services Roanoke Virginia",
+  description: "Expert security solutions for Roanoke Valley businesses. Access control, security cameras, locksmith services. Serving downtown Roanoke, Salem, and surrounding areas.",
+  url: "https://unitedsecurityva.com/roanoke-security-services",
+  areaServed: ["Roanoke", "Salem", "Vinton", "Hollins", "Cave Spring", "Roanoke Valley"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Roanoke Access Control Installation",
+        "description": "Professional access control systems for Roanoke Valley businesses"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Roanoke Security Camera Systems",
+        "description": "Commercial security camera installation and monitoring for Roanoke area"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Roanoke Commercial Locksmith",
+        "description": "Business locksmith services for downtown Roanoke and surrounding areas"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Roanoke Security Services | Commercial Security Systems Roanoke VA | United Security" 
+  description="Professional security services for Roanoke Valley businesses. Access control, security cameras, locksmith services for downtown Roanoke, Salem, Vinton. Licensed since 1988."
+  type="service"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-hero-bg to-primary-light overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					<span class="text-primary">Roanoke Security Services</span><br>
+					Professional Solutions for the Star City
+				</h1>
+				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Comprehensive security solutions for Roanoke Valley businesses. Access control, security cameras, and locksmith services for downtown Roanoke, Salem, and surrounding areas.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+						document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+					}}>
+						Get Free Roanoke Security Quote
+					</Button>
+					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-5 h-5 mr-2" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Indicators -->
+	<section class="py-12 bg-white border-b border-gray-100">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap justify-center items-center gap-8 text-body">
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Licensed DCJS# 11-3283</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Roanoke Valley Local</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Same-Day Service Available</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Virginia Owned Since 1988</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Roanoke Market Overview -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-header mb-6">
+						Roanoke Valley Security Experts
+					</h2>
+					<p class="text-xl text-body max-w-3xl mx-auto leading-relaxed">
+						From downtown Roanoke's business district to Salem's growing commercial areas, we provide comprehensive security solutions for the entire Roanoke Valley region.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Building class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Downtown Roanoke</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Serving the heart of the Star City with security solutions for office buildings, retail spaces, and government facilities in downtown Roanoke.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Corporate office buildings</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">City Market area businesses</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Government facilities</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Shield class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Salem & Vinton</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Professional security services for Salem's business community and Vinton's growing commercial district with same-day response times.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Salem business district</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Vinton commercial areas</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Manufacturing facilities</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Users class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Roanoke County</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Comprehensive security solutions for Roanoke County businesses in Hollins, Cave Spring, and surrounding suburban commercial areas.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Hollins business corridor</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Cave Spring retail areas</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Professional office parks</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas Map -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Roanoke Valley Service Areas
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Downtown Roanoke</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Salem</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Vinton</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Hollins</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Cave Spring</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Roanoke County</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Complete Security Services -->
+	<section class="py-20 bg-muted/30">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Complete Security Solutions for Roanoke Businesses
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<InternalLinkCard
+						title="Roanoke Access Control"
+						description="Electronic access control systems for Roanoke Valley businesses with biometric, keypad, and card reader options."
+						href="/access-control-systems-virginia"
+						badge="Popular"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Roanoke Security Cameras"
+						description="Professional surveillance camera installation with IP cameras, AI detection, and remote monitoring."
+						href="/security-cameras-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Roanoke Commercial Locksmith"
+						description="Business locksmith services including master key systems, door hardware, and emergency services."
+						href="/commercial-locksmith-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Roanoke Security Systems"
+						description="Complete business security systems with wireless options and central monitoring services."
+						href="/business-security-systems-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Downtown Office Security"
+						description="Specialized security solutions for downtown Roanoke office buildings and professional services."
+						href="/office-building-security"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Retail Security Solutions"
+						description="Loss prevention and customer safety security systems for Roanoke Valley retail businesses."
+						href="/retail-security-virginia"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Local Testimonials -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-12">
+					Trusted by Roanoke Valley Businesses
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-gray-50 rounded-lg p-8">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"United Security installed our access control system in downtown Roanoke. Professional installation, great training, and excellent local support when we need it."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Downtown Roanoke Business Owner
+						</div>
+					</div>
+					<div class="bg-gray-50 rounded-lg p-8">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"Fast response time for our Salem location emergency lockout. They know the area well and arrived quickly. Highly recommend for any Roanoke Valley business."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Salem Manufacturing Company
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Local -->
+	<section class="py-20 bg-primary-light">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Why Choose United Security for Roanoke Valley?
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Local Roanoke Valley Presence</h3>
+						<p class="text-body">Based in the Roanoke area since 1988, we understand local business needs and provide rapid response throughout the valley.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Same-Day Service</h3>
+						<p class="text-body">Our proximity to downtown Roanoke, Salem, and surrounding areas allows us to provide same-day service for most requests.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Roanoke Business Expertise</h3>
+						<p class="text-body">Extensive experience with Roanoke Valley businesses, from downtown offices to Salem manufacturing and retail operations.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Licensed Virginia Contractor</h3>
+						<p class="text-body">Fully licensed (DCJS# 11-3283), bonded, and insured Virginia security contractor with 35+ years of experience.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

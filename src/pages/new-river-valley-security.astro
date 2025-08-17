@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import Breadcrumb from '../components/Breadcrumb';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import { Button } from '../components/ui/button';
+import { Phone } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Commercial Security Solutions New River Valley Virginia",
+  name: "Professional Business Security Services New River Valley VA",
+  description: "Commercial security solutions in New River Valley, VA. Professional business security services including access control, security cameras, and commercial locksmith services.",
+  url: "https://unitedsecurityva.com/new-river-valley-security",
+  areaServed: [
+    "New River Valley", "Montgomery County", "Blacksburg", "Christiansburg", "Radford", "Pulaski", "Dublin", "Floyd"
+  ]
+};
+---
+
+<Layout 
+  title="Commercial Security Solutions New River Valley VA | United Security" 
+  description="Professional business security services in New River Valley VA. Commercial security solutions for Blacksburg, Christiansburg, Radford. Call 540-989-9393."
+  type="website"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Locations", href: "/locations" },
+		{ label: "New River Valley" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Commercial Security Solutions New River Valley VA
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional Business Security Services in New River Valley VA
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Problem Statement -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Commercial Security Solutions in New River Valley, VA</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your New River Valley business or educational facility needs security services, you need specialists who understand the unique challenges of our diverse region spanning from Virginia Tech to rural mountain communities. United Security provides on-site solutions throughout Blacksburg, Christiansburg, Radford, Pulaski, and surrounding New River Valley communities with expertise in both traditional commercial security and specialized university campus protection.
+					</p>
+				</div>
+
+				<!-- Services -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Services We Provide in New River Valley</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Emergency Security Response</strong> – Break-ins, alarm activations, urgent on-site support</li>
+						<li><strong>Access Control Solutions</strong> – Keycard systems, biometric entry, door hardware upgrades</li>
+						<li><strong>Security Camera Installation & Repair</strong> – IP cameras, CCTV, system troubleshooting</li>
+						<li><strong>Commercial Locksmith Services</strong> – Lock changes, master key systems, rekeying</li>
+						<li><strong>Intrusion Detection Systems</strong> – Alarm systems, motion sensors, perimeter security</li>
+						<li><strong>University Campus Security</strong> – Research facility protection, student housing security</li>
+						<li><strong>Technology Sector Security</strong> – Corporate research and development facility protection</li>
+						<li><strong>Business Security Consulting</strong> – Site assessments, risk analysis, tailored security plans</li>
+						<li><strong>Preventive Security Maintenance</strong> – Equipment checks, firmware updates, system inspections</li>
+					</ul>
+				</div>
+
+				<!-- Why Choose Us -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Why Choose United Security in New River Valley?</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>University Expertise</strong> – Specialized experience with Virginia Tech campus and research facilities</li>
+						<li><strong>Technology Sector Knowledge</strong> – Understanding of high-tech business security requirements</li>
+						<li><strong>Rural-Urban Coverage</strong> – Experience serving both university towns and mountain communities</li>
+						<li><strong>Prompt Response</strong> – Strategically positioned teams ensure fast arrival for urgent service needs</li>
+						<li><strong>Fair Pricing</strong> – Transparent quotes with no hidden fees</li>
+						<li><strong>Trusted by Major Institutions</strong> – Proven track record serving educational and technology clients</li>
+					</ul>
+				</div>
+
+				<!-- Business Types -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Common Businesses We Service</h3>
+					<ul class="space-y-3 text-lg text-header">
+						<li>• Universities and research institutions</li>
+						<li>• Technology companies and corporate research facilities</li>
+						<li>• Manufacturing and industrial facilities</li>
+						<li>• Retail stores and shopping centers</li>
+						<li>• Healthcare facilities and medical centers</li>
+						<li>• Government buildings and municipal services</li>
+					</ul>
+				</div>
+
+				<!-- Service Area -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Serving the New River Valley Area</h3>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						We cover all of the New River Valley region and beyond:
+					</p>
+					
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Blacksburg:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Virginia Tech campus and research facilities</li>
+							<li>• Downtown Blacksburg business district and Main Street</li>
+							<li>• Corporate Research Center and technology corridor</li>
+							<li>• University City Boulevard commercial areas</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Christiansburg:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Downtown Christiansburg and Main Street businesses</li>
+							<li>• New River Valley Mall and commercial corridors</li>
+							<li>• Industrial parks and manufacturing facilities</li>
+							<li>• Government buildings and municipal services</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Radford and Pulaski:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Radford University campus and downtown district</li>
+							<li>• Pulaski downtown and government complex</li>
+							<li>• Dublin industrial areas and manufacturing facilities</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Surrounding Areas:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Floyd rural businesses and Blue Ridge music venues</li>
+							<li>• Shawsville and Elliston rural commercial areas</li>
+							<li>• Blue Ridge Parkway access points and tourism facilities</li>
+							<li>• Appalachian Trail access areas and outdoor recreation businesses</li>
+						</ul>
+					</div>
+
+					<div class="text-center">
+						<Button variant="cta-prominent" size="2xl" asChild>
+							<a href="tel:540-989-9393" class="flex items-center">
+								<Phone class="w-6 h-6 mr-3" />
+								Call 540-989-9393 for Immediate Service
+							</a>
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

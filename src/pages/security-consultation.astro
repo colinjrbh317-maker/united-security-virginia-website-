@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import Breadcrumb from '../components/Breadcrumb';
+import { Button } from '../components/ui/button';
+import { Phone, CheckCircle, Clock, Star } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Free Security Consultation Southwest Virginia",
+  name: "Professional Security Assessment and Consultation",
+  description: "Free security consultation and site assessment for Southwest Virginia businesses. Expert evaluation of your security needs with customized recommendations.",
+  url: "https://unitedsecurityva.com/security-consultation",
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Free Security Assessment",
+        "description": "Comprehensive security evaluation with professional recommendations"
+      },
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Free Security Consultation Southwest Virginia | United Security" 
+  description="Get a free professional security consultation for your Southwest Virginia business. Expert assessment, customized recommendations, and transparent pricing. Call 540-989-9393."
+  type="service"
+  image="/business-security-system.jpg"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Services", href: "/services" },
+		{ label: "Security Consultation" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-primary-light via-white to-gray-50 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
+					<Star class="w-4 h-4 mr-2" />
+					Limited Time: Free Security Assessment ($200 Value)
+				</div>
+				
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Free Professional Security Consultation
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Get expert security recommendations tailored to your Southwest Virginia business
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up [animation-delay:0.4s]">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393 Now
+						</a>
+					</Button>
+					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+						<a href="#consultation-form">Schedule Online</a>
+					</Button>
+				</div>
+				
+				<div class="grid md:grid-cols-3 gap-6 text-center animate-fade-in-up [animation-delay:0.6s]">
+					<div class="flex items-center justify-center text-header">
+						<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+						<span>100% Free Assessment</span>
+					</div>
+					<div class="flex items-center justify-center text-header">
+						<Clock class="w-5 h-5 mr-2 text-primary" />
+						<span>Same-Day Response</span>
+					</div>
+					<div class="flex items-center justify-center text-header">
+						<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+						<span>No Obligation Quote</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What's Included Section -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">What's Included in Your Free Consultation</h2>
+					<p class="text-lg text-header leading-relaxed">
+						Our expert security professionals will conduct a comprehensive assessment of your facility and provide detailed recommendations.
+					</p>
+				</div>
+				
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="space-y-6">
+						<div class="flex items-start">
+							<CheckCircle class="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
+							<div>
+								<h3 class="font-bold text-lg text-header mb-2">Security Vulnerability Assessment</h3>
+								<p class="text-header">Complete evaluation of your property's security weaknesses and entry points.</p>
+							</div>
+						</div>
+						
+						<div class="flex items-start">
+							<CheckCircle class="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
+							<div>
+								<h3 class="font-bold text-lg text-header mb-2">Customized Security Plan</h3>
+								<p class="text-header">Tailored recommendations based on your specific business needs and budget.</p>
+							</div>
+						</div>
+						
+						<div class="flex items-start">
+							<CheckCircle class="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
+							<div>
+								<h3 class="font-bold text-lg text-header mb-2">Technology Recommendations</h3>
+								<p class="text-header">Expert guidance on the latest security technologies for your industry.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="space-y-6">
+						<div class="flex items-start">
+							<CheckCircle class="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
+							<div>
+								<h3 class="font-bold text-lg text-header mb-2">Detailed Written Quote</h3>
+								<p class="text-header">Transparent pricing with no hidden fees or surprises.</p>
+							</div>
+						</div>
+						
+						<div class="flex items-start">
+							<CheckCircle class="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
+							<div>
+								<h3 class="font-bold text-lg text-header mb-2">Implementation Timeline</h3>
+								<p class="text-header">Clear project schedule with minimal disruption to your business.</p>
+							</div>
+						</div>
+						
+						<div class="flex items-start">
+							<CheckCircle class="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
+							<div>
+								<h3 class="font-bold text-lg text-header mb-2">Ongoing Support Plan</h3>
+								<p class="text-header">Maintenance and support options to keep your security systems optimal.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Our Consultation -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">Why Choose United Security for Your Consultation</h2>
+				
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+							<span class="text-2xl font-bold text-primary">35+</span>
+						</div>
+						<h3 class="font-bold text-lg text-header mb-2">Years Experience</h3>
+						<p class="text-header">Serving Southwest Virginia since 1988</p>
+					</div>
+					
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+							<span class="text-sm font-bold text-primary">DCJS</span>
+						</div>
+						<h3 class="font-bold text-lg text-header mb-2">Licensed & Insured</h3>
+						<p class="text-header">DCJS# 11-3283 Virginia contractor</p>
+					</div>
+					
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+							<span class="text-2xl font-bold text-primary">500+</span>
+						</div>
+						<h3 class="font-bold text-lg text-header mb-2">Businesses Served</h3>
+						<p class="text-header">Trusted by local companies</p>
+					</div>
+					
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+							<span class="text-2xl font-bold text-primary">24/7</span>
+						</div>
+						<h3 class="font-bold text-lg text-header mb-2">Emergency Service</h3>
+						<p class="text-header">Round-the-clock support</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section id="consultation-form" class="py-16 bg-primary text-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold mb-6">Ready to Secure Your Business?</h2>
+				<p class="text-xl mb-8 opacity-90">
+					Get your free security consultation today. No obligation, no pressure - just expert advice to protect what matters most.
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+					<Button variant="outline" size="2xl" class="bg-white text-primary border-white hover:bg-gray-100" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393 Now
+						</a>
+					</Button>
+					<Button variant="outline" size="xl" class="border-white text-white hover:bg-white hover:text-primary" asChild>
+						<a href="/contact">Schedule Online</a>
+					</Button>
+				</div>
+				
+				<p class="text-sm mt-6 opacity-75">
+					Available 24/7 for emergency consultations • Same-day response • Licensed DCJS# 11-3283
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

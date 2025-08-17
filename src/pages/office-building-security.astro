@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import Breadcrumb from '../components/Breadcrumb';
+import { Button } from '../components/ui/button';
+import { Building, Shield, Camera, Lock, Phone, CheckCircle } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Office Building Security Virginia",
+  name: "Professional Office Building Security Systems Southwest Virginia",
+  description: "Comprehensive security solutions for office buildings in Southwest Virginia. Access control, surveillance cameras, intrusion detection, and professional monitoring for commercial office properties.",
+  url: "https://unitedsecurityva.com/office-building-security",
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Office Building Access Control",
+        "description": "Electronic access control systems for office buildings with employee management"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Office Building Surveillance",
+        "description": "IP camera systems and video monitoring for office building security"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Office Building Alarm Systems",
+        "description": "Intrusion detection and alarm systems for office building protection"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Office Building Security Systems Virginia | Commercial Office Security | United Security" 
+  description="Professional office building security systems for Southwest Virginia. Access control, surveillance, intrusion detection, and monitoring for commercial office properties. Licensed since 1988."
+  type="service"
+  image="/business-security-system.jpg"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Services", href: "/services" },
+		{ label: "Office Building Security" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Office Building Security Systems Southwest Virginia
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Comprehensive Security Solutions for Virginia Office Buildings
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Introduction -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Professional Office Building Security in Southwest Virginia</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your Virginia office building needs comprehensive security protection, you need specialists who understand the unique challenges of multi-tenant commercial properties. United Security provides complete office building security solutions throughout Southwest Virginia with over 35 years of experience protecting professional office environments and corporate facilities.
+					</p>
+				</div>
+
+				<!-- What's Included -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">What's Included in Our Office Building Security Systems</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Building access control</strong> – Electronic entry systems for lobbies, elevators, and restricted areas</li>
+						<li><strong>Tenant access management</strong> – Individual tenant access cards and scheduling</li>
+						<li><strong>Surveillance camera systems</strong> – HD cameras for lobbies, hallways, parking areas, and entrances</li>
+						<li><strong>Intrusion detection</strong> – After-hours alarm systems and motion detection</li>
+						<li><strong>Visitor management</strong> – Electronic visitor check-in and temporary access</li>
+						<li><strong>Parking security</strong> – Access control and monitoring for parking garages</li>
+						<li><strong>Emergency communication</strong> – Panic buttons and emergency notification systems</li>
+						<li><strong>Professional monitoring</strong> – 24/7 central station monitoring and response</li>
+					</ul>
+				</div>
+
+				<!-- What Happens When You Call -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">What Happens When You Call United Security</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Building security assessment</strong> – We evaluate your office building's security needs and vulnerabilities</li>
+						<li><strong>Tenant consultation</strong> – Meet with building management and key tenants</li>
+						<li><strong>Custom system design</strong> – Tailored security solution for your office building layout</li>
+						<li><strong>Transparent pricing</strong> – Detailed quote with no hidden fees or long-term contracts</li>
+						<li><strong>Coordinated installation</strong> – Minimal disruption to daily office operations</li>
+						<li><strong>Training and support</strong> – Complete system training for building management</li>
+					</ul>
+				</div>
+
+				<!-- Common Situations -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Common Office Building Security Situations We Handle</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Unauthorized access</strong> – Control who enters the building and when</li>
+						<li><strong>After-hours incidents</strong> – Monitor building activity outside business hours</li>
+						<li><strong>Tenant security needs</strong> – Individual tenant access control and monitoring</li>
+						<li><strong>Visitor management</strong> – Professional visitor check-in and tracking systems</li>
+						<li><strong>Parking security</strong> – Secure parking garage access for tenants and visitors</li>
+						<li><strong>Emergency situations</strong> – Rapid response for security incidents and alarms</li>
+						<li><strong>Employee safety</strong> – Escort services and emergency communication systems</li>
+					</ul>
+				</div>
+
+				<!-- Customer Service Promise -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Our Customer Service Promise</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Minimal business disruption</strong> – Coordinated installation during off-hours when possible</li>
+						<li><strong>Licensed professionals</strong> – DCJS# 11-3283 licensed Virginia security contractor</li>
+						<li><strong>Local Virginia company</strong> – Family-owned and operated since 1988</li>
+						<li><strong>Building management focus</strong> – Systems designed for property management efficiency</li>
+						<li><strong>Scalable solutions</strong> – Systems that grow with your building's needs</li>
+						<li><strong>Complete warranty</strong> – Full manufacturer warranty plus our service guarantee</li>
+					</ul>
+				</div>
+
+				<!-- Building Types -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Office Building Types We Secure</h3>
+					<ul class="space-y-3 text-lg text-header">
+						<li>• Multi-tenant office buildings and professional complexes</li>
+						<li>• Corporate headquarters and executive office suites</li>
+						<li>• Medical office buildings and professional centers</li>
+						<li>• Legal office buildings and courthouse complexes</li>
+						<li>• Government office buildings and municipal facilities</li>
+						<li>• Mixed-use buildings with retail and office space</li>
+						<li>• High-rise office towers and business districts</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Coverage Area -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h3 class="text-3xl font-bold text-header mb-8 text-center">Office Building Security Coverage Areas</h3>
+				<p class="text-lg text-header text-center mb-12 leading-relaxed">
+					We provide professional office building security systems throughout Southwest Virginia:
+				</p>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/roanoke-valley-security">Roanoke Valley Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/new-river-valley-security">New River Valley Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/lynchburg-area-security">Lynchburg Area Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/martinsville-henry-county-security">Martinsville Area Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/franklin-county-security">Franklin County Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/botetourt-county-security">Botetourt County Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/allegheny-county-security">Allegheny County Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/rockbridge-county-security">Rockbridge County Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/bedford-county-security">Bedford County Office Security</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/giles-county-security">Giles County Office Security</a>
+						</Button>
+					</div>
+				</div>
+
+				<div class="text-center mt-12">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393 for Building Security Assessment
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

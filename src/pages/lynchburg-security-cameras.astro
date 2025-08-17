@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import Breadcrumb from '../components/Breadcrumb';
+import { Button } from '../components/ui/button';
+import { Camera, Building, Phone, CheckCircle } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Lynchburg Security Camera Installation",
+  name: "Professional Security Camera Systems Lynchburg Virginia",
+  description: "Expert security camera installation for Lynchburg area businesses. IP cameras, CCTV systems, and video surveillance for commercial properties in Lynchburg, Bedford, and surrounding areas.",
+  url: "https://unitedsecurityva.com/lynchburg-security-cameras",
+  areaServed: ["Lynchburg", "Bedford", "Amherst", "Campbell County", "Lynchburg Metro"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Lynchburg Commercial Security Cameras",
+        "description": "Professional surveillance camera installation for Lynchburg businesses"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Lynchburg Security Camera Installation | Commercial Surveillance Lynchburg VA | United Security" 
+  description="Professional security camera installation for Lynchburg area businesses. IP cameras, CCTV, remote monitoring in Lynchburg, Bedford, Amherst. Licensed DCJS# 11-3283."
+  type="service"
+  image="/security-camera.jpg"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Services", href: "/services" },
+		{ label: "Security Cameras", href: "/security-cameras-virginia" },
+		{ label: "Lynchburg Area" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Security Camera Installation Lynchburg Virginia
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional Surveillance Systems for Lynchburg Area Businesses
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button variant="cta-prominent" size="2xl" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Introduction -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Professional Security Camera Installation in Lynchburg Area</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your Lynchburg area business needs reliable video surveillance, you need specialists who understand the security challenges facing local businesses and institutions. United Security provides comprehensive security camera solutions throughout the Lynchburg region including Lynchburg, Bedford, Amherst, and Campbell County with over 35 years of experience protecting Virginia businesses.
+					</p>
+				</div>
+
+				<!-- What's Included -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">What's Included in Our Lynchburg Security Camera Systems</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>HD IP cameras</strong> – High-definition cameras with crystal clear image quality</li>
+						<li><strong>Professional installation</strong> – Complete system setup optimized for your property</li>
+						<li><strong>Digital video recording</strong> – Local storage with backup and retrieval capabilities</li>
+						<li><strong>Remote viewing access</strong> – Monitor cameras from smartphone, tablet, or computer</li>
+						<li><strong>Night vision capability</strong> – Clear recording in low-light and dark conditions</li>
+						<li><strong>Motion detection alerts</strong> – Instant notifications when activity is detected</li>
+						<li><strong>Weatherproof cameras</strong> – Outdoor cameras built for Virginia weather conditions</li>
+						<li><strong>System training</strong> – Complete training on system operation and management</li>
+					</ul>
+				</div>
+
+				<!-- What Happens When You Call -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">What Happens When You Call United Security</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Free Lynchburg area site survey</strong> – We assess your property and camera placement needs</li>
+						<li><strong>Custom system design</strong> – Tailored surveillance solution for your business</li>
+						<li><strong>Transparent pricing</strong> – Detailed quote with no hidden fees or monthly charges</li>
+						<li><strong>Local installation team</strong> – Certified technicians familiar with Lynchburg area</li>
+						<li><strong>System demonstration</strong> – Learn to view cameras and access recordings</li>
+						<li><strong>Ongoing local support</strong> – Lynchburg-based service team for maintenance</li>
+					</ul>
+				</div>
+
+				<!-- Common Situations -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Common Lynchburg Business Situations We Handle</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Downtown Lynchburg businesses</strong> – Retail surveillance and customer safety monitoring</li>
+						<li><strong>Bedford industrial facilities</strong> – Production floor and warehouse surveillance</li>
+						<li><strong>Amherst commercial properties</strong> – Office building and parking area monitoring</li>
+						<li><strong>Campbell County logistics</strong> – Loading dock and inventory tracking cameras</li>
+						<li><strong>Liberty University area businesses</strong> – Student-focused retail and service surveillance</li>
+						<li><strong>Lynchburg Regional Airport area</strong> – Transportation and logistics security</li>
+						<li><strong>James River corridor businesses</strong> – Waterfront and recreational facility monitoring</li>
+					</ul>
+				</div>
+
+				<!-- Customer Service Promise -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Our Lynchburg Area Service Promise</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>No monthly fees</strong> – Own your camera system with no ongoing charges</li>
+						<li><strong>Licensed professionals</strong> – DCJS# 11-3283 licensed Virginia security contractor</li>
+						<li><strong>Local Lynchburg expertise</strong> – Deep understanding of area business needs</li>
+						<li><strong>Quality equipment</strong> – Commercial-grade cameras built to last</li>
+						<li><strong>Fast installation</strong> – Most systems installed within one week</li>
+						<li><strong>Complete warranty</strong> – Full manufacturer warranty plus service guarantee</li>
+					</ul>
+				</div>
+
+				<!-- Service Area -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Lynchburg Area Coverage</h3>
+					<div class="grid md:grid-cols-2 gap-6 mb-6">
+						<div>
+							<h4 class="text-xl font-bold text-header mb-3">Primary Service Areas:</h4>
+							<ul class="space-y-2 text-lg text-header">
+								<li>• Downtown Lynchburg commercial district</li>
+								<li>• Bedford business and industrial areas</li>
+								<li>• Amherst commercial corridors</li>
+								<li>• Campbell County business parks</li>
+								<li>• Liberty University area businesses</li>
+							</ul>
+						</div>
+						<div>
+							<h4 class="text-xl font-bold text-header mb-3">Extended Coverage:</h4>
+							<ul class="space-y-2 text-lg text-header">
+								<li>• Lynchburg Regional Airport area</li>
+								<li>• James River business corridor</li>
+								<li>• Forest retail and commercial zones</li>
+								<li>• Rustburg agricultural businesses</li>
+								<li>• Appomattox area commercial properties</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Industries We Serve -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Lynchburg Area Industries We Serve</h3>
+					<ul class="space-y-3 text-lg text-header">
+						<li>• Healthcare facilities including Centra Health and medical offices</li>
+						<li>• Educational institutions and Liberty University area businesses</li>
+						<li>• Manufacturing and industrial facilities in Bedford County</li>
+						<li>• Transportation and logistics companies near the regional airport</li>
+						<li>• Retail stores and shopping centers throughout the metro area</li>
+						<li>• Financial institutions and professional services</li>
+						<li>• Hospitality and tourism businesses along the James River</li>
+					</ul>
+				</div>
+
+				<!-- Camera Types -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Camera Types for Lynchburg Businesses</h3>
+					<ul class="space-y-3 text-lg text-header">
+						<li>• **Indoor dome cameras** – Discreet monitoring for retail and office spaces</li>
+						<li>• **Outdoor bullet cameras** – Weather-resistant perimeter surveillance</li>
+						<li>• **PTZ cameras** – Pan, tilt, zoom capability for large area coverage</li>
+						<li>• **License plate cameras** – Vehicle identification for parking areas</li>
+						<li>• **4K ultra-high definition** – Maximum detail for critical surveillance areas</li>
+						<li>• **Infrared night vision** – Clear recording in complete darkness</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h3 class="text-3xl font-bold text-header mb-6">Ready to Protect Your Lynchburg Area Business?</h3>
+				<p class="text-lg text-header mb-8 leading-relaxed">
+					Contact United Security today for a free site survey and camera system consultation for your Lynchburg business.
+				</p>
+				<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
+					<a href="tel:540-989-9393" class="flex items-center">
+						<Phone class="w-6 h-6 mr-3" />
+						Call 540-989-9393 for Free Lynchburg Site Survey
+					</a>
+				</Button>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

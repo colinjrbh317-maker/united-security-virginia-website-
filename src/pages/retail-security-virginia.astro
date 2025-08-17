@@ -1,0 +1,460 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { ShoppingBag, Eye, Users, CreditCard, CheckCircle, Phone, Star, MapPin, Shield, Camera, DollarSign } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Retail Security Virginia",
+  name: "Professional Retail Security Systems Southwest Virginia",
+  description: "Expert security solutions for Virginia retail businesses. Loss prevention, customer safety, POS security, surveillance systems for retail stores throughout Southwest Virginia.",
+  url: "https://unitedsecurityva.com/retail-security-virginia",
+  areaServed: ["Southwest Virginia", "Roanoke Valley", "Lynchburg", "Blacksburg", "Martinsville", "Franklin County"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Retail Loss Prevention Systems",
+        "description": "Advanced loss prevention security systems for Virginia retail stores with theft detection and customer monitoring"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Retail Surveillance Systems",
+        "description": "Comprehensive surveillance camera systems for retail businesses with real-time monitoring and recording capabilities"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Retail Access Control",
+        "description": "Professional access control systems for retail businesses with employee management and restricted area protection"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Retail Security Virginia | Loss Prevention Systems Southwest VA | United Security" 
+  description="Professional retail security for Virginia stores & shopping centers. Loss prevention, customer safety, POS security, surveillance systems. Protecting retail since 1988."
+  type="service"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-hero-bg to-primary-light overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					<span class="text-primary">Retail Security Virginia</span><br>
+					Loss Prevention & Customer Safety
+				</h1>
+				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Comprehensive security solutions for Virginia retail businesses. Loss prevention systems, customer safety monitoring, and POS security protecting stores throughout Southwest Virginia.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+						document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+					}}>
+						Get Free Retail Security Consultation
+					</Button>
+					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-5 h-5 mr-2" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Indicators -->
+	<section class="py-12 bg-white border-b border-gray-100">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap justify-center items-center gap-8 text-body">
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Licensed DCJS# 11-3283</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Retail Security Specialists</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Loss Prevention Experts</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Customer Safety Focus</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Retail Security Overview -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-header mb-6">
+						Comprehensive Retail Security Solutions
+					</h2>
+					<p class="text-xl text-body max-w-3xl mx-auto leading-relaxed">
+						From small boutiques to large shopping centers, we provide security systems designed specifically for retail environments, balancing loss prevention with customer experience.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<ShoppingBag class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Loss Prevention Systems</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Advanced theft detection and prevention systems for Virginia retail stores, reducing shrink while maintaining positive shopping experiences.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Electronic article surveillance</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Theft detection cameras</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Employee monitoring</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Users class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Customer Safety Monitoring</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Comprehensive surveillance systems ensuring customer safety in retail environments while creating secure, welcoming shopping experiences.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Public area monitoring</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Parking lot security</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Emergency response systems</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<CreditCard class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">POS & Cash Security</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Point-of-sale security systems protecting cash handling areas, transaction monitoring, and after-hours protection for retail businesses.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Cash register monitoring</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Safe and vault protection</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Transaction security</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Virginia Retail Security Service Areas
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Roanoke Valley Retail</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Lynchburg Shopping</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Blacksburg Retail</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Martinsville Stores</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Franklin County Retail</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Southwest Virginia</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Retail Security Solutions -->
+	<section class="py-20 bg-muted/30">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Specialized Retail Security Systems
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<InternalLinkCard
+						title="Loss Prevention Cameras"
+						description="Advanced surveillance systems with AI analytics for theft detection and prevention in retail environments."
+						href="/security-cameras-virginia"
+						badge="Popular"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Electronic Article Surveillance"
+						description="EAS systems and security tags for merchandise protection with customizable alarm zones and detection sensitivity."
+						href="/electronic-article-surveillance"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Retail Access Control"
+						description="Employee access management systems for stockrooms, offices, and restricted areas with time-based permissions."
+						href="/access-control-systems-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="POS Security Systems"
+						description="Point-of-sale security with transaction monitoring, cash drawer protection, and employee accountability."
+						href="/pos-security-systems"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Shopping Center Security"
+						description="Comprehensive security solutions for shopping centers and strip malls with tenant coordination and common area protection."
+						href="/shopping-center-security"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Retail Alarm Systems"
+						description="After-hours protection with motion detection, glass break sensors, and silent alarm capabilities for retail stores."
+						href="/retail-alarm-systems"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Loss Prevention Focus -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Reducing Retail Loss While Enhancing Customer Experience
+				</h2>
+				<p class="text-xl text-body mb-12 leading-relaxed">
+					Our retail security solutions are designed to minimize shrink and theft while maintaining the open, welcoming atmosphere that encourages customer engagement and sales.
+				</p>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4 flex items-center">
+							<Eye class="w-6 h-6 text-primary mr-3" />
+							Theft Prevention
+						</h3>
+						<p class="text-body mb-4">
+							Advanced detection systems and strategic camera placement deter shoplifting and employee theft while providing evidence for prosecution when necessary.
+						</p>
+					</div>
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4 flex items-center">
+							<Users class="w-6 h-6 text-primary mr-3" />
+							Customer Experience
+						</h3>
+						<p class="text-body mb-4">
+							Security systems designed to operate invisibly during normal shopping, maintaining the welcoming atmosphere essential for retail success and customer satisfaction.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Retail Technology Features -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Advanced Retail Security Technology
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Camera class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">AI Analytics</h3>
+						<p class="text-sm text-body">Intelligent video analytics with behavior detection and automated theft alerts for proactive loss prevention.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<DollarSign class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">POS Integration</h3>
+						<p class="text-sm text-body">Point-of-sale system integration with video overlay for transaction verification and void monitoring.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Shield class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Remote Monitoring</h3>
+						<p class="text-sm text-body">Real-time remote monitoring capabilities with smartphone alerts and off-site security management.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 text-center">
+						<Eye class="w-12 h-12 text-primary mx-auto mb-4" />
+						<h3 class="text-lg font-semibold text-header mb-2">Heat Mapping</h3>
+						<p class="text-sm text-body">Customer behavior analytics and heat mapping for optimal store layout and security camera placement.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Retail Types Served -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Retail Business Types We Protect
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="bg-gray-50 rounded-lg p-6">
+						<h3 class="text-lg font-semibold text-header mb-3">Clothing & Fashion</h3>
+						<p class="text-sm text-body">Boutiques, department stores, and fashion retailers with specialized merchandise protection.</p>
+					</div>
+					<div class="bg-gray-50 rounded-lg p-6">
+						<h3 class="text-lg font-semibold text-header mb-3">Electronics & Technology</h3>
+						<p class="text-sm text-body">High-value electronics retailers with enhanced security for expensive merchandise.</p>
+					</div>
+					<div class="bg-gray-50 rounded-lg p-6">
+						<h3 class="text-lg font-semibold text-header mb-3">Grocery & Food</h3>
+						<p class="text-sm text-body">Supermarkets, convenience stores, and specialty food retailers with comprehensive coverage.</p>
+					</div>
+					<div class="bg-gray-50 rounded-lg p-6">
+						<h3 class="text-lg font-semibold text-header mb-3">Jewelry & Luxury</h3>
+						<p class="text-sm text-body">High-security protection for jewelry stores and luxury retailers with vault and showcase security.</p>
+					</div>
+					<div class="bg-gray-50 rounded-lg p-6">
+						<h3 class="text-lg font-semibold text-header mb-3">Home & Garden</h3>
+						<p class="text-sm text-body">Hardware stores, home improvement, and garden centers with indoor and outdoor security.</p>
+					</div>
+					<div class="bg-gray-50 rounded-lg p-6">
+						<h3 class="text-lg font-semibold text-header mb-3">Shopping Centers</h3>
+						<p class="text-sm text-body">Mall and shopping center security with coordinated tenant protection and common area monitoring.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Retail Testimonials -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-12">
+					Trusted by Virginia Retail Businesses
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-white rounded-lg p-8 shadow-md">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"United Security installed a comprehensive loss prevention system for our clothing store. The theft detection cameras and EAS system have significantly reduced shrink while maintaining our welcoming store atmosphere."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Virginia Retail Store Owner
+						</div>
+					</div>
+					<div class="bg-white rounded-lg p-8 shadow-md">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"Professional installation with excellent customer service. The POS integration and security cameras give us complete visibility over our operations. Our customers feel safe and our losses have decreased substantially."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Virginia Electronics Store Manager
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Retail Security -->
+	<section class="py-20 bg-primary-light">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Why Choose United Security for Retail Businesses?
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Retail Expertise</h3>
+						<p class="text-body">Specialized experience with Virginia retail businesses from small boutiques to large shopping centers, understanding unique retail security challenges.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Loss Prevention Focus</h3>
+						<p class="text-body">Advanced loss prevention systems designed to reduce shrink and theft while maintaining positive customer shopping experiences.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Customer Experience Balance</h3>
+						<p class="text-body">Security solutions that protect your business without compromising the welcoming atmosphere essential for retail success.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Virginia Licensed Retail Contractor</h3>
+						<p class="text-body">Fully licensed (DCJS# 11-3283) Virginia security contractor with 35+ years protecting retail businesses across Southwest Virginia.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

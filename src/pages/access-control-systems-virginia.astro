@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import Breadcrumb from '../components/Breadcrumb';
+import { Button } from '../components/ui/button';
+import { Shield, Lock, Users, Building, CheckCircle, Phone, ArrowRight } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Access Control Systems Virginia",
+  name: "Commercial Access Control Systems Installation Virginia",
+  description: "Professional access control systems for Southwest Virginia businesses. Biometric, keypad, and card reader solutions with no monthly fees. Licensed DCJS# 11-3283.",
+  url: "https://unitedsecurityva.com/access-control-systems-virginia",
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Biometric Access Control",
+        "description": "Fingerprint and facial recognition access control systems"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Keypad Door Entry Systems",
+        "description": "Electronic keypad entry systems for businesses"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Card Reader Access Control",
+        "description": "Proximity card and key fob access control systems"
+      }
+    }
+  ]
+};
+---
+
+<Layout title="Access Control Systems Virginia | Commercial Door Security | United Security" description="Professional access control systems for Southwest Virginia businesses. Biometric, keypad & card reader solutions. No monthly fees. Licensed & insured. Free consultation." image="/access-control-system.webp">
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Services", href: "/services" },
+		{ label: "Access Control Systems" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Access Control Systems Southwest Virginia
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional Electronic Access Control Solutions for Virginia Businesses
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Introduction -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Professional Access Control Systems in Southwest Virginia</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When you need to control who enters your Virginia business and when they can access specific areas, you need reliable electronic access control systems. United Security provides comprehensive access control solutions throughout Southwest Virginia with over 35 years of experience protecting businesses from unauthorized entry.
+					</p>
+				</div>
+
+				<!-- What's Included -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">What's Included in Our Access Control Systems</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Electronic door controls</strong> – Keycard readers, keypads, biometric scanners</li>
+						<li><strong>Access management software</strong> – User permissions, time schedules, activity reports</li>
+						<li><strong>Professional installation</strong> – Complete system setup and configuration</li>
+						<li><strong>Door hardware upgrades</strong> – Electric strikes, magnetic locks, automatic operators</li>
+						<li><strong>System integration</strong> – Connect with existing security cameras and alarms</li>
+						<li><strong>User training</strong> – Complete training on system operation and management</li>
+						<li><strong>Ongoing support</strong> – Maintenance, troubleshooting, and system updates</li>
+					</ul>
+				</div>
+
+				<!-- What Happens When You Call -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">What Happens When You Call United Security</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Free security consultation</strong> – We assess your facility and security needs</li>
+						<li><strong>Custom system design</strong> – Tailored access control solution for your business</li>
+						<li><strong>Transparent pricing</strong> – Detailed quote with no hidden fees or monthly charges</li>
+						<li><strong>Professional installation</strong> – Certified technicians install and test your system</li>
+						<li><strong>Complete training</strong> – Learn to manage users, schedules, and system features</li>
+						<li><strong>Ongoing support</strong> – Local service team for maintenance and upgrades</li>
+					</ul>
+				</div>
+
+				<!-- Common Situations -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Common Situations We Handle</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Employee departures</strong> – Immediately remove access without changing locks</li>
+						<li><strong>Contractor access</strong> – Temporary access codes for maintenance and vendors</li>
+						<li><strong>After-hours entry</strong> – Controlled access for approved personnel outside business hours</li>
+						<li><strong>Multi-zone security</strong> – Different access levels for offices, warehouses, server rooms</li>
+						<li><strong>Lost or stolen keys</strong> – Eliminate traditional key management problems</li>
+						<li><strong>Access tracking</strong> – Know exactly who entered which areas and when</li>
+						<li><strong>Emergency lockdown</strong> – Instantly secure all doors during security events</li>
+					</ul>
+				</div>
+
+				<!-- Customer Service Promise -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Our Customer Service Promise</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>No monthly fees</strong> – Own your system outright with no ongoing charges</li>
+						<li><strong>Licensed professionals</strong> – DCJS# 11-3283 licensed Virginia security contractor</li>
+						<li><strong>Local Virginia company</strong> – Family-owned and operated since 1988</li>
+						<li><strong>Fast response</strong> – Same-day service available for urgent needs</li>
+						<li><strong>Quality equipment</strong> – Commercial-grade systems built to last</li>
+						<li><strong>Complete warranty</strong> – Full manufacturer warranty plus our service guarantee</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Coverage Area -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h3 class="text-3xl font-bold text-header mb-8 text-center">Access Control Service Coverage Areas</h3>
+				<p class="text-lg text-header text-center mb-12 leading-relaxed">
+					We provide professional access control installation and service throughout Southwest Virginia:
+				</p>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/roanoke-valley-security">Roanoke Valley Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/new-river-valley-security">New River Valley Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/lynchburg-area-security">Lynchburg Area Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/martinsville-henry-county-security">Martinsville Area Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/franklin-county-security">Franklin County Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/botetourt-county-security">Botetourt County Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/allegheny-county-security">Allegheny County Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/rockbridge-county-security">Rockbridge County Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/bedford-county-security">Bedford County Access Control</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/giles-county-security">Giles County Access Control</a>
+						</Button>
+					</div>
+				</div>
+
+				<div class="text-center mt-12">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393 for Free Consultation
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

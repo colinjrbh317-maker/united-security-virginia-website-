@@ -1,0 +1,390 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import Breadcrumb from '../components/Breadcrumb';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { Waves, Home, Building, Umbrella, CheckCircle, Phone, Star, MapPin } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Smith Mountain Lake Security",
+  name: "Professional Security Smith Mountain Lake Virginia",
+  description: "Expert lakefront security for Smith Mountain Lake homes and businesses. Access control, security cameras, vacation home monitoring for Franklin County lake properties.",
+  url: "https://unitedsecurityva.com/smith-mountain-lake-security",
+  areaServed: ["Smith Mountain Lake", "Franklin County", "Bedford County", "Pittsylvania County", "Moneta", "Huddleston"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Smith Mountain Lake Vacation Home Security",
+        "description": "Remote monitoring and security systems for Smith Mountain Lake vacation properties"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Smith Mountain Lake Marina Security",
+        "description": "Professional security systems for lakefront marinas and boat storage facilities"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Smith Mountain Lake Resort Security",
+        "description": "Complete security solutions for Smith Mountain Lake resorts and hospitality businesses"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Smith Mountain Lake Security | Lakefront Property Security Virginia | United Security" 
+  description="Professional security for Smith Mountain Lake properties. Vacation home monitoring, marina security, resort protection. Remote access control & cameras. Licensed since 1988."
+  type="service"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Locations", href: "/locations" },
+		{ label: "Smith Mountain Lake" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-hero-bg to-primary-light overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					<span class="text-primary">Smith Mountain Lake Security</span><br>
+					Protecting Your Lakefront Investment
+				</h1>
+				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Comprehensive security solutions for Smith Mountain Lake properties. Vacation home monitoring, marina security, and resort protection with remote management capabilities.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+						document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+					}}>
+						Get Free Lake Security Quote
+					</Button>
+					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-5 h-5 mr-2" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Indicators -->
+	<section class="py-12 bg-white border-b border-gray-100">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap justify-center items-center gap-8 text-body">
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Licensed DCJS# 11-3283</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Lakefront Property Specialists</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Remote Monitoring Experts</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Franklin County Local</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Smith Mountain Lake Market Overview -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-header mb-6">
+						Security for Virginia's Premier Lake Community
+					</h2>
+					<p class="text-xl text-body max-w-3xl mx-auto leading-relaxed">
+						From vacation homes to marinas, we provide specialized security solutions for Smith Mountain Lake's unique lakefront environment and seasonal property needs.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Home class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Vacation Home Security</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Comprehensive security systems for Smith Mountain Lake vacation homes with remote monitoring and smartphone alerts for year-round property protection.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Remote monitoring systems</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Smartphone alerts</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Seasonal property management</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Waves class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Marina & Dock Security</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Specialized security solutions for Smith Mountain Lake marinas, boat storage facilities, and private docks protecting valuable watercraft and equipment.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Marina access control</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Boat storage monitoring</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Waterfront surveillance</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Umbrella class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Resort & Hospitality</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Professional security systems for Smith Mountain Lake resorts, restaurants, and hospitality businesses serving the lake's tourism and recreation industry.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Resort guest safety</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Restaurant security</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Event venue protection</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Smith Mountain Lake Service Areas
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Smith Mountain Lake</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Moneta</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Huddleston</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Franklin County</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Bedford County</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Pittsylvania County</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Lakefront Security Solutions -->
+	<section class="py-20 bg-muted/30">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Specialized Lakefront Security Solutions
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<InternalLinkCard
+						title="Vacation Home Monitoring"
+						description="Remote security systems with smartphone alerts for seasonal and vacation properties around Smith Mountain Lake."
+						href="/vacation-home-security"
+						badge="Popular"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Wireless Security Cameras"
+						description="Weather-resistant IP cameras perfect for lakefront properties with challenging wiring conditions."
+						href="/security-cameras-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Remote Access Control"
+						description="Smartphone-controlled access systems for vacation homes and rental properties with guest management."
+						href="/access-control-systems-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Marine Security Systems"
+						description="Specialized security solutions for marinas, boat storage facilities, and waterfront commercial properties."
+						href="/marina-security-systems"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Resort Security Solutions"
+						description="Comprehensive security systems for Smith Mountain Lake resorts, restaurants, and hospitality businesses."
+						href="/hospitality-security-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Lakefront Locksmith"
+						description="Emergency locksmith services for Smith Mountain Lake properties including high-security locks and key systems."
+						href="/commercial-locksmith-virginia"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Seasonal Considerations -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Year-Round Lakefront Protection
+				</h2>
+				<p class="text-xl text-body mb-12 leading-relaxed">
+					Smith Mountain Lake properties face unique security challenges with seasonal occupancy, remote locations, and valuable waterfront assets requiring specialized protection strategies.
+				</p>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4">Seasonal Property Challenges</h3>
+						<p class="text-body mb-4">
+							Vacation homes and seasonal properties around Smith Mountain Lake need security systems that work reliably whether occupied or vacant, protecting against break-ins, vandalism, and weather-related issues.
+						</p>
+					</div>
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4">Remote Monitoring Solutions</h3>
+						<p class="text-body mb-4">
+							Our smartphone-enabled security systems provide real-time alerts and remote management capabilities, perfect for property owners who live elsewhere but want constant awareness of their lakefront investment.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Local Testimonials -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-12">
+					Trusted by Smith Mountain Lake Property Owners
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-white rounded-lg p-8 shadow-md">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"Perfect security solution for our Smith Mountain Lake vacation home. The smartphone alerts give us peace of mind when we're not at the lake, and the system works flawlessly year-round."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Smith Mountain Lake Vacation Home Owner
+						</div>
+					</div>
+					<div class="bg-white rounded-lg p-8 shadow-md">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"United Security installed a comprehensive system for our marina. They understand the unique challenges of waterfront security and delivered exactly what we needed to protect boats and equipment."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Smith Mountain Lake Marina Owner
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose for Smith Mountain Lake -->
+	<section class="py-20 bg-primary-light">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Why Choose United Security for Smith Mountain Lake?
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Lakefront Property Expertise</h3>
+						<p class="text-body">Specialized experience with vacation homes, marinas, and seasonal properties around Smith Mountain Lake and Franklin County.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Remote Monitoring Specialists</h3>
+						<p class="text-body">Advanced remote monitoring capabilities perfect for property owners who live elsewhere but want constant awareness of their lakefront investment.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Weather-Resistant Systems</h3>
+						<p class="text-body">Security equipment designed to withstand lakefront environmental conditions including humidity, temperature changes, and severe weather.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Central Virginia Coverage</h3>
+						<p class="text-body">Virginia-based company with rapid response throughout the Smith Mountain Lake area and surrounding counties.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

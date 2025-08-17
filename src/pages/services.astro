@@ -1,0 +1,285 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { Shield, Camera, Lock, Building, Phone, CheckCircle, Users, Star } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Security Services Virginia",
+  name: "Professional Security Services Southwest Virginia",
+  description: "Comprehensive security solutions for Virginia businesses. Access control, security cameras, locksmith services, business security systems throughout Southwest Virginia.",
+  url: "https://unitedsecurityva.com/services",
+  areaServed: ["Southwest Virginia", "Roanoke Valley", "New River Valley", "Lynchburg", "Martinsville", "Franklin County"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Access Control Systems",
+        "description": "Professional access control installation and management for Virginia businesses"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Security Camera Systems",
+        "description": "Commercial surveillance and video monitoring systems for Southwest Virginia"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Commercial Locksmith Services",
+        "description": "Professional locksmith services for Virginia commercial and industrial facilities"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Business Security Systems",
+        "description": "Complete security system design and installation for Virginia businesses"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Security Services Virginia | Professional Security Solutions Southwest VA | United Security" 
+  description="Complete security services for Virginia businesses. Access control, security cameras, locksmith services, business security systems. Licensed DCJS# 11-3283 since 1988."
+  type="website"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Professional Security Services Southwest Virginia
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Comprehensive Commercial Security Solutions for Virginia Businesses
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<!-- Introduction -->
+				<div class="mb-16 text-center">
+					<h2 class="text-3xl font-bold text-header mb-6">Complete Security Solutions for Virginia Businesses</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your business needs reliable security services, you need specialists who understand Virginia's unique commercial environment. United Security provides comprehensive on-site solutions throughout Southwest Virginia with over 35 years of experience protecting businesses across all industries.
+					</p>
+				</div>
+
+				<!-- Access Control Service -->
+				<div class="mb-20">
+					<div class="flex flex-col lg:flex-row items-center gap-12">
+						<div class="lg:w-1/2">
+							<div class="flex items-center mb-6">
+								<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+									<Lock class="w-6 h-6 text-primary" />
+								</div>
+								<h3 class="text-2xl font-bold text-header">ACCESS CONTROL SYSTEMS</h3>
+							</div>
+							<p class="text-lg text-header leading-relaxed mb-6">
+								Locked out of your office at midnight? Need to grant temporary access to contractors? Our electronic access control systems provide secure, convenient entry management for Virginia businesses of all sizes.
+							</p>
+							<div class="mb-6">
+								<h4 class="font-bold text-header mb-3">SERVICES INCLUDE:</h4>
+								<ul class="space-y-2 text-header">
+									<li>• Keycard and proximity card systems</li>
+									<li>• Biometric access control (fingerprint, facial recognition)</li>
+									<li>• Keypad entry systems and door hardware upgrades</li>
+									<li>• Remote access management and mobile app control</li>
+									<li>• Master key systems and high-security locks</li>
+								</ul>
+							</div>
+							<Button class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3" asChild>
+								<a href="/access-control-systems-virginia" class="flex items-center">
+									LEARN MORE ABOUT ACCESS CONTROL SYSTEMS
+									<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</Button>
+						</div>
+						<div class="lg:w-1/2">
+							<div class="rounded-2xl h-80 overflow-hidden">
+								<img src="/access-control-system.webp" alt="Access Control System Installation" class="w-full h-full object-cover" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Security Cameras Service -->
+				<div class="mb-20">
+					<div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+						<div class="lg:w-1/2">
+							<div class="flex items-center mb-6">
+								<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+									<Camera class="w-6 h-6 text-primary" />
+								</div>
+								<h3 class="text-2xl font-bold text-header">SECURITY CAMERA SYSTEMS</h3>
+							</div>
+							<p class="text-lg text-header leading-relaxed mb-6">
+								Suspicious activity after hours? Need to monitor multiple locations? Our high-definition security camera systems provide 24/7 surveillance and peace of mind for Virginia business owners.
+							</p>
+							<div class="mb-6">
+								<h4 class="font-bold text-header mb-3">SERVICES INCLUDE:</h4>
+								<ul class="space-y-2 text-header">
+									<li>• IP camera installation and configuration</li>
+									<li>• CCTV systems and digital video recording</li>
+									<li>• Remote monitoring and mobile app access</li>
+									<li>• Night vision and weatherproof cameras</li>
+									<li>• Motion detection and alert systems</li>
+								</ul>
+							</div>
+							<Button class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3" asChild>
+								<a href="/security-cameras-virginia" class="flex items-center">
+									LEARN MORE ABOUT SECURITY CAMERAS
+									<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</Button>
+						</div>
+						<div class="lg:w-1/2">
+							<div class="rounded-2xl h-80 overflow-hidden">
+								<img src="/security-camera.jpg" alt="Security Camera System Installation" class="w-full h-full object-cover" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Commercial Locksmith Service -->
+				<div class="mb-20">
+					<div class="flex flex-col lg:flex-row items-center gap-12">
+						<div class="lg:w-1/2">
+							<div class="flex items-center mb-6">
+								<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+									<Building class="w-6 h-6 text-primary" />
+								</div>
+								<h3 class="text-2xl font-bold text-header">COMMERCIAL LOCKSMITH SERVICES</h3>
+							</div>
+							<p class="text-lg text-header leading-relaxed mb-6">
+								Locked out at 3 AM? Need to rekey locks after an employee departure? Our professional locksmith services provide emergency response and comprehensive lock solutions for Virginia businesses 24/7.
+							</p>
+							<div class="mb-6">
+								<h4 class="font-bold text-header mb-3">SERVICES INCLUDE:</h4>
+								<ul class="space-y-2 text-header">
+									<li>• Emergency lockout assistance and key cutting</li>
+									<li>• Lock installation, repair, and replacement</li>
+									<li>• Master key systems and rekeying services</li>
+									<li>• High-security lock upgrades and safes</li>
+									<li>• Door hardware installation and maintenance</li>
+								</ul>
+							</div>
+							<Button class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3" asChild>
+								<a href="/commercial-locksmith-virginia" class="flex items-center">
+									LEARN MORE ABOUT LOCKSMITH SERVICES
+									<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</Button>
+						</div>
+						<div class="lg:w-1/2">
+							<div class="rounded-2xl h-80 overflow-hidden">
+								<img src="/commercial-locksmith.jpg" alt="Commercial Locksmith Services" class="w-full h-full object-cover" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Business Security Systems Service -->
+				<div class="mb-20">
+					<div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+						<div class="lg:w-1/2">
+							<div class="flex items-center mb-6">
+								<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+									<Shield class="w-6 h-6 text-primary" />
+								</div>
+								<h3 class="text-2xl font-bold text-header">BUSINESS SECURITY SYSTEMS</h3>
+							</div>
+							<p class="text-lg text-header leading-relaxed mb-6">
+								Break-in detected at 2 AM? Need comprehensive facility protection? Our wireless security systems provide complete business protection with instant alerts and professional monitoring throughout Virginia.
+							</p>
+							<div class="mb-6">
+								<h4 class="font-bold text-header mb-3">SERVICES INCLUDE:</h4>
+								<ul class="space-y-2 text-header">
+									<li>• Intrusion detection and alarm systems</li>
+									<li>• Motion sensors and perimeter protection</li>
+									<li>• Glass break detectors and door/window sensors</li>
+									<li>• Wireless technology and cellular backup</li>
+									<li>• Professional installation and system integration</li>
+								</ul>
+							</div>
+							<Button class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3" asChild>
+								<a href="/business-security-systems-virginia" class="flex items-center">
+									LEARN MORE ABOUT SECURITY SYSTEMS
+									<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</Button>
+						</div>
+						<div class="lg:w-1/2">
+							<div class="rounded-2xl h-80 overflow-hidden">
+								<img src="/business-security-system.jpg" alt="Business Security System Installation" class="w-full h-full object-cover" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Why Choose Us -->
+				<div class="mb-12 text-center">
+					<h3 class="text-2xl font-bold text-header mb-6">Why Choose United Security for Your Virginia Business?</h3>
+					<ul class="space-y-4 text-lg text-header max-w-4xl mx-auto">
+						<li><strong>Local Virginia Experts</strong> – Family-owned and operated in Southwest Virginia since 1988</li>
+						<li><strong>No Monthly Fees</strong> – Own your security system outright with no ongoing monitoring costs</li>
+						<li><strong>Licensed & Insured</strong> – Fully licensed (DCJS# 11-3283), bonded, and insured Virginia contractor</li>
+						<li><strong>24/7 Emergency Service</strong> – Round-the-clock support for urgent security needs</li>
+						<li><strong>Complete Solutions</strong> – From consultation to installation to ongoing maintenance</li>
+					</ul>
+
+					<div class="text-center mt-8">
+						<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
+							<a href="tel:540-989-9393" class="flex items-center">
+								<Phone class="w-6 h-6 mr-3" />
+								Call 540-989-9393 for Free Consultation
+							</a>
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

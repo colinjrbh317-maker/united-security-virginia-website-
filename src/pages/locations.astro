@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import { Button } from '../components/ui/button';
+import { MapPin, Building, Factory, Mountain, GraduationCap, Phone, CheckCircle, Users, Navigation } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Security Services Southwest Virginia",
+  name: "Professional Security Services Southwest Virginia Locations",
+  description: "Local security services throughout Southwest Virginia. Serving Roanoke Valley, New River Valley, Lynchburg, Bedford, Franklin, Botetourt, Allegheny, Rockbridge, Giles, and Henry Counties.",
+  url: "https://unitedsecurityva.com/locations",
+  areaServed: [
+    "Roanoke Valley", "Botetourt County", "Franklin County", "Martinsville", "Henry County", "Allegheny County",
+    "Rockbridge County", "Bedford County", "Lynchburg", "New River Valley", "Montgomery County", "Giles County",
+    "Roanoke", "Salem", "Vinton", "Buchanan", "Fincastle", "Rocky Mount", "Martinsville", "Bassett", "Collinsville",
+    "Covington", "Clifton Forge", "Lexington", "Buena Vista", "Bedford", "Forest", "Lynchburg", "Amherst", 
+    "Blacksburg", "Christiansburg", "Radford", "Pulaski", "Dublin", "Floyd", "Giles", "Narrows", "Pearisburg"
+  ],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Southwest Virginia Security Services",
+        "description": "Comprehensive security solutions across all Southwest Virginia counties and communities"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Security Services Locations Virginia | Southwest VA Counties | United Security" 
+  description="Local security services throughout Southwest Virginia counties. Serving Roanoke Valley, New River Valley, Lynchburg, Bedford, Franklin, Botetourt & more. Licensed since 1988."
+  type="website"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-hero-bg to-primary-light overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Service Locations
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Commercial Security Solutions Across Southwest Virginia
+				</p>
+				<div class="animate-fade-in-up [animation-delay:0.4s]">
+					<p class="text-lg text-header max-w-4xl mx-auto leading-relaxed">
+						United Security provides comprehensive security services throughout the Southwest Virginia region. Our strategically positioned teams deliver on-site solutions including access control, security cameras, commercial locksmith services, and business security systems.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- All Service Areas -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-7xl mx-auto">
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+					<!-- Roanoke Valley -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/roanoke-valley-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Roanoke Valley</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Roanoke County, Roanoke City, Salem, Vinton
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/roanoke-valley-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- Botetourt County -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/botetourt-county-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Botetourt County</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Buchanan, Fincastle, Troutville
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/botetourt-county-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- Franklin County -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/franklin-county-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Franklin County</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Rocky Mount, Boones Mill, Ferrum, Smith Mountain Lake
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/franklin-county-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- Martinsville/Henry County -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/martinsville-henry-county-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Martinsville/Henry County</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Martinsville, Bassett, Collinsville
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/martinsville-henry-county-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- Allegheny County -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/allegheny-county-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Allegheny County</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Covington, Clifton Forge, Low Moor
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/allegheny-county-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- Rockbridge County -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/rockbridge-county-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Rockbridge County</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Lexington, Buena Vista, Natural Bridge
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/rockbridge-county-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- Bedford County -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/bedford-county-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Bedford County</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Bedford, Forest, Moneta, Big Island
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/bedford-county-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- Lynchburg Area -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/lynchburg-area-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Lynchburg Area</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Lynchburg, Amherst, Appomattox
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/lynchburg-area-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- New River Valley/Montgomery County -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/new-river-valley-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">New River Valley/Montgomery County</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Radford, Christiansburg, Blacksburg, Pulaski, Dublin, Floyd
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/new-river-valley-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+
+					<!-- Giles County -->
+					<div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group" onClick={() => {
+						window.location.href = '/giles-county-security';
+					}}>
+						<h3 class="text-xl font-bold text-header mb-3">Giles County</h3>
+						<div class="mb-4">
+							<p class="text-sm text-header leading-relaxed">
+								Giles, Narrows, Pearisburg
+							</p>
+						</div>
+						<hr class="border-gray-200 mb-4" />
+						<Button asChild variant="ghost" class="w-full font-bold text-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+							<a href="/giles-county-security">VIEW DETAILS</a>
+						</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Local Expertise -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Comprehensive Southwest Virginia Coverage
+				</h2>
+				<p class="text-xl text-body mb-12 leading-relaxed">
+					As Southwest Virginia's premier security company since 1988, we provide professional security solutions across all major counties and communities with local expertise and rapid response.
+				</p>
+				
+				<div class="grid md:grid-cols-3 gap-8 mb-12">
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+							<MapPin class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-lg font-semibold text-header mb-2">10 County Coverage</h3>
+						<p class="text-body">Complete security coverage across all Southwest Virginia counties with dedicated local expertise in each area.</p>
+					</div>
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+							<Phone class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-lg font-semibold text-header mb-2">Rapid Response</h3>
+						<p class="text-body">Same-day service available throughout our entire service area with quick response times for emergencies.</p>
+					</div>
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+							<Users class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-lg font-semibold text-header mb-2">Local Knowledge</h3>
+						<p class="text-body">Deep understanding of each community's business environment, security challenges, and local requirements.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

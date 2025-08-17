@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import Breadcrumb from '../components/Breadcrumb';
+import { Button } from '../components/ui/button';
+import { Building, Phone } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Commercial Locksmith Virginia",
+  name: "Professional Commercial Locksmith Services Southwest Virginia",
+  description: "Expert commercial locksmith services for Southwest Virginia businesses. Lock installation, master key systems, emergency lockouts, and door hardware.",
+  url: "https://unitedsecurityva.com/commercial-locksmith-virginia",
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Commercial Lock Installation",
+        "description": "Professional lock installation and replacement for commercial properties"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Commercial Locksmith Virginia | Professional Locksmith Services | United Security" 
+  description="Expert commercial locksmith services for Southwest Virginia businesses. Emergency lockouts, master key systems, lock installation. Licensed & insured since 1988."
+  type="service"
+  image="/commercial-locksmith.jpg"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Services", href: "/services" },
+		{ label: "Commercial Locksmith" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Commercial Locksmith Services Southwest Virginia
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional Locksmith Solutions for Virginia Businesses
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Introduction -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Professional Commercial Locksmith Services in Southwest Virginia</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When you're locked out of your Virginia business at 3 AM or need to secure your facility after an employee departure, you need reliable commercial locksmith services. United Security provides comprehensive locksmith solutions throughout Southwest Virginia with over 35 years of experience helping businesses with lock and key emergencies.
+					</p>
+				</div>
+
+				<!-- What's Included -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">What's Included in Our Commercial Locksmith Services</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Emergency lockout service</strong> – 24/7 assistance when you're locked out</li>
+						<li><strong>Lock installation and repair</strong> – New locks and fixing broken mechanisms</li>
+						<li><strong>Key cutting and duplication</strong> – Standard and high-security key services</li>
+						<li><strong>Master key systems</strong> – Convenient access control for multiple doors</li>
+						<li><strong>Lock rekeying</strong> – Change locks without replacing hardware</li>
+						<li><strong>High-security locks</strong> – Advanced protection for sensitive areas</li>
+						<li><strong>Door hardware installation</strong> – Exit devices, closers, and operators</li>
+						<li><strong>Safe installation</strong> – Commercial safes and secure storage</li>
+					</ul>
+				</div>
+
+				<!-- What Happens When You Call -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">What Happens When You Call United Security</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Rapid response</strong> – Emergency lockout service within 30 minutes</li>
+						<li><strong>Professional assessment</strong> – Evaluate your security needs and lock condition</li>
+						<li><strong>Upfront pricing</strong> – Clear quotes with no hidden fees or surprises</li>
+						<li><strong>Expert service</strong> – Licensed locksmith technicians with proper tools</li>
+						<li><strong>Quality work</strong> – Professional installation and repair services</li>
+						<li><strong>Follow-up support</strong> – Ongoing assistance for lock and key needs</li>
+					</ul>
+				</div>
+
+				<!-- Common Situations -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Common Situations We Handle</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>Emergency lockouts</strong> – Get back into your business quickly and safely</li>
+						<li><strong>Employee departures</strong> – Rekey locks immediately for security</li>
+						<li><strong>Broken keys</strong> – Extract broken keys and cut replacements</li>
+						<li><strong>Lost keys</strong> – Replace or rekey locks when keys go missing</li>
+						<li><strong>Security upgrades</strong> – Install high-security locks and hardware</li>
+						<li><strong>New construction</strong> – Complete lock installation for new buildings</li>
+						<li><strong>Malfunctioning locks</strong> – Repair or replace faulty lock mechanisms</li>
+					</ul>
+				</div>
+
+				<!-- Customer Service Promise -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Our Customer Service Promise</h3>
+					<ul class="space-y-4 text-lg text-header">
+						<li><strong>24/7 emergency service</strong> – Available when you need us most</li>
+						<li><strong>Licensed professionals</strong> – DCJS# 11-3283 licensed Virginia security contractor</li>
+						<li><strong>Local Virginia company</strong> – Family-owned and operated since 1988</li>
+						<li><strong>Fair pricing</strong> – Competitive rates with transparent billing</li>
+						<li><strong>Quality workmanship</strong> – Professional service that lasts</li>
+						<li><strong>Complete warranty</strong> – Guarantee on all labor and materials</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Coverage Area -->
+	<section class="py-16 bg-gray-50">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h3 class="text-3xl font-bold text-header mb-8 text-center">Commercial Locksmith Service Coverage Areas</h3>
+				<p class="text-lg text-header text-center mb-12 leading-relaxed">
+					We provide professional commercial locksmith services throughout Southwest Virginia:
+				</p>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/roanoke-valley-security">Roanoke Valley Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/new-river-valley-security">New River Valley Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/lynchburg-area-security">Lynchburg Area Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/martinsville-henry-county-security">Martinsville Area Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/franklin-county-security">Franklin County Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/botetourt-county-security">Botetourt County Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/allegheny-county-security">Allegheny County Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/rockbridge-county-security">Rockbridge County Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/bedford-county-security">Bedford County Locksmith</a>
+						</Button>
+					</div>
+					<div class="text-center">
+						<Button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
+							<a href="/giles-county-security">Giles County Locksmith</a>
+						</Button>
+					</div>
+				</div>
+
+				<div class="text-center mt-12">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-6 h-6 mr-3" />
+							Call 540-989-9393 for Emergency Service
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

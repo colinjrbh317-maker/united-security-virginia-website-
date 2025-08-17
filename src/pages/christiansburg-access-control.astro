@@ -1,0 +1,384 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import InternalLinkCard from '../components/InternalLinkCard';
+import { Button } from '../components/ui/button';
+import { MapPin, Building, Shield, Users, CheckCircle, Phone, Star } from 'lucide-react';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Christiansburg Access Control",
+  name: "Professional Access Control Christiansburg Virginia",
+  description: "Expert access control systems for Christiansburg and Montgomery County businesses. Biometric, keypad, and card reader solutions for commercial facilities.",
+  url: "https://unitedsecurityva.com/christiansburg-access-control",
+  areaServed: ["Christiansburg", "Montgomery County", "Radford", "Pulaski", "Dublin"],
+  offers: [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Christiansburg Access Control Installation",
+        "description": "Professional access control systems for Montgomery County businesses"
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Montgomery County Security Systems",
+        "description": "Complete security solutions for Christiansburg area commercial properties"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Christiansburg Commercial Locksmith",
+        "description": "Business locksmith services for Christiansburg and surrounding areas"
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Christiansburg Access Control | Montgomery County Security Systems | United Security" 
+  description="Professional access control systems for Christiansburg & Montgomery County businesses. Biometric, keypad & card reader solutions. Licensed DCJS# 11-3283 since 1988."
+  type="service"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-hero-bg to-primary-light overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					<span class="text-primary">Christiansburg Access Control</span><br>
+					Montgomery County Security Specialists
+				</h1>
+				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional access control systems for Christiansburg and Montgomery County businesses. Secure entry solutions with biometric, keypad, and card reader technology.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
+					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+						document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+					}}>
+						Get Free Access Control Quote
+					</Button>
+					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+						<a href="tel:540-989-9393" class="flex items-center">
+							<Phone class="w-5 h-5 mr-2" />
+							Call 540-989-9393
+						</a>
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Trust Indicators -->
+	<section class="py-12 bg-white border-b border-gray-100">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap justify-center items-center gap-8 text-body">
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Licensed DCJS# 11-3283</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>Montgomery County Local</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>No Monthly Fees</span>
+				</div>
+				<div class="flex items-center">
+					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<span>New River Valley Experts</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Christiansburg Market Overview -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-header mb-6">
+						Montgomery County Access Control Experts
+					</h2>
+					<p class="text-xl text-body max-w-3xl mx-auto leading-relaxed">
+						Serving Christiansburg's business community with professional access control solutions designed for the New River Valley's diverse commercial and industrial landscape.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Building class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Christiansburg Business District</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Professional access control for Christiansburg's growing business corridor, from office buildings to retail centers along the main commercial areas.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Office building security</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Retail access control</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Professional services</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Shield class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Industrial Facilities</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Heavy-duty access control systems for Montgomery County's manufacturing and industrial facilities requiring robust security solutions.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Manufacturing plants</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Warehouse facilities</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Distribution centers</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+							<Users class="w-8 h-8 text-primary" />
+						</div>
+						<h3 class="text-xl font-bold text-header mb-4">Government & Institutional</h3>
+						<p class="text-body leading-relaxed mb-6">
+							Specialized access control for Montgomery County government buildings, institutions, and public facilities requiring enhanced security protocols.
+						</p>
+						<ul class="space-y-2">
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Government buildings</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Public institutions</span>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<span class="text-sm text-body">Community facilities</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Areas -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					New River Valley Service Areas
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Christiansburg</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Radford</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Pulaski</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Dublin</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Montgomery County</span>
+					</div>
+					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
+						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<span class="font-medium text-header">Floyd County</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Access Control Solutions -->
+	<section class="py-20 bg-muted/30">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-12 text-center">
+					Complete Access Control Solutions
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<InternalLinkCard
+						title="Biometric Access Control"
+						description="Fingerprint and facial recognition systems for maximum security at Christiansburg facilities."
+						href="/access-control-systems-virginia"
+						badge="High Security"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Keypad Entry Systems"
+						description="Electronic keypad access control with programmable codes for Montgomery County businesses."
+						href="/access-control-systems-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Card Reader Systems"
+						description="Proximity card and key fob access control for convenient employee access management."
+						href="/access-control-systems-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Security Camera Integration"
+						description="Access control systems that integrate seamlessly with security camera surveillance."
+						href="/security-cameras-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Master Key Systems"
+						description="Professional locksmith services with master key design for multi-level access control."
+						href="/commercial-locksmith-virginia"
+						client:load
+					/>
+					<InternalLinkCard
+						title="Gate Access Control"
+						description="Automated gate systems for parking lots and facility perimeters with remote management."
+						href="/gate-access-systems"
+						client:load
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Local Business Focus -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Supporting Christiansburg's Business Growth
+				</h2>
+				<p class="text-xl text-body mb-12 leading-relaxed">
+					As Christiansburg continues to grow as a business hub in the New River Valley, we provide access control solutions that scale with your success.
+				</p>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4">Growing Business Community</h3>
+						<p class="text-body mb-4">
+							Christiansburg's strategic location and business-friendly environment attract companies from across Southwest Virginia. Our access control systems support this growth with scalable security solutions.
+						</p>
+					</div>
+					<div class="text-left">
+						<h3 class="text-xl font-semibold text-header mb-4">New River Valley Connectivity</h3>
+						<p class="text-body mb-4">
+							Connected to Virginia Tech's innovation ecosystem while maintaining its own strong business identity, Christiansburg businesses need modern security that matches their forward-thinking approach.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Local Testimonials -->
+	<section class="py-20 bg-section-bg">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-12">
+					Trusted by Montgomery County Businesses
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-white rounded-lg p-8 shadow-md">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"United Security installed our access control system perfectly. They understand the local business environment and provided exactly what our Christiansburg facility needed."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Christiansburg Business Owner
+						</div>
+					</div>
+					<div class="bg-white rounded-lg p-8 shadow-md">
+						<div class="flex items-center mb-4">
+							{[...Array(5)].map((_, i) => (
+								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+							))}
+						</div>
+						<p class="text-body italic mb-4">
+							"Professional installation and great ongoing support. The biometric system works flawlessly for our Montgomery County manufacturing facility. Highly recommend for any local business."
+						</p>
+						<div class="text-sm text-header font-semibold">
+							- Montgomery County Facility Manager
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose for Christiansburg -->
+	<section class="py-20 bg-primary-light">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-header mb-8">
+					Why Choose United Security for Christiansburg?
+				</h2>
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">New River Valley Local</h3>
+						<p class="text-body">Deep understanding of the Christiansburg and Montgomery County business community with rapid local response.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">No Monthly Fees</h3>
+						<p class="text-body">One-time purchase access control systems without ongoing monthly software fees or hidden costs.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Scalable Solutions</h3>
+						<p class="text-body">Access control systems that grow with your business, from small offices to large industrial facilities.</p>
+					</div>
+					<div class="bg-white rounded-lg p-6 shadow-md">
+						<h3 class="text-xl font-semibold text-header mb-4">Virginia Licensed & Insured</h3>
+						<p class="text-body">Fully licensed (DCJS# 11-3283), bonded, and insured Virginia security contractor since 1988.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>
