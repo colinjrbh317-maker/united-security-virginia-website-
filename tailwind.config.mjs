@@ -1,11 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	darkMode: ["class"],
+	// darkMode removed to reduce bundle size
 	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+	],
+	safelist: [
+		// Critical animation classes
+		'animate-fade-in-up',
+		'animate-fade-in-down', 
+		'animate-slide-in-right',
+		'animate-pulse',
+		// Dynamic animation delays
+		'[animation-delay:0.2s]',
+		'[animation-delay:0.3s]',
+		'[animation-delay:0.4s]',
+		'[animation-delay:0.6s]',
+		'[animation-delay:0.8s]',
+		// Dynamic transforms used in buttons
+		'hover:scale-110',
+		'hover:scale-105',
+		'transform',
+		'transition-all',
+		'duration-300',
+		'duration-700',
+		// Dynamic states
+		'data-[state=checked]:bg-primary',
+		'data-[state=checked]:text-primary-foreground',
+		'group-open:rotate-180',
 	],
 	prefix: "",
 	theme: {

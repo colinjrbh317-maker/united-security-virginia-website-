@@ -38,22 +38,65 @@ export default defineConfig({
   },
   trailingSlash: 'ignore',
   build: {
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'auto',
+    splitting: true
   },
   vite: {
     build: {
-      cssCodeSplit: false,
+      target: 'es2022',
+      cssCodeSplit: true,
       rollupOptions: {
         output: {
-          manualChunks: {
-            vendor: ['react', 'react-dom']
+          manualChunks: (id) => {
+            // React core
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            // Radix UI components
+            if (id.includes('@radix-ui')) {
+              return 'radix-vendor';
+            }
+            // Lucide icons
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            // Utility libraries
+            if (id.includes('clsx') || id.includes('tailwind-merge') || id.includes('class-variance-authority')) {
+              return 'utils';
+            }
+            // Form libraries
+            if (id.includes('react-hook-form') || id.includes('zod')) {
+              return 'forms';
+            }
+            // Large UI libraries
+            if (id.includes('recharts') || id.includes('embla-carousel')) {
+              return 'charts-carousel';
+            }
+            // Node modules that aren't specifically chunked
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
           }
         }
+      },
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+          pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace']
+        }
       }
+    },
+    ssr: {
+      noExternal: ['@radix-ui/*']
     }
   },
   prefetch: {
-    prefetchAll: true,
-    defaultStrategy: 'viewport'
+    prefetchAll: false,
+    defaultStrategy: 'hover'
+  },
+  experimental: {
+    clientPrerender: true
   }
 });

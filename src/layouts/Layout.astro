@@ -59,17 +59,16 @@ const imageURL = new URL(image, Astro.site);
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
     
-    <!-- Fonts - Optimized -->
+    <!-- Critical Font Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
     
-    <!-- DNS Prefetch and Resource Hints for Performance -->
+    <!-- Performance optimizations -->
+    <link rel="preload" href={image} as="image" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="preload" href={image} as="image" />
-    <link rel="prefetch" href="/contact" />
-    <link rel="prefetch" href="/services" />
     
     <!-- Schema.org placeholder -->
     <slot name="schema" />

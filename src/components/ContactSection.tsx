@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { Phone, Mail, Shield, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -17,15 +17,15 @@ const ContactSection = () => {
     otherServiceDescription: ''
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-  };
+  }, []);
 
-  const handleServiceChange = (service: string, checked: boolean) => {
+  const handleServiceChange = useCallback((service: string, checked: boolean) => {
     setFormData(prev => ({
       ...prev,
       selectedServices: checked 
@@ -34,7 +34,7 @@ const ContactSection = () => {
       // Clear "Other" description if "Other" is unchecked
       otherServiceDescription: service === 'Other' && !checked ? '' : prev.otherServiceDescription
     }));
-  };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -192,13 +192,13 @@ const ContactSection = () => {
                     Services Needed (select all that apply)
                   </Label>
                   <div className="space-y-3">
-                    {[
+                    {useMemo(() => [
                       'Access Control',
                       'Cameras (Video Surveillance)',
                       'Commercial Locksmith services',
                       'Security Systems',
                       'Other'
-                    ].map((service) => (
+                    ], []).map((service) => (
                       <div key={service} className="flex items-center space-x-2">
                         <Checkbox
                           id={service}
