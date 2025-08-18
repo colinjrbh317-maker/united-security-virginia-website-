@@ -11,7 +11,7 @@ export interface Props {
 const { 
   title, 
   description = "United Security & Control Systems - Professional security solutions for Southwest Virginia businesses. Access control, security cameras, and locksmith services since 1988.",
-  image = "/lovable-uploads/f279366a-7136-4229-b19a-ad0fee523641.png",
+  image = "/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp",
   noindex = false,
   canonical,
   type = 'website'
@@ -66,7 +66,8 @@ const imageURL = new URL(image, Astro.site);
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
     
     <!-- Performance optimizations -->
-    <link rel="preload" href={image} as="image" />
+    <link rel="preload" href="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.webp" as="image" type="image/webp" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     

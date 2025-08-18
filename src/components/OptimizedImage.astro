@@ -1,0 +1,70 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  optimized?: boolean;
+}
+
+const { 
+  src, 
+  alt, 
+  width = 800, 
+  height = 600, 
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+  class: className = '',
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  optimized = true
+} = Astro.props;
+
+// Extract filename without extension for optimized images
+const getOptimizedSrc = (originalSrc: string, format: string, size?: string) => {
+  if (!optimized || !originalSrc.includes('lovable-uploads')) {
+    return originalSrc;
+  }
+  
+  const filename = originalSrc.split('/').pop()?.replace(/\.(png|jpg|jpeg)$/i, '');
+  if (!filename) return originalSrc;
+  
+  const sizePrefix = size ? `-${size}` : '';
+  return `/optimized/${filename}${sizePrefix}.${format}`;
+};
+
+const webpSrc = getOptimizedSrc(src, 'webp');
+const webpSmallSrc = getOptimizedSrc(src, 'webp', 'small');
+const avifSrc = getOptimizedSrc(src, 'avif');
+---
+
+<picture>
+  <!-- AVIF for modern browsers (smallest) -->
+  <source 
+    srcset={`${avifSrc} ${width}w`}
+    type="image/avif" 
+    sizes={sizes}
+  />
+  
+  <!-- WebP for most browsers -->
+  <source 
+    srcset={`${webpSmallSrc} 400w, ${webpSrc} 800w`}
+    type="image/webp" 
+    sizes={sizes}
+  />
+  
+  <!-- Fallback to original image -->
+  <img 
+    src={webpSrc} 
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+  />
+</picture>

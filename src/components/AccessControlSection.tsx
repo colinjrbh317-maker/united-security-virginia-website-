@@ -36,7 +36,27 @@ const AccessControlSection = () => {
           {/* Image Right Column */}
           <div className="lg:pl-8 animate-fade-in-up [animation-delay:0.8s]">
             <div className="relative">
-              <img src="/lovable-uploads/8b8da98e-6301-4608-afaf-4c1b2a613156.png" alt="Professional office entrance with access control card reader" className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-xl" />
+              <picture>
+                <source 
+                  srcset="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.avif 800w" 
+                  type="image/avif" 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <source 
+                  srcset="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156-small.webp 400w, /optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.webp 800w" 
+                  type="image/webp" 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <img 
+                  src="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.webp" 
+                  alt="Professional office entrance with access control card reader" 
+                  className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-xl"
+                  width="800"
+                  height="600"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/20 to-transparent rounded-2xl" />
               
               {/* Overlay Badge */}

@@ -39,14 +39,26 @@ const MainNavigation = () => {
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200"
             aria-label="United Security & Control Systems - Home"
           >
-            <img 
-              src="/lovable-uploads/f279366a-7136-4229-b19a-ad0fee523641.png" 
-              alt="United Security & Control Systems Logo"
-              className="h-28 sm:h-32 md:h-32 lg:h-40 xl:h-48 w-auto object-contain hover:scale-105 transition-transform duration-200"
-              width="200"
-              height="160"
-              loading="eager"
-            />
+            <picture>
+              <source 
+                srcset="/optimized/f279366a-7136-4229-b19a-ad0fee523641.avif" 
+                type="image/avif" 
+              />
+              <source 
+                srcset="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" 
+                type="image/webp" 
+              />
+              <img 
+                src="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" 
+                alt="United Security & Control Systems Logo"
+                className="h-28 sm:h-32 md:h-32 lg:h-40 xl:h-48 w-auto object-contain hover:scale-105 transition-transform duration-200"
+                width="200"
+                height="160"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
           </a>
 
           {/* Desktop Navigation */}
