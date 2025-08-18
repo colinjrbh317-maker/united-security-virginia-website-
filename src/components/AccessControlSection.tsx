@@ -38,21 +38,21 @@ const AccessControlSection = () => {
             <div className="relative">
               <picture>
                 <source 
-                  srcSet="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.avif 800w" 
+                  srcSet="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156-medium.avif" 
                   type="image/avif" 
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <source 
-                  srcSet="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156-small.webp 400w, /optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.webp 800w" 
+                  srcSet="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156-small.webp 400w, /optimized/8b8da98e-6301-4608-afaf-4c1b2a613156-medium.webp 533w" 
                   type="image/webp" 
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <img 
-                  src="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.webp" 
+                  src="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156-medium.webp" 
                   alt="Professional office entrance with access control card reader" 
                   className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-xl"
-                  width="800"
-                  height="600"
+                  width="533"
+                  height="400"
                   fetchPriority="high"
                   decoding="async"
                 />

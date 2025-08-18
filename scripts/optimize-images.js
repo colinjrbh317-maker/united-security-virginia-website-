@@ -42,6 +42,50 @@ async function optimizeImage(inputPath, filename) {
       .webp({ quality: 80, effort: 6 })
       .toFile(webpSmallPath);
     
+    // Create logo-specific tiny versions for navigation (150x120)
+    if (baseNameWithoutExt.includes('f279366a-7136-4229-b19a-ad0fee523641')) {
+      const webpTinyPath = path.join(outputDir, `${baseNameWithoutExt}-tiny.webp`);
+      await sharp(inputPath)
+        .resize(150, 120, { 
+          fit: 'contain',
+          position: 'center',
+          background: { r: 255, g: 255, b: 255, alpha: 0 }
+        })
+        .webp({ quality: 85, effort: 6 })
+        .toFile(webpTinyPath);
+      
+      const avifTinyPath = path.join(outputDir, `${baseNameWithoutExt}-tiny.avif`);
+      await sharp(inputPath)
+        .resize(150, 120, { 
+          fit: 'contain',
+          position: 'center',
+          background: { r: 255, g: 255, b: 255, alpha: 0 }
+        })
+        .avif({ quality: 80, effort: 6 })
+        .toFile(avifTinyPath);
+    }
+    
+    // Create medium size for AccessControl image (533x400)
+    if (baseNameWithoutExt.includes('8b8da98e-6301-4608-afaf-4c1b2a613156')) {
+      const webpMediumPath = path.join(outputDir, `${baseNameWithoutExt}-medium.webp`);
+      await sharp(inputPath)
+        .resize(533, 400, { 
+          fit: 'cover',
+          position: 'center'
+        })
+        .webp({ quality: 85, effort: 6 })
+        .toFile(webpMediumPath);
+      
+      const avifMediumPath = path.join(outputDir, `${baseNameWithoutExt}-medium.avif`);
+      await sharp(inputPath)
+        .resize(533, 400, { 
+          fit: 'cover',
+          position: 'center'
+        })
+        .avif({ quality: 80, effort: 6 })
+        .toFile(avifMediumPath);
+    }
+    
     // Create AVIF version for modern browsers (even smaller)
     const avifPath = path.join(outputDir, `${baseNameWithoutExt}.avif`);
     await sharp(inputPath)

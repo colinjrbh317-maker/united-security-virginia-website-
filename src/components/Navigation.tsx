@@ -32,19 +32,19 @@ const Navigation = () => {
             {/* Logo - Bigger and centered on mobile */}
             <picture>
               <source 
-                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641.avif" 
+                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641-tiny.avif" 
                 type="image/avif" 
               />
               <source 
-                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" 
+                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641-tiny.webp" 
                 type="image/webp" 
               />
               <img 
-                src="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" 
+                src="/optimized/f279366a-7136-4229-b19a-ad0fee523641-tiny.webp" 
                 alt="United Security & Control Systems"
                 className="h-28 sm:h-32 md:h-32 lg:h-40 xl:h-48 w-auto object-contain hover:scale-105 transition-transform duration-200"
-                width="200"
-                height="160"
+                width="150"
+                height="120"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
