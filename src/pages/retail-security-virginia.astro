@@ -66,14 +66,14 @@ const schemaData = {
 					Comprehensive security solutions for Virginia retail businesses. Loss prevention systems, customer safety monitoring, and POS security protecting stores throughout Southwest Virginia.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
-					<Button size="xl" class="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+					<Button size="xl" className="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
 						document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 					}}>
 						Get Free Retail Security Consultation
 					</Button>
-					<Button variant="outline" size="xl" class="border-primary text-primary hover:bg-primary hover:text-white" asChild>
+					<Button variant="outline" size="xl" className="border-primary text-primary hover:bg-primary hover:text-white" asChild>
 						<a href="tel:540-989-9393" class="flex items-center">
-							<Phone class="w-5 h-5 mr-2" />
+							<Phone className="w-5 h-5 mr-2" />
 							Call 540-989-9393
 						</a>
 					</Button>
@@ -87,19 +87,19 @@ const schemaData = {
 		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex flex-wrap justify-center items-center gap-8 text-body">
 				<div class="flex items-center">
-					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<CheckCircle className="w-5 h-5 mr-2 text-primary" />
 					<span>Licensed DCJS# 11-3283</span>
 				</div>
 				<div class="flex items-center">
-					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<CheckCircle className="w-5 h-5 mr-2 text-primary" />
 					<span>Retail Security Specialists</span>
 				</div>
 				<div class="flex items-center">
-					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<CheckCircle className="w-5 h-5 mr-2 text-primary" />
 					<span>Loss Prevention Experts</span>
 				</div>
 				<div class="flex items-center">
-					<CheckCircle class="w-5 h-5 mr-2 text-primary" />
+					<CheckCircle className="w-5 h-5 mr-2 text-primary" />
 					<span>Customer Safety Focus</span>
 				</div>
 			</div>
@@ -122,7 +122,7 @@ const schemaData = {
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
 					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
 						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-							<ShoppingBag class="w-8 h-8 text-primary" />
+							<ShoppingBag className="w-8 h-8 text-primary" />
 						</div>
 						<h3 class="text-xl font-bold text-header mb-4">Loss Prevention Systems</h3>
 						<p class="text-body leading-relaxed mb-6">
@@ -130,15 +130,15 @@ const schemaData = {
 						</p>
 						<ul class="space-y-2">
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Electronic article surveillance</span>
 							</li>
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Theft detection cameras</span>
 							</li>
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Employee monitoring</span>
 							</li>
 						</ul>
@@ -146,7 +146,7 @@ const schemaData = {
 
 					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
 						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-							<Users class="w-8 h-8 text-primary" />
+							<Users className="w-8 h-8 text-primary" />
 						</div>
 						<h3 class="text-xl font-bold text-header mb-4">Customer Safety Monitoring</h3>
 						<p class="text-body leading-relaxed mb-6">
@@ -154,15 +154,15 @@ const schemaData = {
 						</p>
 						<ul class="space-y-2">
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Public area monitoring</span>
 							</li>
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Parking lot security</span>
 							</li>
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Emergency response systems</span>
 							</li>
 						</ul>
@@ -170,7 +170,7 @@ const schemaData = {
 
 					<div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
 						<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-							<CreditCard class="w-8 h-8 text-primary" />
+							<CreditCard className="w-8 h-8 text-primary" />
 						</div>
 						<h3 class="text-xl font-bold text-header mb-4">POS & Cash Security</h3>
 						<p class="text-body leading-relaxed mb-6">
@@ -178,15 +178,15 @@ const schemaData = {
 						</p>
 						<ul class="space-y-2">
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Cash register monitoring</span>
 							</li>
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Safe and vault protection</span>
 							</li>
 							<li class="flex items-start">
-								<CheckCircle class="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
+								<CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
 								<span class="text-sm text-body">Transaction security</span>
 							</li>
 						</ul>
@@ -205,27 +205,27 @@ const schemaData = {
 				</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
-						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<MapPin className="w-6 h-6 text-primary mr-3" />
 						<span class="font-medium text-header">Roanoke Valley Retail</span>
 					</div>
 					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
-						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<MapPin className="w-6 h-6 text-primary mr-3" />
 						<span class="font-medium text-header">Lynchburg Shopping</span>
 					</div>
 					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
-						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<MapPin className="w-6 h-6 text-primary mr-3" />
 						<span class="font-medium text-header">Blacksburg Retail</span>
 					</div>
 					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
-						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<MapPin className="w-6 h-6 text-primary mr-3" />
 						<span class="font-medium text-header">Martinsville Stores</span>
 					</div>
 					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
-						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<MapPin className="w-6 h-6 text-primary mr-3" />
 						<span class="font-medium text-header">Franklin County Retail</span>
 					</div>
 					<div class="flex items-center p-4 bg-gray-50 rounded-lg">
-						<MapPin class="w-6 h-6 text-primary mr-3" />
+						<MapPin className="w-6 h-6 text-primary mr-3" />
 						<span class="font-medium text-header">Southwest Virginia</span>
 					</div>
 				</div>
@@ -296,7 +296,7 @@ const schemaData = {
 				<div class="grid md:grid-cols-2 gap-8">
 					<div class="text-left">
 						<h3 class="text-xl font-semibold text-header mb-4 flex items-center">
-							<Eye class="w-6 h-6 text-primary mr-3" />
+							<Eye className="w-6 h-6 text-primary mr-3" />
 							Theft Prevention
 						</h3>
 						<p class="text-body mb-4">
@@ -305,7 +305,7 @@ const schemaData = {
 					</div>
 					<div class="text-left">
 						<h3 class="text-xl font-semibold text-header mb-4 flex items-center">
-							<Users class="w-6 h-6 text-primary mr-3" />
+							<Users className="w-6 h-6 text-primary mr-3" />
 							Customer Experience
 						</h3>
 						<p class="text-body mb-4">
@@ -326,22 +326,22 @@ const schemaData = {
 				</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 					<div class="bg-white rounded-lg p-6 text-center">
-						<Camera class="w-12 h-12 text-primary mx-auto mb-4" />
+						<Camera className="w-12 h-12 text-primary mx-auto mb-4" />
 						<h3 class="text-lg font-semibold text-header mb-2">AI Analytics</h3>
 						<p class="text-sm text-body">Intelligent video analytics with behavior detection and automated theft alerts for proactive loss prevention.</p>
 					</div>
 					<div class="bg-white rounded-lg p-6 text-center">
-						<DollarSign class="w-12 h-12 text-primary mx-auto mb-4" />
+						<DollarSign className="w-12 h-12 text-primary mx-auto mb-4" />
 						<h3 class="text-lg font-semibold text-header mb-2">POS Integration</h3>
 						<p class="text-sm text-body">Point-of-sale system integration with video overlay for transaction verification and void monitoring.</p>
 					</div>
 					<div class="bg-white rounded-lg p-6 text-center">
-						<Shield class="w-12 h-12 text-primary mx-auto mb-4" />
+						<Shield className="w-12 h-12 text-primary mx-auto mb-4" />
 						<h3 class="text-lg font-semibold text-header mb-2">Remote Monitoring</h3>
 						<p class="text-sm text-body">Real-time remote monitoring capabilities with smartphone alerts and off-site security management.</p>
 					</div>
 					<div class="bg-white rounded-lg p-6 text-center">
-						<Eye class="w-12 h-12 text-primary mx-auto mb-4" />
+						<Eye className="w-12 h-12 text-primary mx-auto mb-4" />
 						<h3 class="text-lg font-semibold text-header mb-2">Heat Mapping</h3>
 						<p class="text-sm text-body">Customer behavior analytics and heat mapping for optimal store layout and security camera placement.</p>
 					</div>
@@ -398,7 +398,7 @@ const schemaData = {
 					<div class="bg-white rounded-lg p-8 shadow-md">
 						<div class="flex items-center mb-4">
 							{[...Array(5)].map((_, i) => (
-								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+								<Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
 							))}
 						</div>
 						<p class="text-body italic mb-4">
@@ -411,7 +411,7 @@ const schemaData = {
 					<div class="bg-white rounded-lg p-8 shadow-md">
 						<div class="flex items-center mb-4">
 							{[...Array(5)].map((_, i) => (
-								<Star key={i} class="w-5 h-5 text-yellow-400 fill-current" />
+								<Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
 							))}
 						</div>
 						<p class="text-body italic mb-4">
