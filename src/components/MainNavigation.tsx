@@ -41,19 +41,19 @@ const MainNavigation = () => {
           >
             <picture>
               <source 
-                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641-tiny.avif" 
+                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641.avif" 
                 type="image/avif" 
               />
               <source 
-                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641-tiny.webp" 
+                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" 
                 type="image/webp" 
               />
               <img 
-                src="/optimized/f279366a-7136-4229-b19a-ad0fee523641-tiny.webp" 
+                src="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" 
                 alt="United Security & Control Systems Logo"
                 className="h-28 sm:h-32 md:h-32 lg:h-40 xl:h-48 w-auto object-contain hover:scale-105 transition-transform duration-200"
-                width="150"
-                height="120"
+                width="300"
+                height="240"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
