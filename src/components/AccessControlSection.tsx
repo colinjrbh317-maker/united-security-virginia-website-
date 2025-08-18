@@ -1,4 +1,5 @@
 import { Lock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 const AccessControlSection = () => {
   const features = ["Reliable offline operation ensures continuous access control", "One-time purchase with lifetime ownership—no recurring fees", "Scalable solutions from single doors to multi-location enterprises", "Instant facility-wide lockdown capabilities for enhanced security", "Complete access tracking and reporting for compliance needs", "Comprehensive training and 24/7 ongoing support included"];
   return <section id="services" className="py-16 lg:py-24 bg-white">
@@ -30,6 +31,13 @@ const AccessControlSection = () => {
                     {feature}
                   </p>
                 </div>)}
+            </div>
+            
+            {/* View Details Button */}
+            <div className="mt-8">
+              <Button variant="outline" size="lg" asChild>
+                <a href="/access-control-systems-virginia">View Details</a>
+              </Button>
             </div>
           </div>
 

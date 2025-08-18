@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import Breadcrumb from '../components/Breadcrumb';
+import { Button } from '../components/ui/button';
+import { Shield, CheckCircle, Phone, Users, Award, MapPin } from 'lucide-react';
+import '../styles/global.css';
+
+const breadcrumbItems = [
+  { label: 'About Us' }
+];
+
+const aboutSchema = {
+  "@type": "AboutPage",
+  "name": "About United Security & Control Systems",
+  "description": "Learn about United Security & Control Systems - Southwest Virginia's trusted security partner since 1988. Family-owned business specializing in access control, security cameras, and locksmith services.",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "United Security & Control Systems",
+    "foundingDate": "1988",
+    "founder": "James Morrison",
+    "description": "Electronic security design/build firm serving industrial, commercial, institutional and residential clients in Virginia since 1988.",
+    "telephone": "540-989-9393",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6405 Merriman Rd # 204",
+      "addressLocality": "Roanoke",
+      "addressRegion": "VA",
+      "postalCode": "24018",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Southwest Virginia", "Roanoke", "New River Valley", "Lynchburg", 
+      "Martinsville", "Blacksburg", "Christiansburg"
+    ]
+  }
+};
+---
+
+<Layout 
+  title="About United Security & Control Systems | Southwest Virginia Security Since 1988" 
+  description="Learn about United Security & Control Systems - family-owned security company serving Southwest Virginia since 1988. Licensed, insured, and trusted by businesses for over 35 years."
+  type="website"
+>
+  <SchemaMarkup type="AboutPage" data={aboutSchema} client:load />
+  
+  <MainNavigation client:load />
+  
+  <Breadcrumb items={breadcrumbItems} client:load />
+  
+  <!-- Hero Section -->
+  <section class="relative py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-primary/10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+          About <span class="text-primary">United Security</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-body leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+          Southwest Virginia's trusted security partner since 1988
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- Company History -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-header mb-8 text-center">Our Story</h2>
+          <div class="space-y-6 text-lg text-body leading-relaxed">
+            <p>
+              Founded in 1988, United Security & Control Systems has been Southwest Virginia's premier electronic security design and build firm for over 35 years. What started as a vision to provide state-of-the-art security solutions has grown into a trusted family-owned business that serves industrial, commercial, institutional, and residential clients throughout Virginia and neighboring states.
+            </p>
+            <p>
+              Officially incorporated on April 12, 1996, our company has built its reputation on delivering customized security solutions tailored to each client's unique needs. We've evolved from a small local operation to a comprehensive security provider, expanding our services over the decades to meet the changing needs of our community.
+            </p>
+            <p>
+              In recent years, we've continued to grow and adapt, adding Commercial Locksmith Services to our comprehensive offerings. This expansion, led by industry veteran Buck Washburn (formerly of Meador & Co.), demonstrates our commitment to being Southwest Virginia's complete security solution provider.
+            </p>
+          </div>
+        </div>
+
+        <!-- Leadership Team -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-header mb-8 text-center">Leadership Team</h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 rounded-xl p-6">
+              <div class="flex items-center mb-4">
+                <Users className="w-8 h-8 text-primary mr-3" />
+                <h3 class="text-xl font-semibold text-header">James Morrison</h3>
+              </div>
+              <p class="text-gray-600 mb-2 font-medium">President</p>
+              <p class="text-body leading-relaxed">
+                Leading United Security's strategic vision and operations, James brings decades of experience in the security industry to ensure our clients receive the highest quality solutions and service.
+              </p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-6">
+              <div class="flex items-center mb-4">
+                <Users className="w-8 h-8 text-primary mr-3" />
+                <h3 class="text-xl font-semibold text-header">Susanne Baker</h3>
+              </div>
+              <p class="text-gray-600 mb-2 font-medium">Office Manager</p>
+              <p class="text-body leading-relaxed">
+                Susanne manages our day-to-day operations and client communications, ensuring seamless project coordination and exceptional customer service for every client interaction.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- What Sets Us Apart -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-header mb-8 text-center">What Sets Us Apart</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="text-center p-6">
+              <Award className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 class="text-xl font-semibold text-header mb-3">Licensed & Certified</h3>
+              <p class="text-body">
+                Fully licensed by Virginia DCJS (#11-3283), bonded, and insured with all required certifications for professional security services.
+              </p>
+            </div>
+            <div class="text-center p-6">
+              <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 class="text-xl font-semibold text-header mb-3">35+ Years Experience</h3>
+              <p class="text-body">
+                Over three decades of continuous service to Southwest Virginia, building lasting relationships and deep community knowledge.
+              </p>
+            </div>
+            <div class="text-center p-6">
+              <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 class="text-xl font-semibold text-header mb-3">Local Expertise</h3>
+              <p class="text-body">
+                Family-owned and locally operated with 24/7 emergency service throughout Virginia and neighboring states.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Commitment -->
+        <div class="bg-primary/5 rounded-2xl p-8 mb-16">
+          <h2 class="text-3xl font-bold text-header mb-6 text-center">Our Commitment</h2>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <p class="text-body leading-relaxed">
+                <strong>Customized Solutions:</strong> Every security system is designed specifically for your property and operational needs, not one-size-fits-all packages.
+              </p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <p class="text-body leading-relaxed">
+                <strong>No Long-Term Contracts:</strong> You own your system outright with flexible monitoring options and no surprise fees or lengthy commitments.
+              </p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <p class="text-body leading-relaxed">
+                <strong>Complete Service:</strong> From initial consultation through installation, training, and ongoing support, we handle every aspect of your security needs.
+              </p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <p class="text-body leading-relaxed">
+                <strong>24/7 Availability:</strong> Round-the-clock emergency service ensures you're never without support when security issues arise.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Areas -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-header mb-8 text-center">Serving Southwest Virginia</h2>
+          <p class="text-lg text-body text-center mb-8 leading-relaxed">
+            We proudly serve businesses, schools, healthcare facilities, and government buildings throughout Southwest Virginia, including:
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-header">Roanoke Area</h4>
+              <p class="text-sm text-body">Roanoke, Salem, Vinton, Cave Spring</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-header">New River Valley</h4>
+              <p class="text-sm text-body">Blacksburg, Christiansburg, Radford</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-header">Lynchburg Area</h4>
+              <p class="text-sm text-body">Lynchburg, Bedford, Forest, Amherst</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-header">Additional Areas</h4>
+              <p class="text-sm text-body">Martinsville, Franklin, Botetourt, Allegheny</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center bg-primary/5 rounded-2xl p-8">
+          <h2 class="text-2xl font-bold text-header mb-4">Ready to Secure Your Property?</h2>
+          <p class="text-lg text-body mb-6 leading-relaxed">
+            Experience the difference that comes from working with Southwest Virginia's most trusted security professionals.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button variant="cta-prominent" size="lg" asChild>
+              <a href="tel:540-989-9393" class="flex items-center">
+                <Phone className="w-5 h-5 mr-2" />
+                Call Now
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="/contact">Get Free Consultation</a>
+            </Button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer client:visible />
+</Layout>

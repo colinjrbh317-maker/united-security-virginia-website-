@@ -28,7 +28,7 @@ const SchemaMarkup = ({ type, data }: SchemaMarkupProps) => {
       },
       "areaServed": [
         "Southwest Virginia",
-        "Roanoke Valley",
+        "Roanoke",
         "New River Valley",
         "Lynchburg",
         "Blacksburg",
@@ -45,9 +45,10 @@ const SchemaMarkup = ({ type, data }: SchemaMarkupProps) => {
         "https://www.facebook.com/unitedsecurityva",
         "https://www.linkedin.com/company/united-security-control-systems"
       ],
-      "licenses": "DCJS# 11-3283",
       "foundingDate": "1988",
-      "slogan": "Southwest Virginia's Trusted Security Partner"
+      "openingHours": [
+        "Mo-Fr 08:00-17:00"
+      ]
     };
 
     switch (type) {

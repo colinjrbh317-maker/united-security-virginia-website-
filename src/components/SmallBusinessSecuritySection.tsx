@@ -1,4 +1,5 @@
 import { Building } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const SmallBusinessSecuritySection = () => {
   const features = [
@@ -40,6 +41,13 @@ const SmallBusinessSecuritySection = () => {
                 </p>
               </div>
             ))}
+          </div>
+          
+          {/* View Details Button */}
+          <div className="mt-12">
+            <Button variant="outline" size="lg" asChild>
+              <a href="/business-security-systems-virginia">View Details</a>
+            </Button>
           </div>
         </div>
       </div>

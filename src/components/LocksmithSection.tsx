@@ -1,4 +1,5 @@
 import { Key } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const LocksmithSection = () => {
   const services = [
@@ -55,6 +56,13 @@ const LocksmithSection = () => {
                   </p>
                 </div>
               ))}
+            </div>
+            
+            {/* View Details Button */}
+            <div className="mt-8">
+              <Button variant="outline" size="lg" asChild>
+                <a href="/commercial-locksmith-virginia">View Details</a>
+              </Button>
             </div>
           </div>
         </div>

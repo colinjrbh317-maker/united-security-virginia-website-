@@ -15,7 +15,14 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
       <div className="container mx-auto">
         <ol className="flex items-center space-x-2 text-sm">
           <li>
-            <a href="/" className="text-gray-500 hover:text-primary transition-colors flex items-center">
+            <a 
+              href="/" 
+              className="text-gray-500 hover:text-primary transition-colors flex items-center"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.location.href = '/';
+              }}
+            >
               <Home className="w-4 h-4" />
               <span className="sr-only">Home</span>
             </a>
@@ -24,7 +31,14 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
             <li key={index} className="flex items-center">
               <ChevronRight className="w-4 h-4 text-gray-400 mx-2" />
               {item.href && index < items.length - 1 ? (
-                <a href={item.href} className="text-gray-500 hover:text-primary transition-colors">
+                <a 
+                  href={item.href} 
+                  className="text-gray-500 hover:text-primary transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.location.href = item.href!;
+                  }}
+                >
                   {item.label}
                 </a>
               ) : (

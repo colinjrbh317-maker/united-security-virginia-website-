@@ -4,7 +4,7 @@ import { MapPin, Navigation } from 'lucide-react';
 
 const ServiceAreaSection = () => {
   const primaryAreas = [
-    { name: "Roanoke Valley", href: "/roanoke-valley-security" },
+    { name: "Roanoke", href: "/roanoke-valley-security" },
     { name: "New River Valley", href: "/new-river-valley-security" },
     { name: "Lynchburg Area", href: "/lynchburg-area-security" },
     { name: "Martinsville Area", href: "/martinsville-henry-county-security" }

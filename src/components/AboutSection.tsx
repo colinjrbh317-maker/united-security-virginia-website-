@@ -11,18 +11,14 @@ const AboutSection = () => {
         </div>
 
         {/* Content */}
-        <div className="max-w-5xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-16">
           <div className="space-y-6 text-left">
-            <p className="text-lg text-body leading-relaxed mb-6">
-              Most security companies offer cookie-cutter solutions and complicated contracts. We take a different approach. Every property is unique, every business has different challenges, and every security system should be designed specifically for how you actually use your space. That's why we start every project with a thorough consultation to understand your real-world needs.
-            </p>
-            
-            <p className="text-lg text-body leading-relaxed mb-6">
-              As a factory-authorized dealer specializing in access control systems, security cameras, and locksmith services, we provide enterprise-grade solutions with straightforward, one-time purchase options. No monthly software fees, no surprise costs, no long-term contracts. Our team handles everything from initial design through installation, training, and ongoing support—ensuring your investment delivers reliable protection for years to come.
+            <p className="text-lg text-body leading-relaxed">
+              Since 1988, United Security has been Southwest Virginia's trusted security partner, specializing in access control systems, security cameras, and commercial locksmith services. Unlike companies that offer cookie-cutter solutions, we design every security system specifically for your property and operational needs. Our family-owned business provides enterprise-grade solutions with no long-term contracts—you own your system outright with flexible monitoring options.
             </p>
             
             <p className="text-lg text-body leading-relaxed">
-              Being locally owned and operated means we're here when you need us. Our Southwest Virginia-based team knows the area, understands local business challenges, and can respond quickly for service calls or emergencies. We're fully licensed, insured, and factory-certified because your peace of mind depends on working with professionals you can trust.
+              As a fully licensed (DCJS# 11-3283), insured, and locally operated company, we handle everything from initial consultation through installation, training, and ongoing support. Our Southwest Virginia-based team knows the area, understands local business challenges, and provides 24/7 emergency service when you need us most.
             </p>
           </div>
         </div>
@@ -32,16 +28,21 @@ const AboutSection = () => {
           <p className="text-xl text-body mb-8">
             Ready to see how we can secure your property?
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
-          const element = document.getElementById('contact');
-          if (element) {
-            element.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }
-        }}>
-            Schedule Your Free Security Consultation
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button size="lg" className="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
+            const element = document.getElementById('contact');
+            if (element) {
+              element.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }
+          }}>
+              Schedule Your Free Security Consultation
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="/about">Learn More About Us</a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>;

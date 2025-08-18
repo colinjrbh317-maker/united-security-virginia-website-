@@ -87,7 +87,7 @@ const Navigation = () => {
             <Button variant="outline" size="sm" asChild>
               <a href="tel:540-989-9393" className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
-                540-989-9393
+                Call Now
               </a>
             </Button>
           </nav>
@@ -142,7 +142,7 @@ const Navigation = () => {
                 <Button variant="outline" size="sm" className="w-full" asChild>
                   <a href="tel:540-989-9393" className="flex items-center justify-center">
                     <Phone className="w-4 h-4 mr-2" />
-                    Call 540-989-9393
+                    Call Now
                   </a>
                 </Button>
               </div>
