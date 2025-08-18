@@ -38,12 +38,12 @@ const AccessControlSection = () => {
             <div className="relative">
               <picture>
                 <source 
-                  srcset="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.avif 800w" 
+                  srcSet="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.avif 800w" 
                   type="image/avif" 
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <source 
-                  srcset="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156-small.webp 400w, /optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.webp 800w" 
+                  srcSet="/optimized/8b8da98e-6301-4608-afaf-4c1b2a613156-small.webp 400w, /optimized/8b8da98e-6301-4608-afaf-4c1b2a613156.webp 800w" 
                   type="image/webp" 
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />

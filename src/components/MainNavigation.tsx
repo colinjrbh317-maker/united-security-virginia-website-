@@ -41,11 +41,11 @@ const MainNavigation = () => {
           >
             <picture>
               <source 
-                srcset="/optimized/f279366a-7136-4229-b19a-ad0fee523641.avif" 
+                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641.avif" 
                 type="image/avif" 
               />
               <source 
-                srcset="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" 
+                srcSet="/optimized/f279366a-7136-4229-b19a-ad0fee523641.webp" 
                 type="image/webp" 
               />
               <img 
