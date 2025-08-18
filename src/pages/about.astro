@@ -13,29 +13,10 @@ const breadcrumbItems = [
 ];
 
 const aboutSchema = {
-  "@type": "AboutPage",
-  "name": "About United Security & Control Systems",
-  "description": "Learn about United Security & Control Systems - Southwest Virginia's trusted security partner since 1988. Family-owned business specializing in access control, security cameras, and locksmith services.",
-  "mainEntity": {
-    "@type": "LocalBusiness",
-    "name": "United Security & Control Systems",
-    "foundingDate": "1988",
-    "founder": "James Morrison",
-    "description": "Electronic security design/build firm serving industrial, commercial, institutional and residential clients in Virginia since 1988.",
-    "telephone": "540-989-9393",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "6405 Merriman Rd # 204",
-      "addressLocality": "Roanoke",
-      "addressRegion": "VA",
-      "postalCode": "24018",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      "Southwest Virginia", "Roanoke", "New River Valley", "Lynchburg", 
-      "Martinsville", "Blacksburg", "Christiansburg"
-    ]
-  }
+  "name": "United Security & Control Systems",
+  "foundingDate": "1988",
+  "founder": "James Morrison",
+  "description": "Electronic security design/build firm serving industrial, commercial, institutional and residential clients in Virginia since 1988."
 };
 ---
 
@@ -44,7 +25,7 @@ const aboutSchema = {
   description="Learn about United Security & Control Systems - family-owned security company serving Southwest Virginia since 1988. Licensed, insured, and trusted by businesses for over 35 years."
   type="website"
 >
-  <SchemaMarkup type="AboutPage" data={aboutSchema} client:load />
+  <SchemaMarkup type="LocalBusiness" data={aboutSchema} client:load />
   
   <MainNavigation client:load />
   
