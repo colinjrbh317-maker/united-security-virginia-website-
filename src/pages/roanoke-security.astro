@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import Breadcrumb from '../components/Breadcrumb';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import LinkButton from '../components/LinkButton.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Business Security Systems Roanoke Virginia",
+  name: "Business Security Systems Roanoke VA",
+  description: "Business security systems in Roanoke, VA. Professional access control, security cameras, and locksmith services for Roanoke City, Salem, Vinton, and surrounding areas.",
+  url: "https://unitedsecurityva.com/roanoke-security",
+  areaServed: [
+    "Roanoke", "Roanoke County", "Roanoke City", "Salem", "Vinton", "Cave Spring", "Hollins", "Oak Grove"
+  ]
+};
+
+const faqs = [
+  {
+    question: "What are your service hours in Roanoke?",
+    answer: "We provide 24/7 emergency security services in Roanoke. Our regular business hours are Monday-Friday 8:00 AM to 5:00 PM, with after-hours emergency response available."
+  },
+  {
+    question: "Do you service both Roanoke City and Roanoke County?",
+    answer: "Yes, we provide comprehensive security services throughout Roanoke City, Roanoke County, Salem, Vinton, and all surrounding communities in the Roanoke area."
+  },
+  {
+    question: "How quickly can you respond to security emergencies in Roanoke?",
+    answer: "Our average response time for security emergencies in the Roanoke area is typically 30-45 minutes, depending on location and traffic conditions."
+  },
+  {
+    question: "Are you licensed to provide security services in Virginia?",
+    answer: "Yes, United Security is fully licensed by the Virginia Department of Criminal Justice Services (DCJS# 11-3283), bonded, and insured for all security services."
+  },
+  {
+    question: "Do you offer free security consultations in Roanoke?",
+    answer: "Absolutely! We provide free, no-obligation security consultations and assessments for all businesses and properties throughout the Roanoke area."
+  }
+];
+---
+
+<Layout 
+  title="Business Security Systems Roanoke VA | United Security" 
+  description="Business security systems in Roanoke VA. Professional access control, security cameras, and locksmith services for Roanoke City, Salem, Vinton area. Call 540-989-9393."
+  type="website"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Locations", href: "/locations" },
+		{ label: "Roanoke" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Business Security Systems in Roanoke, VA
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional security solutions for businesses throughout Roanoke City, Roanoke County, Salem, and Vinton
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<LinkButton 
+						href="/contact" 
+						label="Get Security Services in Roanoke" 
+						ariaLabel="Request security services for your Roanoke business"
+						variant="primary"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Intro Section -->
+				<div class="mb-12">
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your Roanoke business needs professional security systems, United Security delivers comprehensive solutions tailored to your specific needs. We serve businesses throughout Roanoke City, Roanoke County, Salem, Vinton, Cave Spring, Hollins, and Oak Grove with over 35 years of experience in Southwest Virginia. Our local expertise ensures fast response times and systems designed for the unique security challenges of the Roanoke region.
+					</p>
+					<div class="text-center mb-8">
+						<LinkButton 
+							href="/contact" 
+							label="Get Security Services in Roanoke" 
+							ariaLabel="Request security consultation for your Roanoke business"
+							variant="primary"
+						/>
+					</div>
+				</div>
+
+				<!-- Access Control Section -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Access Control Systems in Roanoke</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						Secure your Roanoke business with professional <a href="/access-control-systems-virginia" class="text-primary hover:underline">access control systems</a> designed for Virginia's business environment. Our keycard entry systems, biometric readers, and keyless entry solutions provide reliable security for offices, retail stores, and industrial facilities throughout the Roanoke area.
+					</p>
+					<p class="text-lg text-header leading-relaxed">
+						From single-door installations to multi-building campus access control, we customize each system to match your operational workflow and security requirements. Our systems work offline, ensuring access even during network outages.
+					</p>
+				</div>
+
+				<!-- Security Camera Section -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Security Camera Installation in Roanoke</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						Protect your Roanoke property with professional <a href="/security-cameras-virginia" class="text-primary hover:underline">security camera systems</a> and CCTV installation. Our IP camera systems provide crystal-clear video surveillance with remote viewing capabilities, perfect for monitoring multiple locations across the Roanoke area.
+					</p>
+					<p class="text-lg text-header leading-relaxed">
+						Whether you need indoor surveillance for retail theft prevention or outdoor cameras for parking lot security, our systems are built to withstand Virginia's weather conditions while providing reliable 24/7 monitoring.
+					</p>
+				</div>
+
+				<!-- Locksmith Section -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Commercial Locksmith Services in Roanoke</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						From emergency lockouts to master key system installation, our <a href="/commercial-locksmith-virginia" class="text-primary hover:underline">commercial locksmith services</a> keep Roanoke businesses secure and accessible. We provide rapid response for lock repairs, rekeying services, and high-security lock upgrades throughout the area.
+					</p>
+					<p class="text-lg text-header leading-relaxed">
+						Our certified locksmiths handle everything from basic lock changes to complex master key systems for large office buildings and retail centers across Roanoke City and County.
+					</p>
+				</div>
+
+
+				<!-- Business Security Specialties -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Security for Healthcare & Schools in Roanoke</h2>
+					<p class="text-lg text-header leading-relaxed">
+						Roanoke's healthcare facilities and educational institutions require specialized security solutions. We provide HIPAA-compliant access control for medical centers, visitor management systems for schools, and emergency lockdown capabilities that meet Virginia's safety standards for sensitive environments.
+					</p>
+				</div>
+
+
+				<!-- Service Area -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Serving the Roanoke Area</h3>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						We cover all of the greater Roanoke metropolitan area and beyond:
+					</p>
+					
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Roanoke City:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Downtown Roanoke business district and Wells Avenue corridor</li>
+							<li>• Grandin Village and Southwest Roanoke commercial areas</li>
+							<li>• Crystal Spring and Melrose business districts</li>
+							<li>• Roanoke Regional Airport and aviation corridor</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Roanoke County:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Cave Spring and Hollins commercial centers</li>
+							<li>• Oak Grove and Valley View shopping districts</li>
+							<li>• Tanglewood Mall area and Peters Creek Road corridor</li>
+							<li>• Hidden Valley and North Hills business areas</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Salem and Vinton:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Salem downtown and Main Street business district</li>
+							<li>• Roanoke College campus and surrounding areas</li>
+							<li>• Vinton downtown and Washington Avenue corridor</li>
+							<li>• I-81 corridor industrial and business parks</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Surrounding Areas:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Blue Ridge Parkway access points and tourism facilities</li>
+							<li>• Smith Mountain Lake northern access areas</li>
+							<li>• Catawba and Daleville corridor businesses</li>
+							<li>• Mill Mountain and Roanoke Star area attractions</li>
+						</ul>
+					</div>
+
+					<div class="text-center">
+						<LinkButton 
+							href="/contact" 
+							label="Request a Quote for Roanoke" 
+							ariaLabel="Request a security quote for your Roanoke business"
+							variant="primary"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<FAQSchema faqs={faqs} />
+	
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

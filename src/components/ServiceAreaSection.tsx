@@ -6,7 +6,7 @@ const ServiceAreaSection = () => {
   const primaryAreas = [
     { name: "Roanoke", href: "/roanoke-valley-security" },
     { name: "New River Valley", href: "/new-river-valley-security" },
-    { name: "Lynchburg Area", href: "/lynchburg-area-security" },
+    { name: "Lynchburg", href: "/lynchburg-security" },
     { name: "Martinsville Area", href: "/martinsville-henry-county-security" }
   ];
 
@@ -14,7 +14,7 @@ const ServiceAreaSection = () => {
     { name: "Franklin County", href: "/franklin-county-security" },
     { name: "Bedford County", href: "/bedford-county-security" },
     { name: "Botetourt County", href: "/botetourt-county-security" },
-    { name: "Allegheny County", href: "/allegheny-county-security" },
+    { name: "Alleghany County", href: "/alleghany-county-security" },
     { name: "Rockbridge County", href: "/rockbridge-county-security" },
     { name: "Giles County", href: "/giles-county-security" }
   ];

@@ -20,9 +20,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-header mb-4">Service Areas</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/roanoke-valley-security" className="text-muted-foreground hover:text-primary transition-colors">Roanoke</a></li>
+              <li><a href="/roanoke-security" className="text-muted-foreground hover:text-primary transition-colors">Roanoke</a></li>
               <li><a href="/new-river-valley-security" className="text-muted-foreground hover:text-primary transition-colors">New River Valley</a></li>
-              <li><a href="/lynchburg-area-security" className="text-muted-foreground hover:text-primary transition-colors">Lynchburg Area</a></li>
+              <li><a href="/lynchburg-security" className="text-muted-foreground hover:text-primary transition-colors">Lynchburg</a></li>
               <li><a href="/martinsville-henry-county-security" className="text-muted-foreground hover:text-primary transition-colors">Martinsville Area</a></li>
               <li><a href="/locations" className="text-muted-foreground hover:text-primary transition-colors">All Service Areas</a></li>
             </ul>

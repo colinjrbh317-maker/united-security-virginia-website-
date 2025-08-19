@@ -5,8 +5,8 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import SchemaMarkup from '../components/SchemaMarkup';
 import Breadcrumb from '../components/Breadcrumb';
-import { Button } from '../components/ui/button';
-import { Building, Phone } from 'lucide-react';
+import LinkButton from '../components/LinkButton.astro';
+import FAQSchema from '../components/FAQSchema.astro';
 import '../styles/global.css';
 
 const schemaData = {
@@ -25,6 +25,21 @@ const schemaData = {
     }
   ]
 };
+
+const faqs = [
+  {
+    question: "Do you provide 24/7 emergency locksmith services?",
+    answer: "Yes, we provide 24/7 emergency commercial locksmith services throughout Southwest Virginia. Whether you're locked out at midnight or need urgent rekeying after hours, we're available to help."
+  },
+  {
+    question: "How quickly can you respond to emergency lockouts?",
+    answer: "Our average response time for emergency commercial lockouts is typically 30 minutes or less in most areas we serve. We prioritize emergency calls to get you back into your business quickly."
+  },
+  {
+    question: "Can you rekey locks instead of replacing them?",
+    answer: "Yes, rekeying is often the most cost-effective solution when you need to change access. We can rekey most commercial locks to work with new keys while keeping your existing hardware."
+  }
+];
 ---
 
 <Layout 
@@ -47,18 +62,18 @@ const schemaData = {
 		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-4xl mx-auto text-center">
 				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
-					Commercial Locksmith Services Southwest Virginia
+					Commercial Locksmith Services for Businesses
 				</h1>
 				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
-					Professional Locksmith Solutions for Virginia Businesses
+					Professional locksmith services and emergency lockout assistance for Virginia businesses
 				</p>
 				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
-					<Button size="xl" className="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
-						<a href="tel:540-989-9393" class="flex items-center">
-							<Phone className="w-6 h-6 mr-3" />
-							Call 540-989-9393
-						</a>
-					</Button>
+					<LinkButton 
+						href="/contact" 
+						label="Request Emergency Locksmith Service" 
+						ariaLabel="Request emergency locksmith service for your business"
+						variant="primary"
+					/>
 				</div>
 			</div>
 		</div>
@@ -72,8 +87,16 @@ const schemaData = {
 				<div class="mb-12">
 					<h2 class="text-3xl font-bold text-header mb-6">Professional Commercial Locksmith Services in Southwest Virginia</h2>
 					<p class="text-lg text-header leading-relaxed mb-4">
-						When you're locked out of your Virginia business at 3 AM or need to secure your facility after an employee departure, you need reliable commercial locksmith services. United Security provides comprehensive locksmith solutions throughout Southwest Virginia with over 35 years of experience helping businesses with lock and key emergencies.
+						When you're locked out of your Virginia business at 3 AM or need to secure your facility after an employee departure, you need reliable commercial locksmith services. United Security provides comprehensive lock installation, master key systems, rekeying services, and emergency lockout assistance throughout Southwest Virginia with over 35 years of experience helping businesses from Roanoke to Lynchburg, Christiansburg to Martinsville.
 					</p>
+					<div class="text-center mb-8">
+						<LinkButton 
+							href="/contact" 
+							label="Request Emergency Locksmith Service" 
+							ariaLabel="Request emergency locksmith consultation"
+							variant="primary"
+						/>
+					</div>
 				</div>
 
 				<!-- What's Included -->
@@ -134,78 +157,60 @@ const schemaData = {
 		</div>
 	</section>
 
-	<!-- Service Coverage Area -->
+	<!-- Where We Work -->
 	<section class="py-16 bg-gray-50">
 		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="max-w-6xl mx-auto">
-				<h3 class="text-3xl font-bold text-header mb-8 text-center">Commercial Locksmith Service Coverage Areas</h3>
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-header mb-8 text-center">Where We Work</h2>
 				<p class="text-lg text-header text-center mb-12 leading-relaxed">
 					We provide professional commercial locksmith services throughout Southwest Virginia:
 				</p>
-				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
 					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/roanoke-valley-security">Roanoke Valley Locksmith</a>
-						</Button>
+						<h3 class="text-xl font-semibold text-header mb-3">Roanoke Area</h3>
+						<p class="text-body mb-4">Emergency lockout and rekeying services for Roanoke City, Salem, and Vinton</p>
+						<LinkButton href="/roanoke-security" label="Roanoke Locksmith" variant="secondary" />
 					</div>
 					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/new-river-valley-security">New River Valley Locksmith</a>
-						</Button>
+						<h3 class="text-xl font-semibold text-header mb-3">Lynchburg</h3>
+						<p class="text-body mb-4">Master key systems and lock installation for Central Virginia businesses</p>
+						<LinkButton href="/lynchburg-security" label="Lynchburg Locksmith" variant="secondary" />
 					</div>
 					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/lynchburg-area-security">Lynchburg Area Locksmith</a>
-						</Button>
+						<h3 class="text-xl font-semibold text-header mb-3">New River Valley</h3>
+						<p class="text-body mb-4">University and commercial lock services for Blacksburg and Christiansburg</p>
+						<LinkButton href="/new-river-valley-security" label="NRV Locksmith" variant="secondary" />
 					</div>
 					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/martinsville-henry-county-security">Martinsville Area Locksmith</a>
-						</Button>
+						<h3 class="text-xl font-semibold text-header mb-3">Smith Mountain Lake</h3>
+						<p class="text-body mb-4">Vacation property and marina lock services</p>
+						<LinkButton href="/smith-mountain-lake-security" label="Lake Locksmith" variant="secondary" />
 					</div>
 					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/franklin-county-security">Franklin County Locksmith</a>
-						</Button>
+						<h3 class="text-xl font-semibold text-header mb-3">Martinsville Area</h3>
+						<p class="text-body mb-4">Industrial and commercial locksmith solutions</p>
+						<LinkButton href="/martinsville-henry-county-security" label="Martinsville Locksmith" variant="secondary" />
 					</div>
 					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/botetourt-county-security">Botetourt County Locksmith</a>
-						</Button>
-					</div>
-					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/allegheny-county-security">Allegheny County Locksmith</a>
-						</Button>
-					</div>
-					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/rockbridge-county-security">Rockbridge County Locksmith</a>
-						</Button>
-					</div>
-					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/bedford-county-security">Bedford County Locksmith</a>
-						</Button>
-					</div>
-					<div class="text-center">
-						<Button className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3" asChild>
-							<a href="/giles-county-security">Giles County Locksmith</a>
-						</Button>
+						<h3 class="text-xl font-semibold text-header mb-3">More Locations</h3>
+						<p class="text-body mb-4">Serving all of Southwest Virginia and surrounding areas</p>
+						<LinkButton href="/locations" label="All Service Areas" variant="secondary" />
 					</div>
 				</div>
 
-				<div class="text-center mt-12">
-					<Button size="xl" className="bg-primary hover:bg-primary-hover text-white font-bold px-8 py-4" asChild>
-						<a href="tel:540-989-9393" class="flex items-center">
-							<Phone className="w-6 h-6 mr-3" />
-							Call 540-989-9393 for Emergency Service
-						</a>
-					</Button>
+				<div class="text-center">
+					<LinkButton 
+						href="/contact" 
+						label="Talk to a Locksmith Expert" 
+						ariaLabel="Contact United Security for commercial locksmith consultation"
+						variant="primary"
+					/>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<FAQSchema faqs={faqs} />
 
 	<ContactSection client:load />
 	<Footer client:load />

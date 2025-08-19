@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNavigation from '../components/MainNavigation';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SchemaMarkup from '../components/SchemaMarkup';
+import Breadcrumb from '../components/Breadcrumb';
+import LinkButton from '../components/LinkButton.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import '../styles/global.css';
+
+const schemaData = {
+  serviceName: "Business Security Systems Lynchburg Virginia",
+  name: "Business Security Systems Lynchburg VA",
+  description: "Business security systems in Lynchburg, VA. Professional access control, security cameras, and locksmith services for Lynchburg, Amherst, Appomattox, and surrounding areas.",
+  url: "https://unitedsecurityva.com/lynchburg-security",
+  areaServed: [
+    "Lynchburg", "Amherst", "Appomattox", "Madison Heights", "Campbell County", "Amherst County"
+  ]
+};
+
+const faqs = [
+  {
+    question: "What areas around Lynchburg do you serve?",
+    answer: "We provide security services throughout Lynchburg, Amherst, Appomattox, Madison Heights, Campbell County, and Amherst County. Our service area covers the entire Central Virginia region."
+  },
+  {
+    question: "Do you offer 24/7 emergency service in Lynchburg?",
+    answer: "Yes, we provide 24/7 emergency security services in the Lynchburg area. Whether it's a lockout, alarm malfunction, or security breach, we're available around the clock."
+  },
+  {
+    question: "How long does it take to install a security system in Lynchburg?",
+    answer: "Installation time varies by system complexity, but most business security systems can be installed within 1-3 days. We work with your schedule to minimize disruption to your operations."
+  },
+  {
+    question: "Do you provide security system maintenance in Lynchburg?",
+    answer: "Absolutely! We offer comprehensive maintenance services including regular system checks, software updates, and preventive maintenance to ensure your security systems operate reliably."
+  }
+];
+---
+
+<Layout 
+  title="Business Security Systems Lynchburg VA | United Security" 
+  description="Business security systems in Lynchburg VA. Professional access control, security cameras, and locksmith services for Lynchburg, Amherst, Appomattox area. Call 540-989-9393."
+  type="website"
+>
+	<SchemaMarkup type="Service" data={schemaData} client:load />
+	
+	<MainNavigation client:load />
+	
+	<Breadcrumb items={[
+		{ label: "Locations", href: "/locations" },
+		{ label: "Lynchburg" }
+	]} client:load />
+	
+	<!-- Hero Section -->
+	<section class="relative py-24 lg:py-32 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
+					Business Security Systems in Lynchburg, VA
+				</h1>
+				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+					Professional security solutions for businesses throughout Lynchburg, Amherst, Appomattox, and Madison Heights
+				</p>
+				<div class="flex justify-center animate-fade-in-up [animation-delay:0.4s]">
+					<LinkButton 
+						href="/contact" 
+						label="Get Security Services in Lynchburg" 
+						ariaLabel="Request security services for your Lynchburg business"
+						variant="primary"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="py-16 bg-white">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<!-- Intro Section -->
+				<div class="mb-12">
+					<p class="text-lg text-header leading-relaxed mb-4">
+						When your Lynchburg business needs professional security systems, United Security delivers comprehensive solutions tailored to your specific needs. We serve businesses throughout Lynchburg, Amherst, Appomattox, Madison Heights, Campbell County, and Amherst County with specialized expertise in educational, healthcare, and commercial security. Our Central Virginia team understands the unique security challenges of both urban business districts and rural commercial facilities.
+					</p>
+					<div class="text-center mb-8">
+						<LinkButton 
+							href="/contact" 
+							label="Get Security Services in Lynchburg" 
+							ariaLabel="Request security consultation for your Lynchburg business"
+							variant="primary"
+						/>
+					</div>
+				</div>
+
+				<!-- Access Control Section -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Access Control Systems in Lynchburg</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						Secure your Lynchburg business with professional <a href="/access-control-systems-virginia" class="text-primary hover:underline">access control systems</a> designed for Virginia's diverse business environment. From university campus badge access to medical facility biometric entry, our keyless entry solutions provide reliable security for any size organization.
+					</p>
+					<p class="text-lg text-header leading-relaxed">
+						Whether you need simple keypad entry for small businesses or complex multi-building access management for educational institutions, our systems integrate seamlessly with your existing infrastructure and operational needs.
+					</p>
+				</div>
+
+				<!-- Security Camera Section -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Security Camera Installation in Lynchburg</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						Protect your Lynchburg property with professional <a href="/security-cameras-virginia" class="text-primary hover:underline">security camera systems</a> and business surveillance solutions. Our IP camera installations provide high-definition video monitoring with remote access capabilities, perfect for monitoring multiple locations across Central Virginia.
+					</p>
+					<p class="text-lg text-header leading-relaxed">
+						From retail loss prevention to campus security monitoring, our CCTV systems are designed to meet Virginia's varied climate conditions while providing reliable 24/7 surveillance for your business.
+					</p>
+				</div>
+
+				<!-- Locksmith Section -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Commercial Locksmith Services in Lynchburg</h2>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						From emergency lockouts to master key system installation, our <a href="/commercial-locksmith-virginia" class="text-primary hover:underline">commercial locksmith services</a> keep Lynchburg businesses secure and accessible. We provide rapid response for lock repairs, rekeying services, and commercial door hardware upgrades throughout the area.
+					</p>
+					<p class="text-lg text-header leading-relaxed">
+						Our certified locksmiths specialize in everything from basic lock changes to complex master key systems for large educational campuses, healthcare facilities, and multi-tenant commercial buildings.
+					</p>
+				</div>
+
+				<!-- Business Security Specialties -->
+				<div class="mb-12">
+					<h2 class="text-3xl font-bold text-header mb-6">Security for Universities & Healthcare in Lynchburg</h2>
+					<p class="text-lg text-header leading-relaxed">
+						Lynchburg's educational institutions and healthcare facilities require specialized security solutions that meet strict compliance standards. We provide campus access control for universities, HIPAA-compliant security for medical centers, and emergency response systems that integrate with existing safety protocols.
+					</p>
+				</div>
+
+				<!-- Service Area -->
+				<div class="mb-12">
+					<h3 class="text-2xl font-bold text-header mb-6">Serving the Lynchburg Area</h3>
+					<p class="text-lg text-header leading-relaxed mb-4">
+						We cover all of the greater Lynchburg metropolitan area and beyond:
+					</p>
+					
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Lynchburg City:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Downtown business district and Commerce Street corridor</li>
+							<li>• Liberty University campus and surrounding areas</li>
+							<li>• Lynchburg General Hospital and medical district</li>
+							<li>• Rivermont Avenue historic and business areas</li>
+							<li>• Wards Road commercial corridor and shopping centers</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Campbell County:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Madison Heights commercial areas and shopping centers</li>
+							<li>• Rustburg business district and government facilities</li>
+							<li>• Altavista downtown and manufacturing areas</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Amherst County:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Amherst downtown district and county courthouse</li>
+							<li>• Monroe rural businesses and agricultural facilities</li>
+							<li>• Sweet Briar College campus and surrounding areas</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h4 class="text-xl font-bold text-header mb-3">Surrounding Areas:</h4>
+						<ul class="space-y-2 text-lg text-header ml-4">
+							<li>• Appomattox Court House and historic district</li>
+							<li>• Forest edge and US-460 corridor businesses</li>
+							<li>• Brookneal and Red House rural commercial areas</li>
+							<li>• Blue Ridge Parkway access and tourism facilities</li>
+						</ul>
+					</div>
+
+					<div class="text-center">
+						<LinkButton 
+							href="/contact" 
+							label="Request a Quote for Lynchburg" 
+							ariaLabel="Request a security quote for your Lynchburg business"
+							variant="primary"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<FAQSchema faqs={faqs} />
+	
+	<ContactSection client:load />
+	<Footer client:load />
+</Layout>

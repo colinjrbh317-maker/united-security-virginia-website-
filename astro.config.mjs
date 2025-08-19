@@ -34,7 +34,14 @@ export default defineConfig({
     '/products-services': '/',
     '/products-services/': '/',
     '/for-your-home': '/',
-    '/for-your-home/': '/'
+    '/for-your-home/': '/',
+    // Location page redirects for SEO optimization
+    '/lynchburg-area-security': '/lynchburg-security',
+    '/lynchburg-area-security/': '/lynchburg-security',
+    '/roanoke-valley-security': '/roanoke-security',
+    '/roanoke-valley-security/': '/roanoke-security',
+    '/allegheny-county-security': '/alleghany-county-security',
+    '/allegheny-county-security/': '/alleghany-county-security'
   },
   trailingSlash: 'ignore',
   build: {
