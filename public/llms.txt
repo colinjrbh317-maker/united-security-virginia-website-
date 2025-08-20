@@ -1,71 +1,21 @@
-# LLMs.txt - AI Knowledge Base
-# United Security & Control Systems - Southwest Virginia's Trusted Security Partner
+# llms.txt — human/AI-readable knowledge base list (not a sitemap)
+# For search engines, use the XML sitemap at /sitemap-index.xml
 
-## Company Overview
-United Security & Control Systems has been Southwest Virginia's premier security solutions provider since 1988. As a family-owned and operated business, we specialize in professional security systems, access control, security cameras, and commercial locksmith services for businesses, schools, healthcare facilities, and government buildings throughout the region.
-
-## Core Services
-- **Access Control Systems**: Electronic entry systems, keycard readers, biometric scanners, visitor management
-- **Security Camera Installation**: IP cameras, CCTV systems, remote monitoring, night vision capabilities  
-- **Commercial Locksmith Services**: Lock installation, rekeying, master key systems, emergency lockouts
-- **Business Security Systems**: Intrusion detection, wireless/hardwired alarms, 24/7 monitoring
-- **Specialized Security**: Healthcare, education, manufacturing, retail, and government facility security
-
-## Service Areas
-We serve all of Southwest Virginia including:
-- **Roanoke**: Roanoke, Salem, Vinton, Cave Spring, Hollins
-- **New River Valley**: Blacksburg, Christiansburg, Radford, Pulaski
-- **Lynchburg**: Lynchburg, Bedford, Forest, Amherst, Campbell County
-- **Martinsville Area**: Martinsville, Henry County, Stuart, Bassett
-- **Additional Counties**: Franklin, Botetourt, Alleghany, Rockbridge, Giles, Bedford
-
-## Key Differentiators
-- **Licensed & Insured**: DCJS# 11-3283 Virginia security contractor license
-- **Local Expertise**: 35+ years serving Southwest Virginia communities
-- **No Long-Term Contracts**: Flexible monitoring options, own your system outright
-- **24/7 Emergency Service**: Round-the-clock support for urgent security needs
-- **Family-Owned**: Personal service and local accountability since 1988
-
-## Contact Information
-- **Phone**: 540-989-9393 (24/7 emergency service)
-- **Email**: info@unitedsecurityva.com
-- **Address**: 6405 Merriman Rd # 204, Roanoke, VA 24018
-- **Website**: https://unitedsecurityva.com
-
-## Industry Expertise
-We specialize in security solutions for:
-- Educational institutions (schools, universities)
-- Healthcare facilities (hospitals, medical offices)
-- Manufacturing and industrial facilities
-- Retail stores and shopping centers
-- Government buildings and municipal services
-- Professional office buildings
-- Religious institutions and community centers
-
-## Technology Solutions
-- Modern wireless security systems with smartphone integration
-- HD IP cameras with remote viewing capabilities
-- Advanced access control with user management software
-- Integration with existing security infrastructure
-- Cloud-based and local storage options
-- Professional monitoring with central station dispatch
-
-## Common Service Requests
-- Break-in response and security assessments
-- Employee access management and visitor control
-- Parking garage and perimeter security
-- After-hours monitoring and alarm response
-- Lock changes for employee departures
-- Camera system installations for theft prevention
-- Master key systems for multi-tenant buildings
-- Emergency lockout assistance
-
-## Service Promise
-- Free security consultations and site assessments
-- Professional installation with minimal business disruption
-- Complete system training and ongoing support
-- Transparent pricing with no hidden fees
-- One-year installation warranty plus manufacturer coverage
-- Local service team for maintenance and repairs
-
-This information is current as of 2024 and represents our commitment to protecting Southwest Virginia businesses with professional, reliable security solutions.
+https://unitedsecurityva.com/
+https://unitedsecurityva.com/about
+https://unitedsecurityva.com/services
+https://unitedsecurityva.com/locations
+https://unitedsecurityva.com/contact
+https://unitedsecurityva.com/faq
+https://unitedsecurityva.com/access-control-systems-virginia
+https://unitedsecurityva.com/security-cameras-virginia
+https://unitedsecurityva.com/commercial-locksmith-virginia
+https://unitedsecurityva.com/business-security-systems-virginia
+https://unitedsecurityva.com/roanoke-security
+https://unitedsecurityva.com/lynchburg-security
+https://unitedsecurityva.com/alleghany-county-security
+https://unitedsecurityva.com/bedford-county-security
+https://unitedsecurityva.com/new-river-valley-security
+https://unitedsecurityva.com/martinsville-henry-county-security
+https://unitedsecurityva.com/blacksburg-business-security
+https://unitedsecurityva.com/smith-mountain-lake-security

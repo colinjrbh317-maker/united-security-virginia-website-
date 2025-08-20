@@ -5,9 +5,8 @@ Disallow: /_astro/
 Disallow: /api/
 Disallow: /lovable-uploads/
 
-# Sitemap
 Sitemap: https://unitedsecurityva.com/sitemap-index.xml
-Sitemap: https://unitedsecurityva.com/llms.txt
+# AI knowledge base (not a sitemap): /llms.txt
 
 # AI Bots - Allow access for better discoverability
 User-agent: GPTBot
