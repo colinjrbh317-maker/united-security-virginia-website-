@@ -5,44 +5,43 @@ import Breadcrumb from '../components/Breadcrumb';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import SchemaMarkup from '../components/SchemaMarkup';
+import LinkButton from '../components/LinkButton.astro';
+import FAQSchema from '../components/FAQSchema.astro';
 import InternalLinkCard from '../components/InternalLinkCard';
 import { Button } from '../components/ui/button';
-import { Waves, Home, Building, Umbrella, CheckCircle, Phone, Star, MapPin } from 'lucide-react';
+import { Waves, Home, Umbrella, CheckCircle, Phone, Star, MapPin } from 'lucide-react';
 import '../styles/global.css';
 
 const schemaData = {
-  serviceName: "Smith Mountain Lake Security",
-  name: "Professional Security Smith Mountain Lake Virginia",
-  description: "Expert lakefront security for Smith Mountain Lake homes and businesses. Access control, security cameras, vacation home monitoring for Franklin County lake properties.",
+  serviceName: "Business Security Systems Smith Mountain Lake Virginia",
+  name: "Business Security Systems Smith Mountain Lake VA",
+  description: "Business security systems in Smith Mountain Lake, VA. Professional access control, security cameras, and locksmith services for lakefront properties, marinas, and resorts.",
   url: "https://unitedsecurityva.com/smith-mountain-lake-security",
-  areaServed: ["Smith Mountain Lake", "Franklin County", "Bedford County", "Pittsylvania County", "Moneta", "Huddleston"],
-  offers: [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Smith Mountain Lake Vacation Home Security",
-        "description": "Remote monitoring and security systems for Smith Mountain Lake vacation properties"
-      }
-    },
-    {
-      "@type": "Offer", 
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Smith Mountain Lake Marina Security",
-        "description": "Professional security systems for lakefront marinas and boat storage facilities"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service", 
-        "name": "Smith Mountain Lake Resort Security",
-        "description": "Complete security solutions for Smith Mountain Lake resorts and hospitality businesses"
-      }
-    }
-  ]
+  areaServed: ["Smith Mountain Lake", "Franklin County", "Bedford County", "Pittsylvania County", "Moneta", "Huddleston"]
 };
+
+const faqs = [
+  {
+    question: "What are your service hours for Smith Mountain Lake properties?",
+    answer: "Our business hours are Monday-Friday 8:00 AM to 5:00 PM. We provide security system installation, maintenance, and repair services for Smith Mountain Lake properties during regular business hours."
+  },
+  {
+    question: "Do you service all areas around Smith Mountain Lake?",
+    answer: "Yes, we provide comprehensive security services throughout the entire Smith Mountain Lake area including Moneta, Huddleston, and properties in Franklin County, Bedford County, and Pittsylvania County."
+  },
+  {
+    question: "How quickly can you respond to emergencies at Smith Mountain Lake?",
+    answer: "Our average response time for security emergencies at Smith Mountain Lake properties is typically 45-60 minutes, depending on specific location around the lake and seasonal traffic conditions."
+  },
+  {
+    question: "Do you specialize in vacation home and lakefront property security?",
+    answer: "Absolutely! We specialize in vacation home security, marina protection, resort security systems, and lakefront property monitoring throughout the Smith Mountain Lake region."
+  },
+  {
+    question: "Can you provide remote monitoring for seasonal properties?",
+    answer: "Yes, we offer comprehensive remote monitoring services perfect for seasonal vacation homes and lakefront properties, with real-time alerts and mobile app access for property owners."
+  }
+];
 ---
 
 <Layout 
@@ -65,8 +64,7 @@ const schemaData = {
 		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-4xl mx-auto text-center">
 				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
-					<span class="text-primary">Smith Mountain Lake Security</span><br>
-					Protecting Your Lakefront Investment
+					Business Security Systems at Smith Mountain Lake, VA
 				</h1>
 				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
 					Comprehensive security solutions for Smith Mountain Lake properties. Vacation home monitoring, marina security, and resort protection with remote management capabilities.
@@ -385,6 +383,8 @@ const schemaData = {
 		</div>
 	</section>
 
+	<FAQSchema faqs={faqs} />
+	
 	<ContactSection client:load />
 	<Footer client:load />
 </Layout>

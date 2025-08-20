@@ -4,44 +4,41 @@ import MainNavigation from '../components/MainNavigation';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import SchemaMarkup from '../components/SchemaMarkup';
-import InternalLinkCard from '../components/InternalLinkCard';
-import { Button } from '../components/ui/button';
+import LinkButton from '../components/LinkButton.astro';
+import FAQSchema from '../components/FAQSchema.astro';
 import { GraduationCap, Building2, Cpu, Rocket, CheckCircle, Phone, Star, MapPin } from 'lucide-react';
 import '../styles/global.css';
 
 const schemaData = {
-  serviceName: "Blacksburg Business Security",
-  name: "Professional Business Security Blacksburg Virginia",
-  description: "Expert security solutions for Blacksburg businesses and Virginia Tech area. Access control, security cameras, locksmith services for technology companies and startups.",
+  serviceName: "Business Security Systems Blacksburg Virginia",
+  name: "Business Security Systems Blacksburg VA",
+  description: "Business security systems in Blacksburg, VA. Professional access control, security cameras, and locksmith services for Virginia Tech area businesses and Montgomery County.",
   url: "https://unitedsecurityva.com/blacksburg-business-security",
-  areaServed: ["Blacksburg", "Virginia Tech", "Christiansburg", "Montgomery County"],
-  offers: [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Blacksburg Access Control Systems",
-        "description": "Professional access control for Virginia Tech area businesses"
-      }
-    },
-    {
-      "@type": "Offer", 
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Blacksburg Security Camera Installation",
-        "description": "Commercial surveillance systems for Blacksburg business district"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service", 
-        "name": "Virginia Tech Area Locksmith",
-        "description": "Commercial locksmith services for Blacksburg and Virginia Tech area"
-      }
-    }
-  ]
+  areaServed: ["Blacksburg", "Virginia Tech", "Christiansburg", "Montgomery County"]
 };
+
+const faqs = [
+  {
+    question: "What are your service hours in Blacksburg?",
+    answer: "Our business hours are Monday-Friday 8:00 AM to 5:00 PM. We provide security system installation, maintenance, and repair services throughout Blacksburg and the Virginia Tech area during regular business hours."
+  },
+  {
+    question: "Do you service both Blacksburg and Christiansburg?",
+    answer: "Yes, we provide comprehensive security services throughout Blacksburg, Christiansburg, the Virginia Tech campus area, and all of Montgomery County."
+  },
+  {
+    question: "How quickly can you respond to emergencies in Blacksburg?",
+    answer: "Our average response time for security emergencies in the Blacksburg area is typically 30-45 minutes, depending on location and campus traffic conditions."
+  },
+  {
+    question: "Do you work with Virginia Tech area businesses?",
+    answer: "Absolutely! We specialize in serving technology companies, startups, research facilities, and businesses throughout the Virginia Tech innovation corridor and Blacksburg area."
+  },
+  {
+    question: "Are you licensed to provide security services in Virginia?",
+    answer: "Yes, United Security is fully licensed by the Virginia Department of Criminal Justice Services (DCJS# 11-3283), bonded, and insured for all security services throughout Virginia."
+  }
+];
 ---
 
 <Layout 
@@ -59,11 +56,10 @@ const schemaData = {
 		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-4xl mx-auto text-center">
 				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
-					<span class="text-primary">Blacksburg Business Security</span><br>
-					Virginia Tech Area Experts
+					Business Security Systems in Blacksburg, VA
 				</h1>
 				<p class="text-xl lg:text-2xl text-body mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
-					Advanced security solutions for Blacksburg's innovation economy. Protecting tech companies, startups, and Virginia Tech area businesses with cutting-edge security systems.
+					Professional security solutions for businesses throughout Blacksburg, Virginia Tech area, and Montgomery County
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up [animation-delay:0.4s]">
 					<Button size="xl" className="bg-primary hover:bg-primary-hover text-white font-semibold" onClick={() => {
@@ -380,6 +376,8 @@ const schemaData = {
 		</div>
 	</section>
 
+	<FAQSchema faqs={faqs} />
+	
 	<ContactSection client:load />
 	<Footer client:load />
 </Layout>

@@ -41,8 +41,8 @@ const ContactSection = () => {
     setIsLoading(true);
 
     const webhookUrls = [
-      'https://colinryan17.app.n8n.cloud/webhook/2de75264-ff01-40b4-9f3c-f63fc23614ed',
-      'https://colinryan17.app.n8n.cloud/webhook-test/2de75264-ff01-40b4-9f3c-f63fc23614ed'
+      'https://colinryan17.app.n8n.cloud/webhook/2de75264-ff01-40b4-9f3c-f63fc23614ed', // Production
+      'https://colinryan17.app.n8n.cloud/webhook-test/2de75264-ff01-40b4-9f3c-f63fc23614ed' // Test
     ];
     
     // Build query parameters for GET requests

@@ -5,46 +5,43 @@ import Breadcrumb from '../components/Breadcrumb';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import SchemaMarkup from '../components/SchemaMarkup';
-import InternalLinkCard from '../components/InternalLinkCard';
-import { Button } from '../components/ui/button';
+import LinkButton from '../components/LinkButton.astro';
+import FAQSchema from '../components/FAQSchema.astro';
 import { Shield, Camera, Lock, Users, Factory, CheckCircle, Phone, MapPin, Star, Clock, Award, Building } from 'lucide-react';
 import '../styles/global.css';
 
 const schemaData = {
-  serviceName: "Security Services Martinsville Henry County Virginia",
-  name: "Professional Security Services Martinsville and Henry County - Bassett, Collinsville",
-  description: "Comprehensive security services for Martinsville and Henry County businesses and residents. Serving Martinsville, Bassett, Collinsville with professional security systems, manufacturing security, and commercial solutions since 1988.",
+  serviceName: "Business Security Systems Martinsville Henry County Virginia",
+  name: "Business Security Systems Martinsville and Henry County VA",
+  description: "Business security systems in Martinsville and Henry County, VA. Professional access control, security cameras, and locksmith services for Martinsville, Bassett, Collinsville, and surrounding areas.",
   url: "https://unitedsecurityva.com/martinsville-henry-county-security",
   areaServed: [
     "Martinsville", "Henry County", "Bassett", "Collinsville", "Ridgeway", "Fieldale", "Stanleytown", "Axton"
-  ],
-  offers: [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Martinsville Security Systems",
-        "description": "Complete security system installation and monitoring for Martinsville area businesses and homes"
-      }
-    },
-    {
-      "@type": "Offer", 
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Manufacturing Security Solutions",
-        "description": "Industrial security systems for manufacturing and production facilities"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service", 
-        "name": "Henry County Commercial Security",
-        "description": "Commercial security and access control for Henry County businesses"
-      }
-    }
   ]
 };
+
+const faqs = [
+  {
+    question: "What are your service hours in Martinsville and Henry County?",
+    answer: "Our business hours are Monday-Friday 8:00 AM to 5:00 PM. We provide security system installation, maintenance, and repair services throughout Martinsville and Henry County during regular business hours."
+  },
+  {
+    question: "Do you service both Martinsville and surrounding Henry County areas?",
+    answer: "Yes, we provide comprehensive security services throughout Martinsville, Henry County, Bassett, Collinsville, Ridgeway, Fieldale, Stanleytown, Axton, and all surrounding communities."
+  },
+  {
+    question: "How quickly can you respond to emergencies in the Martinsville area?",
+    answer: "Our average response time for security emergencies in Martinsville and Henry County is typically 30-45 minutes, depending on location and traffic conditions."
+  },
+  {
+    question: "Do you work with manufacturing facilities in Henry County?",
+    answer: "Absolutely! We specialize in industrial security systems and have extensive experience working with manufacturing facilities, textile plants, and industrial operations throughout Henry County and Martinsville."
+  },
+  {
+    question: "Are you licensed to provide security services in Virginia?",
+    answer: "Yes, United Security is fully licensed by the Virginia Department of Criminal Justice Services (DCJS# 11-3283), bonded, and insured for all security services throughout Virginia."
+  }
+];
 ---
 
 <Layout 
@@ -66,7 +63,7 @@ const schemaData = {
 		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-4xl mx-auto text-center">
 				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-header mb-6 animate-fade-in-up">
-					Commercial Security Solutions Martinsville Henry County VA
+					Business Security Systems in Martinsville & Henry County, VA
 				</h1>
 				<p class="text-xl lg:text-2xl text-header mb-8 leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
 					Professional Business Security Services in Martinsville and Henry County VA
@@ -195,6 +192,8 @@ const schemaData = {
 		</div>
 	</section>
 
+	<FAQSchema faqs={faqs} />
+	
 	<ContactSection client:load />
 	<Footer client:load />
 </Layout>
