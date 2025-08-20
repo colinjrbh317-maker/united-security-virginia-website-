@@ -40,10 +40,7 @@ const ContactSection = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    const webhookUrls = [
-      'https://colinryan17.app.n8n.cloud/webhook/2de75264-ff01-40b4-9f3c-f63fc23614ed', // Production
-      'https://colinryan17.app.n8n.cloud/webhook-test/2de75264-ff01-40b4-9f3c-f63fc23614ed' // Test
-    ];
+    const webhookUrl = 'https://colinryan17.app.n8n.cloud/webhook/2de75264-ff01-40b4-9f3c-f63fc23614ed';
     
     // Build query parameters for GET requests
     const selectedServicesText = formData.selectedServices.length > 0 
@@ -61,15 +58,11 @@ const ContactSection = () => {
     });
     
     try {
-      // Send GET requests to both webhooks with no-cors mode
-      const requests = webhookUrls.map(url =>
-        fetch(`${url}?${params.toString()}`, {
-          method: "GET",
-          mode: "no-cors",
-        })
-      );
-      
-      await Promise.all(requests);
+      // Send GET request to webhook with no-cors mode
+      await fetch(`${webhookUrl}?${params.toString()}`, {
+        method: "GET",
+        mode: "no-cors",
+      });
 
       toast({
         title: "Request Submitted",
