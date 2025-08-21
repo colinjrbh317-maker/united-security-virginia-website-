@@ -75,6 +75,16 @@ const imageURL = new URL(image, Astro.site);
     <link rel="modulepreload" href="/_astro/react-vendor.DMr092QB.js" />
     <link rel="modulepreload" href="/_astro/utils.CikWYNu5.js" />
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBC1VFFS2K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HBC1VFFS2K');
+    </script>
+    
     <!-- Schema.org placeholder -->
     <slot name="schema" />
   </head>

@@ -15,10 +15,7 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
-      lastmod: new Date(),
-      customPages: [
-        'https://unitedsecurityva.com/llms.txt'
-      ]
+      lastmod: new Date()
     }),
     compress({
       css: true,
