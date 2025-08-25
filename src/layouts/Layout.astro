@@ -1,4 +1,6 @@
 ---
+import { Analytics } from '@vercel/analytics/astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -90,6 +92,7 @@ const imageURL = new URL(image, Astro.site);
   </head>
   <body>
     <slot />
+    <Analytics />
     
     <!-- Schema.org LocalBusiness (Global) -->
     <script type="application/ld+json">
