@@ -36,18 +36,141 @@
       ]
     }
   ],
-  "rewrites": [
+  "redirects": [
     {
       "source": "/commercial-locksmith-services",
-      "destination": "/"
+      "destination": "/commercial-locksmith-virginia",
+      "permanent": true
     },
     {
       "source": "/products-services",
-      "destination": "/"
+      "destination": "/services",
+      "permanent": true
     },
     {
       "source": "/for-your-home",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/security-systems",
+      "destination": "/business-security-systems-virginia",
+      "permanent": true
+    },
+    {
+      "source": "/video-surveillance",
+      "destination": "/security-cameras-virginia", 
+      "permanent": true
+    },
+    {
+      "source": "/access-control",
+      "destination": "/access-control-systems-virginia",
+      "permanent": true
+    },
+    {
+      "source": "/locksmith",
+      "destination": "/commercial-locksmith-virginia",
+      "permanent": true
+    },
+    {
+      "source": "/locations/roanoke",
+      "destination": "/roanoke-security",
+      "permanent": true
+    },
+    {
+      "source": "/locations/lynchburg", 
+      "destination": "/lynchburg-security",
+      "permanent": true
+    },
+    {
+      "source": "/locations/blacksburg",
+      "destination": "/blacksburg-business-security",
+      "permanent": true
+    },
+    {
+      "source": "/locations/christiansburg",
+      "destination": "/christiansburg-access-control",
+      "permanent": true
+    },
+    {
+      "source": "/locations/martinsville",
+      "destination": "/martinsville-security-systems",
+      "permanent": true
+    },
+    {
+      "source": "/consultation",
+      "destination": "/security-consultation",
+      "permanent": true
+    },
+    {
+      "source": "/quote",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/estimate",
+      "destination": "/contact", 
+      "permanent": true
+    },
+    {
+      "source": "/get-quote",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/free-quote",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact", 
+      "permanent": true
+    },
+    {
+      "source": "/service-areas",
+      "destination": "/locations",
+      "permanent": true
+    },
+    {
+      "source": "/areas-served",
+      "destination": "/locations",
+      "permanent": true
+    },
+    {
+      "source": "/coverage-areas",
+      "destination": "/locations",
+      "permanent": true
+    },
+    {
+      "source": "/virginia-security",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/southwest-virginia",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/business-security",
+      "destination": "/business-security-systems-virginia", 
+      "permanent": true
+    },
+    {
+      "source": "/commercial-security",
+      "destination": "/business-security-systems-virginia",
+      "permanent": true
     }
   ]
 }
